@@ -20,6 +20,8 @@ public class SampleClass {
 	private String fleavor_id_2;
 	private String fleavor_id_3;
 
+
+
 	//getter
 	public int getSales_id() {
 		return sales_id;

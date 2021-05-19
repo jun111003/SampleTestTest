@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import sampleClass.SampleClass;
 
 /**
  * Servlet implementation class ServletGetOrder004
@@ -47,6 +50,12 @@ public class ServletGetOrder004 extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		String action = request.getParameter("order-004");
+
+		SampleClass sample = new SampleClass();
+		HttpSession session = request.getSession();
+		SampleClass SA = (SampleClass) session.getAttribute("SampleClass");
+
+		System.out.println(SA.getEmployee_id());
 
 		if (action.equals("注文内容を修正する")) {
 

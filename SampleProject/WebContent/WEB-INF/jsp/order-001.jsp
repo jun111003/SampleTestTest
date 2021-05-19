@@ -1,102 +1,42 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>注文画面</title>
+<title>31レジシステム</title>
+<img
+	src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png
+	alt="31ロゴマーク" width=20% height=20%>
 </head>
+
 <body>
-	<script>
-		function cupFlagSingle() {
-			document.getElementById("cup1").removeAttribute("disabled");
-			document.getElementById("cup1").style.color = "White";
-			document.getElementById("cup2").removeAttribute("disabled");
-			document.getElementById("cup2").style.color = "White";
-			document.getElementById("cup3").removeAttribute("disabled");
-			document.getElementById("cup3").style.color = "White";
-		}
+	<p>アイスの個数を選択してください</p>
 
-		function cupFlagDouble() {
-			document.getElementById("cup1").removeAttribute("disabled");
-			document.getElementById("cup1").style.color = "White";
-			document.getElementById("cup2").removeAttribute("disabled");
-			document.getElementById("cup2").style.color = "White";
-			document.getElementById("cup3").removeAttribute("disabled");
-			document.getElementById("cup3").style.color = "White";
-		}
-
-		function cupFlagTriple() {
-			document.getElementById("cup1").setAttribute("disabled", true);
-			document.getElementById("cup1").style.color = "Black";
-			document.getElementById("cup2").removeAttribute("disabled");
-			document.getElementById("cup2").style.color = "White";
-			document.getElementById("cup3").setAttribute("disabled", true);
-			document.getElementById("cup3").style.color = "Black";
-		}
-	</script>
-
-
-	<form action=ServletTest method="post">
-
-		<p>アイスの個数を選択してください</p>
-		<label>
-			<input type="radio" name="number" value="1" onclick="cupFlagSingle()">
-			シングル
-		</label>
-		<label>
-			<input type="radio" name="number" value="2" onclick="cupFlagDouble()">
-			ダブル
-		</label>
-		<label>
-			<input type="radio" name="number" value="3" onclick="cupFlagTriple()">
-			トリプル
-		</label>
-
-
-
-		<p>容器を選択してください</p>
-		<label>
-			<input type="radio" id="cup1" name="cup" value="1" disabled>
-			コーン
-		</label>
-		<label>
-			<input type="radio" id="cup2" name="cup" value="2" disabled>
-			カップ
-		</label>
-		<label>
-			<input type="radio" id="cup3" name="cup" value="3" disabled>
-			ワッフルコーン
-		</label>
-
-		<p>一つ目のフレーバーを選択してください</p>
-		<label>
-			<input type="radio" id="fleaver1" name="fleaver" value="1">
-			キャラメルリボン
-		</label>
-		<label>
-			<input type="radio" id="fleaver2" name="fleaver" value="2" disabled>
-			キャラメルリボン
-		</label>
-		<label>
-			<input type="radio" id="fleaver3" name="fleaver" value="3" disabled>
-			抹茶
-		</label>
-		<label>
-			<input type="radio" id="fleaver4" name="fleaver" value="4" disabled>
-			ストロベリーチーズケーキ
-		</label>
-		<label>
-			<input type="radio" id="fleaver5" name="fleaver" value="5" disabled>
-			クッキーアンドクリーム
-		</label>
-
-
+	<div class="single">
+		<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/single.png width=30% height=30%>
 		<p>
-			<input type="submit" value="送信">
-			<input type="reset" value="リセット">
+		<input type="radio" name="number" value="1" onclick="cupFlagSingle()">シングル
 		</p>
-	</form>
+	</div>
 
+	<div class="double">
+		<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/double.png width=30% height=30%>
+		<p>
+		<input type="radio" name="number" value="2" onclick="cupFlagDouble()">ダブル
+		</p>
+	</div>
+
+	<div class="triple">
+		<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/triple.png width=30% height=30%>
+		<p>
+		<input type="radio" name="number" value="3" onclick="cupFlagTriple()">トリプル
+		</p>
+	</div>
+
+	<p>
+		<input type="submit" value="戻る">
+		<input type="submit" value="次へ">
+	</p>
 </body>
 </html>

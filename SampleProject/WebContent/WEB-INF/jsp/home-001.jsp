@@ -3,12 +3,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>31レジシステム</title>
+<link rel="stylesheet" href="/SampleProject/css/home-001.css">
+<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png alt="" class="logo" width=60%
+	height=60%>
 </head>
-<body>
-	<link rel="stylesheet" href="/SampleProject/css/home-001.css">
-	<p>aaaaaaaaaaa</p>
-	<p>iiiiiiiiiiii</p>
 
+<body>
+	<div>
+		<input type="submit" value="注文する">
+	</div>
 </body>
 </html>

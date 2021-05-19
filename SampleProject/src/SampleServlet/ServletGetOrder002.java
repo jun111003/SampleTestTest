@@ -8,20 +8,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ServletTest
+ * Servlet implementation class ServletGetOrder002
  */
-@WebServlet("/ServletTest")
-public class ServletTest extends HttpServlet {
+@WebServlet("/ServletGetOrder002")
+public class ServletGetOrder002 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-
-	public ServletTest() {
+	public ServletGetOrder002() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -32,17 +30,11 @@ public class ServletTest extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
-		HttpSession session = request.getSession();
-
-		//login-001画面をフォワード
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/login-001.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order-002.jsp");
 		dispatcher.forward(request, response);
-
 	}
 
 	/**
@@ -51,21 +43,24 @@ public class ServletTest extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
-
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
-		//リクエストパラメータを取得
-		String id = request.getParameter("id");
+		String action = request.getParameter("order-002");
 
-		String action = request.getParameter("home-001");
-		System.out.println(action);
+		if (action.equals("戻る")) {
 
-		//home-001画面をフォワード
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/home-001.jsp");
-		dispatcher.forward(request, response);
+			//home-001画面をフォワード
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order-001.jsp");
+			dispatcher.forward(request, response);
 
+		} else if (action.equals("次へ")) {
+
+			//order-002画面をフォワード
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order-003.jsp");
+			dispatcher.forward(request, response);
+
+		}
 	}
 
 }

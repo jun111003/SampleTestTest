@@ -12,9 +12,7 @@
 
 <body>
 	<div>
-		<form action="/SampleProject/ServletTest" method="post">
-			<input type="submit" name="orderStart" value="注文する">
-		</form>
+		<a href="/SampleProject/OrderStartServlet">注文する</a>
 	</div>
 </body>
 </html>

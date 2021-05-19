@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class OrderStartServlet
+ * Servlet implementation class ServletGetPayment001
  */
-@WebServlet("/OrderStartServlet")
-public class OrderStartServlet extends HttpServlet {
+@WebServlet("/ServletGetPayment001")
+public class ServletGetPayment001 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public OrderStartServlet() {
+    public ServletGetPayment001() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,14 +29,11 @@ public class OrderStartServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order-001.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/payment-001.jsp");
 		dispatcher.forward(request, response);
-
-
 	}
 
 	/**
@@ -44,30 +41,24 @@ public class OrderStartServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
-
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
+		String action = request.getParameter("payment-001");
 
-		String action = request.getParameter("kosuuButton");
-
-		System.out.println(action);
-
-		if(action.equals("戻る")) {
+		if (action.equals("戻る")) {
 
 			//home-001画面をフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/home-001.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order-004.jsp");
 			dispatcher.forward(request, response);
 
-		} else if(action.equals("次へ")) {
+		} else if (action.equals("決済を行う")) {
 
 			//order-002画面をフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order-002.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/recipt-001.jsp");
 			dispatcher.forward(request, response);
 
 		}
-
 	}
 
 }

@@ -3,13 +3,14 @@
  */
 package sampleClass;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @author j-uchida
  *
  */
-public class SampleClass {
+public class SampleClass implements Serializable{
 	private int sales_id;
 	private int order_id;
 	private Date sales_date;
@@ -19,9 +20,10 @@ public class SampleClass {
 	private String flavor_id_1;
 	private String flavor_id_2;
 	private String flavor_id_3;
-//bbbbbbbbbbbb
-//aaaaaaaaaaaa
-// qawsedrftgyh
+
+//	private int servletAssist;
+
+
 	//getter
 	public int getSales_id() {
 		return sales_id;
@@ -59,6 +61,10 @@ public class SampleClass {
 		return flavor_id_3;
 	}
 
+//	public int getServletAssist() {
+//		return servletAssist;
+//	}
+
 	//setter
 	public void setSales_id(int sales_id) {
 		this.sales_id = sales_id;
@@ -95,5 +101,9 @@ public class SampleClass {
 	public void setFlavor_id_3(String flavor_id_3) {
 		this.flavor_id_3 = flavor_id_3;
 	}
+
+//	public void setServletAssist(int servletAssist) {
+//		this.servletAssist = servletAssist;
+//	}
 
 }

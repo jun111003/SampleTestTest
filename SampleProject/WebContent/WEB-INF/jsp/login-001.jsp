@@ -12,7 +12,7 @@
 <body>
 	<p>IDを入力</p>
 
-	<form action="/SampleProjectTest/ServletTest" method="post">
+	<form action="/SampleProject/ServletLogin" method="post">
 		<p>
 			ID:
 			<input type="text" name="ID" size="20">

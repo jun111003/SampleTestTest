@@ -19,6 +19,9 @@ public class ServletTest extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
+
+	int count = 1;
+
 	public ServletTest() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -35,14 +38,26 @@ public class ServletTest extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
+		if (count == 1) {
 
-		String url = "";
+			//login-001画面をフォワード
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/login-001.jsp");
+			dispatcher.forward(request, response);
 
-		if(url.contentEquals("")) {
-			url = "WEB-INF/jsp/login-001.jsp";
+			count++;
+
 		}
-		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-		dispatcher.forward(request, response);
+
+		if (count == 2) {
+
+			//order-001画面をフォワード
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order-001.jsp");
+			dispatcher.forward(request, response);
+
+			count++;
+
+		}
+
 	}
 
 	/**
@@ -56,38 +71,17 @@ public class ServletTest extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
-		// 行動取得
+		//リクエストパラメータを取得
+		String id = request.getParameter("id");
 
-		String actionID = request.getParameter("ID");
-		System.out.println(actionID);
-		String url = null;
-
-		if (actionID.contentEquals("asd")) {
-			// 遷移先
-			url = "WEB-INF/jsp/home-001.jsp";
-		} else if (actionID.contentEquals("qwe")) {
-			// 遷移先
-			url = "WEB-INF/jsp/login-001.jsp";
-		}
+		String action = request.getParameter("home-001");
+		System.out.println(action);
 
 
-		String action = request.getParameter("orderStart");
-		if (action.contentEquals("注文する")) {
-			// 遷移先
-			url = "WEB-INF/jsp/order-001.jsp";
-		}
-		// 遷移先
-		//String url = "WEB-INF/jsp/home-001.jsp";
-		//System.out.println(url);
-
-		//		if(action == null) {
-		//			url = "WEB-INF/jsp/login-001.jsp";
-		//		}else if(action == "home-001") {
-		//			url = "WEB-INF/jsp/home-001.jsp";
-		//		}
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+		//home-001画面をフォワード
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/home-001.jsp");
 		dispatcher.forward(request, response);
+
 	}
 
 }

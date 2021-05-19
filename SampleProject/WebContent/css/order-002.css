@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+body{
+	font-family: Yu Gothic;
+	font-size: 1em;
+}
+
+p.title {
+	color : white;
+	background-color : #f20c90;
+}
+
+p.title2 {
+	color : white;
+	background-color : #07219b;
+}
+
+img:hover {
+   opacity: 0.5;
+}
+
+label img {
+  margin: 3px;                 /* 画像部分に余白を持たせる */
+  padding: 8px;
+}
+
+.size input[type="radio"] {
+  display: none;
+}
+
+.size input[type="radio"]:checked + label img {
+  background: #f3d0ec;
+}
+
+.flavor input[type="radio"] {
+  display: none;
+}
+
+.flavor input[type="radio"]:checked + label img {
+  background: #b7ceea;
+}
+
+.next {
+  display       : inline-block;
+  border-radius : 20%;          /* 角丸       */
+  font-size     : 10pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 15px 27px;   /* 余白       */
+  background    : #f20c90;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border        : 2px solid #f20c90;    /* 枠の指定 */
+}
+.next:hover {
+  color         : #f20c90;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+.back {
+  display       : inline-block;
+  border-radius : 20%;          /* 角丸       */
+  font-size     : 10pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 15px 27px;   /* 余白       */
+  background    : #07219b;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border        : 2px solid #07219b;    /* 枠の指定 */
+}
+.back:hover {
+  color         : #07219b;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}

@@ -10,29 +10,28 @@
 </head>
 
 <body>
-<p>容器の種類を選んでください</p>
+<p class="title">容器の種類を選んでください</p>
 
-	<div class="cap">
-		<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/cap.png width=50% height=50%>
-		<p>
-		<input type="radio" name="number" value="1" onclick="cap()">カップ
-		</p>
-	</div>
+<div class="size">
+		<input id="1" type="radio" name="number" value="1">
+			<label for="1">
+ 			<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/corn.png width=15% height=15%>
+ 			</label>
 
-	<div class="corn">
-		<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/corn.png width=50% height=50%>
-		<p>
-		<input type="radio" name="number" value="2" onclick="corn()">コーン
-		</p>
-	</div>
+        <input id="2" type="radio" name="number" value="2">
+        	<label for="2">
+			<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/cap.png width=15% height=15%>
+    	    </label>
 
-	<div class="wafflecorn">
-		<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/wafflecorn.png width=50% height=50%>
-		<p>
-		<input type="radio" name="number" value="3" onclick="wafflecorn()">ワッフルコーン
-		</p>
-	</div>
+        <input id="3" type="radio" name="number" value="3">
+        	<label for="3">
+        	<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/wafflecorn.png width=15% height=15%>
+       		</label>
+</div>
 
-<p><input type="submit" value="戻る"><input type="submit" value="次へ"></p>
+<p>
+	<input type="submit" value="戻る" class="back">
+	<input type="submit" value="次へ" class="next">
+</p>
 </body>
 </html>

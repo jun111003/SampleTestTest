@@ -5,14 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
+<link rel="stylesheet" href="/SampleProject/CSS/order-004.css">
 </head>
 <body>
-   <img src ="file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31ロゴ.png"
-    alt = "ロゴマーク"
-    width = "206"
-    height = "70">
+   <img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png alt="31ロゴマーク" width=20% height=20%>
 
-   <p>ご注文内容を確定させてよろしいですか？</p>
+
+   <div class = "title">
+      <p>ご注文内容を確定させてよろしいですか？</p>
+   </div>
 
    <table border="1">
         <tr>
@@ -21,12 +22,13 @@
         <tr>
            <td rowspan="2">ダブル</td><td>スモール</td><td>抹茶</td><td>カップ</td><td>720</td>
         </tr>
-   </table>
+    </table>
+
 
    <p>
-		<input type="submit" value="注文内容を修正する">
-		<input type="submit" value="追加で注文する">
-		<input type="submit" value="注文を確定させる">
+		<input type="submit" value="注文内容を修正する"class="back">
+		<input type="submit" value="追加で注文する"class="back">
+		<input type="submit" value="注文を確定させる" class="next">
 
    </p>
 

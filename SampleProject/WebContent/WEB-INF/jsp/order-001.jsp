@@ -5,38 +5,33 @@
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
-<img
-	src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png
-	alt="31ロゴマーク" width=20% height=20%>
+<link rel="stylesheet" href="/SampleProject/css/order-001.css">
+<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png alt="31ロゴマーク" width=20% height=20%>
 </head>
 
 <body>
-	<p>アイスの個数を選択してください</p>
+	<p class="title">アイスの個数を選択してください</p>
 
-	<div class="single">
-		<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/single.png width=30% height=30%>
-		<p>
-		<input type="radio" name="number" value="1" onclick="cupFlagSingle()">シングル
-		</p>
-	</div>
+<div class="number">
+        <input id="1" type="radio" name="number" value="1">
+			<label for="1">
+ 			<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/シングル.png width=20% height=20%>
+ 			</label>
 
-	<div class="double">
-		<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/double.png width=30% height=30%>
-		<p>
-		<input type="radio" name="number" value="2" onclick="cupFlagDouble()">ダブル
-		</p>
-	</div>
+        <input id="2" type="radio" name="number" value="2">
+        	<label for="2">
+			<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/ダブル.png width=20% height=20%>
+    	    </label>
 
-	<div class="triple">
-		<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/triple.png width=30% height=30%>
-		<p>
-		<input type="radio" name="number" value="3" onclick="cupFlagTriple()">トリプル
-		</p>
-	</div>
+        <input id="3" type="radio" name="number" value="3">
+        	<label for="3">
+        	<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/トリプル.png width=20% height=20%>
+       		</label>
+</div>
 
 	<p>
-		<input type="submit" value="戻る">
-		<input type="submit" value="次へ">
+		<input type="submit" value="戻る" class="back">
+		<input type="submit" value="次へ" class="next">
 	</p>
 </body>
 </html>

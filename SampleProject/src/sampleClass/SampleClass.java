@@ -16,9 +16,9 @@ public class SampleClass {
 	private String employee_id;
 	private String ice_cream_container_id;
 	private String ice_cream_inf_id;
-	private String fleavor_id_1;
-	private String fleavor_id_2;
-	private String fleavor_id_3;
+	private String flavor_id_1;
+	private String flavor_id_2;
+	private String flavor_id_3;
 //bbbbbbbbbbbb
 //aaaaaaaaaaaa
 // qawsedrftgyh
@@ -47,16 +47,16 @@ public class SampleClass {
 		return ice_cream_inf_id;
 	}
 
-	public String getFleavor_id_1() {
-		return fleavor_id_1;
+	public String getFlavor_id_1() {
+		return flavor_id_1;
 	}
 
-	public String getFleavor_id_2() {
-		return fleavor_id_2;
+	public String getFlavor_id_2() {
+		return flavor_id_2;
 	}
 
-	public String getFleavor_id_3() {
-		return fleavor_id_3;
+	public String getFlavor_id_3() {
+		return flavor_id_3;
 	}
 
 	//setter
@@ -84,16 +84,16 @@ public class SampleClass {
 		this.ice_cream_inf_id = ice_cream_inf_id;
 	}
 
-	public void setFleavor_id_1(String fleavor_id_1) {
-		this.fleavor_id_1 = fleavor_id_1;
+	public void setFlavor_id_1(String flavor_id_1) {
+		this.flavor_id_1 = flavor_id_1;
 	}
 
-	public void setFleavor_id_2(String fleavor_id_2) {
-		this.fleavor_id_2 = fleavor_id_2;
+	public void setFlavor_id_2(String flavor_id_2) {
+		this.flavor_id_2 = flavor_id_2;
 	}
 
-	public void setFleavor_id_3(String fleavor_id_3) {
-		this.fleavor_id_3 = fleavor_id_3;
+	public void setFlavor_id_3(String flavor_id_3) {
+		this.flavor_id_3 = flavor_id_3;
 	}
 
 }

@@ -35,41 +35,13 @@ public class ServletTest extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
-//		PrintWriter out = response.getWriter();
-//		out.println("<!DOCTYPE html>");
-//		out.println("<html>");
-//		out.println("<head>");
-//		out.println("<title>ExerciseServlet3</title>");
-//		out.println("</head>");
-//		out.println("<body>");
-//
-//		try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
-//				+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
-//
-//			String sql = "SELECT * FROM employee";
-//			PreparedStatement pStmt = conn.prepareStatement(sql);
-//			//Statement pStmt = conn.createStatement(sql);
-//
-//			//select 実行
-//			ResultSet rs = pStmt.executeQuery();
-//
-//			while (rs.next()) {
-//				//デバッグ用にMPとEXPの数値を代入
-//				String name = rs.getString("employee_name");
-//				out.println(name);
-//			}
-//
-//			out.println("</body>");
-//			out.println("</html>");
-//
-//			pStmt.close();
-//		} catch (SQLException e) {
-//			System.out.println("MySQLに接続できませんでした");
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order-001.jsp");
+		String url = "";
+
+		if(url.contentEquals("")) {
+			url = "WEB-INF/jsp/login-001.jsp";
+		}
+		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}
 
@@ -80,6 +52,42 @@ public class ServletTest extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+
+		// 行動取得
+
+		String actionID = request.getParameter("ID");
+		System.out.println(actionID);
+		String url = null;
+
+		if (actionID.contentEquals("asd")) {
+			// 遷移先
+			url = "WEB-INF/jsp/home-001.jsp";
+		} else if (actionID.contentEquals("qwe")) {
+			// 遷移先
+			url = "WEB-INF/jsp/login-001.jsp";
+		}
+
+
+		String action = request.getParameter("orderStart");
+		if (action.contentEquals("注文する")) {
+			// 遷移先
+			url = "WEB-INF/jsp/order-001.jsp";
+		}
+		// 遷移先
+		//String url = "WEB-INF/jsp/home-001.jsp";
+		//System.out.println(url);
+
+		//		if(action == null) {
+		//			url = "WEB-INF/jsp/login-001.jsp";
+		//		}else if(action == "home-001") {
+		//			url = "WEB-INF/jsp/home-001.jsp";
+		//		}
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+		dispatcher.forward(request, response);
 	}
 
 }

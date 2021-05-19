@@ -21,7 +21,7 @@ public class SampleClass {
 	private String fleavor_id_3;
 
 
-
+// qawsedrftgyh
 	//getter
 	public int getSales_id() {
 		return sales_id;

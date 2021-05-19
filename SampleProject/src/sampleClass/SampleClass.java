@@ -19,8 +19,8 @@ public class SampleClass {
 	private String fleavor_id_1;
 	private String fleavor_id_2;
 	private String fleavor_id_3;
-
-
+//bbbbbbbbbbbb
+//aaaaaaaaaaaa
 // qawsedrftgyh
 	//getter
 	public int getSales_id() {

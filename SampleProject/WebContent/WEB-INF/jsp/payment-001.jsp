@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
-<link rel="stylesheet" href="/SampleProject/CSS/payment-001.css">
+<link rel="stylesheet" href="/SampleProject/css/payment-001.css">
 </head>
 <body>
 	<form action="/SampleProject/ServletGetPayment001" method="post">

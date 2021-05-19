@@ -40,7 +40,7 @@ public class ServletTest extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		//login-001画面をフォワード
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/login-001.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/payment-001.jsp");
 		dispatcher.forward(request, response);
 
 	}

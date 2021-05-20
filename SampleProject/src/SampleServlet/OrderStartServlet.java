@@ -31,13 +31,8 @@ public class OrderStartServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 
-<<<<<<< HEAD
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order-001.jsp");
 		dispatcher.forward(request, response);
-=======
-
-
->>>>>>> branch 'master' of https://github.com/jun111003/SampleTestTest.git
 	}
 
 	/**

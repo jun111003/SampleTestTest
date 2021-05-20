@@ -52,25 +52,25 @@ public class ServletLogin extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		//SampleClassのインスタンス作成
-		SampleClass sample = new SampleClass();
+		SampleClass sampleclass = new SampleClass();
 		//リクエストパラメータを取得しインスタンスに代入
 		String id = request.getParameter("ID");
-		sample.setEmployee_id(id);
+		sampleclass.setEmployee_id(id);
 
 		//Salesのインスタンス作成
-		Sales sampleSales = new Sales();
+		Sales sample = new Sales();
 		//リクエストパラメータを取得しインスタンスに代入
-		sampleSales.setEmployee_id(id);
+		sample.setEmployee_id(id);
 
 		//LoginLogicクラスのメソッドを実行
 		LoginLogic loginLogic = new LoginLogic();
-		boolean isLogin = loginLogic.execute(sample);
+		boolean isLogin = loginLogic.execute(sampleclass);
 
 		//正しいログインIDが入力された場合
 		if(isLogin) {
 			HttpSession session = request.getSession();
-			session.setAttribute("sampleClass", sample);
-			session.setAttribute("javasrc", sampleSales);
+			session.setAttribute("sampleClass", sampleclass);
+			session.setAttribute("SalesLogin-001", sample);
 		}
 
 		//home-001画面をフォワード

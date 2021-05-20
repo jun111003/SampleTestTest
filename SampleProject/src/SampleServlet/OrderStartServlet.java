@@ -54,7 +54,7 @@ public class OrderStartServlet extends HttpServlet {
 		String number = request.getParameter("number");
 		sample.setIce_cream_count_id(number);
 		HttpSession session = request.getSession();
-		session.setAttribute("javasrc", sample);
+		session.setAttribute("SalesOrder-001", sample);
 
 		String action = request.getParameter("kosuuButton");
 

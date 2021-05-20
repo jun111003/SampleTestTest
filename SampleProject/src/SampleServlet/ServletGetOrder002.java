@@ -57,7 +57,7 @@ public class ServletGetOrder002 extends HttpServlet {
 		String flavor = request.getParameter("flavor");
 		sample.setFlavor_id_1(flavor);
 		HttpSession session = request.getSession();
-		session.setAttribute("javasrc", sample);
+		session.setAttribute("SalesOrder-002", sample);
 
 		String action = request.getParameter("order-002");
 

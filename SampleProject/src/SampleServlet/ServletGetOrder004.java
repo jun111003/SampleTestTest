@@ -53,7 +53,7 @@ public class ServletGetOrder004 extends HttpServlet {
 
 		Sales sample = new Sales();
 		HttpSession session = request.getSession();
-		Sales SA = (Sales) session.getAttribute("javasrc");
+		Sales SA = (Sales) session.getAttribute("SalesLogin-001");
 
 		System.out.println(SA.getEmployee_id());
 

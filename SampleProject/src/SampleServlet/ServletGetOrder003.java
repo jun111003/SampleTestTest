@@ -55,7 +55,7 @@ public class ServletGetOrder003 extends HttpServlet {
 		String container = request.getParameter("container");
 		sample.setIce_cream_container_id(container);
 		HttpSession session = request.getSession();
-		session.setAttribute("javasrc", sample);
+		session.setAttribute("SalesOrder-003", sample);
 
 		String action = request.getParameter("order-003");
 

@@ -10,18 +10,18 @@ import java.util.Date;
  * @author j-uchida
  *
  */
-public class SampleClass implements Serializable{
+public class SampleClass implements Serializable {
+
 	private int sales_id;
 	private int order_id;
 	private Date sales_date;
 	private String employee_id;
+	private String employee_name;
 	private String ice_cream_container_id;
 	private String ice_cream_inf_id;
 	private String flavor_id_1;
 	private String flavor_id_2;
 	private String flavor_id_3;
-
-//	private int servletAssist;
 
 
 	//getter
@@ -39,6 +39,10 @@ public class SampleClass implements Serializable{
 
 	public String getEmployee_id() {
 		return employee_id;
+	}
+
+	public String getEmployee_name() {
+		return employee_name;
 	}
 
 	public String getIce_cream_container_id() {
@@ -61,10 +65,6 @@ public class SampleClass implements Serializable{
 		return flavor_id_3;
 	}
 
-//	public int getServletAssist() {
-//		return servletAssist;
-//	}
-
 	//setter
 	public void setSales_id(int sales_id) {
 		this.sales_id = sales_id;
@@ -80,6 +80,10 @@ public class SampleClass implements Serializable{
 
 	public void setEmployee_id(String employee_id) {
 		this.employee_id = employee_id;
+	}
+
+	public void setEmployee_name(String employee_name) {
+		this.employee_name = employee_name;
 	}
 
 	public void setIce_cream_container_id(String ice_cream_container_id) {
@@ -101,9 +105,5 @@ public class SampleClass implements Serializable{
 	public void setFlavor_id_3(String flavor_id_3) {
 		this.flavor_id_3 = flavor_id_3;
 	}
-
-//	public void setServletAssist(int servletAssist) {
-//		this.servletAssist = servletAssist;
-//	}
 
 }

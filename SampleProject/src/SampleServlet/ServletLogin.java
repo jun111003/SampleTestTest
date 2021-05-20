@@ -52,7 +52,6 @@ public class ServletLogin extends HttpServlet {
 
 		//SampleClassのインスタンス作成
 		SampleClass sample = new SampleClass();
-
 		//リクエストパラメータを取得しインスタンスに代入
 		String id = request.getParameter("ID");
 		sample.setEmployee_id(id);

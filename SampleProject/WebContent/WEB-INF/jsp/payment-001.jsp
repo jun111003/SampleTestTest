@@ -4,31 +4,32 @@
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
-<link rel="stylesheet" href="/SampleProject/css/payment-001.css">
+<link rel="stylesheet" href="/SampleProject/CSS/payment-001.css">
 </head>
 <body>
-	<form action="/SampleProject/ServletGetPayment001" method="post">
-		<div class="main">
+    <div class="main">
+	    <form action="/SampleProject/ServletGetPayment001" method="post">
 			<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png alt="31ロゴマーク" width=20%
 				height=20%>
 
 			<h2>合計金額</h2>
 			<p class="total">\1500</p>
 
-			<form action="/SampleProject/ServletTest" method="post">
+			<form action="/SampleProject/ServletTest" method="post" class = "receiving">
 				<h2>受注金額</h2>
 				<input type="text" name="txt" size="20">
 			</form>
 
 			<h2>差額</h2>
+			<p class = "difference">\50</p>
 
 			<p>
 				<input type="submit" name= "payment-001" value="戻る" class="back">
 				<input type="submit" name= "payment-001" value="決済を行う" class="next">
 			</p>
+	    </form>
 		</div>
 
-	</form>
 
 	<div class="calculator">
 		<table border="1">

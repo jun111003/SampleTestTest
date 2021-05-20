@@ -13,7 +13,10 @@ div.main {
 }
 
 div.calculator {
-	float: right;
+    position: absolute;
+	left: 500px;
+	top: 110px;
+	bottom: 50px;
 }
 
 /* ページの枠組み
@@ -25,11 +28,17 @@ div.calculator {
 
 /*メインコンテンツ
 ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+.main {
+	position: absolute;
+	left: 30px;
+}
+
+/*合計金額*/
 .total {
-	padding: 0.5em 1em;
-	margin: 2em 0;
-	font-weight: bold;
-	border: solid 3px #000000;
+	padding: 0.5em 0.5em;
+    margin: 2em 40em 2em 0;
+    font-weight: nomal;
+    border: solid 1px #808080;
 }
 
 .box1 p {
@@ -37,14 +46,29 @@ div.calculator {
 	padding: 0;
 }
 
-/*表*/
+/*受取金額*/
+
+/*差額*/
+p.difference{
+	padding: 0.5em 0.5em;
+    margin: 2em 40em 2em 0;
+    font-weight: nomal;
+    border: solid 1px #808080;
+}
+.box1 p {
+    margin: 0;
+    padding: 0;
+}
+
+/*電卓*/
 table {
 	/*おそらくwidthを％表示にしていることから横に並ばないと考えられる
 	widthを包括ブロックに関係ない指定方法にすれば一時的に解決できるが、
 	この方法は表示する端末に依らず大きさが一定になるので注意が必要。
 	具体的にどうするかは考え中。
 	*/
-	width: 150px;
+	width: 330px;
+	height: 450px;
 	border-collapse: collapse;
 	table-layout: fixed;
 	border-spacing: 0;
@@ -60,19 +84,21 @@ table th, table td {
 
 table tr:nth-child(1) {
 	font-weight: bold;
-	background-color: #b1bfcc;
+	background-color: #808080;
 	color: white;
 }
 
 table tr td:nth-of-type(4) {
 	font-weight: bold;
-	background-color: #b1bfcc;
+	background-color: #808080;
 	color: white;
 }
 
 /*ボタン*/
 .next {
-	float: right;
+	/*float: right;*/
+	position: absolute;
+	left: 200px;
 	display: inline-block;
 	border-radius: 20%; /* 角丸       */
 	font-size: 10pt; /* 文字サイズ */

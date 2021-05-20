@@ -9,7 +9,6 @@
 <body>
 
 	<script>
-
 		//受取金額
 		var payment = 0;
 
@@ -102,37 +101,33 @@
 			document.getElementById("numValue").innerHTML = payment;
 
 		}
-
-
-
-
 	</script>
 
-
-	<form action="/SampleProject/ServletGetPayment001" method="post">
-		<div class="main">
-			<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png alt="31ロゴマーク" width=20%
-				height=20%>
+	<div class="main">
+		<form action="/SampleProject/ServletGetPayment001" method="post" class="receiving">
+			<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png class="image-vw">
 
 			<h2>合計金額</h2>
 			<p class="total">\1500</p>
 
-			<form action="/SampleProject/ServletTest" method="post">
-				<h2>受注金額</h2>
-				<input type="text" name="txt" size="20"><br> <!-- ここの中に金額を打ち込めるようにしたかったけどできませんでした -->
+			<h2>受注金額</h2>
+			<input type="text" name="txt" size="20">
+			<br>
+			<!-- ここの中に金額を打ち込めるようにしたかったけどできませんでした -->
 
-				<span id=numValue>0</span> <!-- <spanタグ内の値が<script>タグの「document.getElement...」によって変更される -->
-			</form>
+			<span id=numValue>0</span>
+			<!-- <spanタグ内の値が<script>タグの「document.getElement...」によって変更される -->
 
 			<h2>差額</h2>
+			<p class="difference">\50</p>
 
 			<p>
-				<input type="submit" name= "payment-001" value="戻る" class="back">
-				<input type="submit" name= "payment-001" value="決済を行う" class="next">
+				<input type="submit" name="payment-001" value="戻る" class="back">
+				<input type="submit" name="payment-001" value="決済を行う" class="next">
 			</p>
-		</div>
 
-	</form>
+		</form>
+	</div>
 
 	<div class="calculator">
 		<table border="1">

@@ -5,8 +5,7 @@
 <meta charset="UTF-8">
 <title>31レジシステム</title>
 <link rel="stylesheet" href="/SampleProject/css/order-003.css">
-<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png alt="31ロゴマーク" width=20%
-	height=20%>
+<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png class="image-vw">
 </head>
 
 <body>
@@ -16,23 +15,23 @@
 		<div class="size">
 			<input id="1" type="radio" name="container" value="1">
 			<label for="1">
-				<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/corn.png width=15% height=15%>
+				<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/コーン.png width=10% height=10%>
 			</label>
 
 			<input id="2" type="radio" name="container" value="2">
 			<label for="2">
-				<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/cap.png width=15% height=15%>
+				<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/カップ.png width=10% height=10%>
 			</label>
 
 			<input id="3" type="radio" name="container" value="3">
 			<label for="3">
-				<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/wafflecorn.png width=15% height=15%>
+				<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/ワッフルコーン.png width=10% height=10%>
 			</label>
 		</div>
 
 		<p>
-			<input type="submit" name= "order-003" value="戻る" class="back">
-			<input type="submit" name= "order-003" value="次へ" class="next">
+			<input type="submit" name="order-003" value="戻る" class="back">
+			<input type="submit" name="order-003" value="次へ" class="next">
 		</p>
 	</form>
 </body>

@@ -6,11 +6,18 @@ body{
 	font-size: 1em;
 }
 
+.image-vw {
+  width : 100vw ;
+}
+
+
 /*メインコンテンツ
 ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
 
 /*ご注文内容を確定させてよろしいですか？*/
 .title {
+	text-indent: 0.5em;
+	font-weight: bold;
 	color : white;
 	background-color : #f20c90;
 }

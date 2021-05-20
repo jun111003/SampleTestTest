@@ -2,13 +2,24 @@
 body{
 	font-family: Yu Gothic;
 	font-size: 1em;
+	font-weight: bold;
 }
 
-p.title {
+.image-vw {
+  width : 100vw ;
+}
+
+.title {
+	text-indent: 0.5em;
 	color : white;
 	background-color : #f20c90;
 }
 
+.number{
+	text-align : center;
+}
+
+/*カーソル合わせたら透明*/
 img:hover {
    opacity: 0.5;
 }
@@ -18,15 +29,18 @@ label img {
   padding: 8px;
 }
 
-.number input[type="radio"] {
+/*クリックしたら色変わる*/
+div.number input[type="radio"] {
   display: none;
 }
 
-.number input[type="radio"]:checked + label img {
+div.number input[type="radio"]:checked + label img {
   background: #f3d0ec;
 }
 
+/*次へ戻るボタン*/
 .next {
+  float : right;
   display       : inline-block;
   border-radius : 20%;          /* 角丸       */
   font-size     : 10pt;        /* 文字サイズ */

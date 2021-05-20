@@ -4,11 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
-<link rel="stylesheet" href="/SampleProject/CSS/order-004.css">
+<link rel="stylesheet" href="/SampleProject/css/order-004.css">
 </head>
 <body>
-	<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png alt="31ロゴマーク" width=20%
-		height=20%>
+	<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png class="image-vw">
 
 	<form action="/SampleProject/ServletGetOrder004" method="post">
 
@@ -35,10 +34,9 @@
 
 
 		<p>
-			<input type="submit" name= "order-004" value="注文内容を修正する" class="back">
-			<input type="submit" name= "order-004" value="追加で注文する" class="back">
-			<input type="submit" name= "order-004" value="注文を確定させる" class="next">
-
+			<input type="submit" name="order-004" value="注文内容を修正する" class="back">
+			<input type="submit" name="order-004" value="追加で注文する" class="back">
+			<input type="submit" name="order-004" value="注文を確定させる" class="next">
 		</p>
 	</form>
 </body>

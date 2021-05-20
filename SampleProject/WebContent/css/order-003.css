@@ -2,22 +2,35 @@
 body{
 	font-family: Yu Gothic;
 	font-size: 1em;
+	font-weight: bold;
+}
+
+.image-vw {
+  width : 100vw ;
 }
 
 p.title {
+	text-indent: 0.5em;
 	color : white;
 	background-color : #f20c90;
 }
 
+div{
+	text-align : center;
+}
+
+/*カーソル合わせたら透明*/
 img:hover {
    opacity: 0.5;
 }
 
 label img {
-  margin: 3px;                 /* 画像部分に余白を持たせる */
+  margin: 3px 30px 3px;                 /* 画像部分に余白を持たせる */
+
   padding: 8px;
 }
 
+/*クリックしたら色変わる*/
 .size input[type="radio"] {
   display: none;
 }
@@ -26,7 +39,9 @@ label img {
   background: #f3d0ec;
 }
 
+/*次へ戻るボタン*/
 .next {
+  float : right;
   display       : inline-block;
   border-radius : 20%;          /* 角丸       */
   font-size     : 10pt;        /* 文字サイズ */

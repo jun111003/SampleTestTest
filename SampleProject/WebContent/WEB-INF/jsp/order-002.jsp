@@ -15,22 +15,22 @@
 		<div class="size">
 			<input id="1" type="radio" name="size" value="1">
 			<label for="1">
-				<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/kids.png width=15% height=15%>
+				<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/キッズ.png width=15% height=15%>
 			</label>
 
 			<input id="2" type="radio" name="size" value="2">
 			<label for="2">
-				<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/small.png width=15% height=15%>
+				<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/スモール.png width=15% height=15%>
 			</label>
 
 			<input id="3" type="radio" name="size" value="3">
 			<label for="3">
-				<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/single.png width=15% height=15%>
+				<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/レギュラー.png width=15% height=15%>
 			</label>
 
 			<input id="4" type="radio" name="size" value="4">
 			<label for="4">
-				<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/king.png width=15% height=15%>
+				<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/キング.png width=15% height=15%>
 			</label>
 		</div>
 

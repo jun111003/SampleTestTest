@@ -3,18 +3,30 @@
 body{
 	font-family: Yu Gothic;
 	font-size: 1em;
+	font-weight: bold;
+}
+
+.image-vw {
+  width : 100vw ;
 }
 
 p.title {
+	text-indent: 0.5em;
 	color : white;
 	background-color : #f20c90;
 }
 
 p.title2 {
+	text-indent: 0.5em;
 	color : white;
 	background-color : #07219b;
 }
 
+div{
+	text-align : center;
+}
+
+/*画面の透明度変える*/
 img:hover {
    opacity: 0.5;
 }
@@ -24,6 +36,7 @@ label img {
   padding: 8px;
 }
 
+/*クリックしたら色変わる*/
 .size input[type="radio"] {
   display: none;
 }
@@ -40,7 +53,9 @@ label img {
   background: #b7ceea;
 }
 
+/*次へ戻るボタン*/
 .next {
+  float : right;
   display       : inline-block;
   border-radius : 20%;          /* 角丸       */
   font-size     : 10pt;        /* 文字サイズ */

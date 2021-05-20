@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import sampleClass.SampleClass;
+import javasrc.Sales;
 
 /**
  * Servlet implementation class ServletGetOrder004
@@ -51,9 +51,9 @@ public class ServletGetOrder004 extends HttpServlet {
 
 		String action = request.getParameter("order-004");
 
-		SampleClass sample = new SampleClass();
+		Sales sample = new Sales();
 		HttpSession session = request.getSession();
-		SampleClass SA = (SampleClass) session.getAttribute("SampleClass");
+		Sales SA = (Sales) session.getAttribute("javasrc");
 
 		System.out.println(SA.getEmployee_id());
 

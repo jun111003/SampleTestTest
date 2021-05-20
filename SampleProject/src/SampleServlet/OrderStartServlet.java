@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import sampleClass.SampleClass;
+import javasrc.Sales;
 
 /**
  * Servlet implementation class OrderStartServlet
@@ -48,13 +48,13 @@ public class OrderStartServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
-		//SampleClassのインスタンス作成
-		SampleClass sample = new SampleClass();
+		//Salesのインスタンス作成
+		Sales sample = new Sales();
 		//リクエストパラメータを取得しインスタンスに代入
 		String number = request.getParameter("number");
-		sample.setEmployee_id(number);
+		sample.setIce_cream_count_id(number);
 		HttpSession session = request.getSession();
-		session.setAttribute("sampleClass", sample);
+		session.setAttribute("javasrc", sample);
 
 		String action = request.getParameter("kosuuButton");
 

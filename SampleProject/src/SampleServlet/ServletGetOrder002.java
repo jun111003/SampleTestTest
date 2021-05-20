@@ -49,15 +49,15 @@ public class ServletGetOrder002 extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
-		//SampleClassのインスタンス作成
+		//Salesのインスタンス作成
 		Sales sample = new Sales();
 		//リクエストパラメータを取得しインスタンスに代入
 		String size = request.getParameter("size");
 		sample.setIce_cream_size_id(size);
 		String flavor = request.getParameter("flavor");
-		sample.setFlavor(flavor);
+		sample.setFlavor_id_1(flavor);
 		HttpSession session = request.getSession();
-		session.setAttribute("Sales", sample);
+		session.setAttribute("javasrc", sample);
 
 		String action = request.getParameter("order-002");
 

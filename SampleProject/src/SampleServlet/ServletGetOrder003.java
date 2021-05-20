@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import javasrc.Sales;
 
 /**
  * Servlet implementation class ServletGetOrder003
@@ -45,6 +48,14 @@ public class ServletGetOrder003 extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
+
+		//Salesのインスタンス作成
+		Sales sample = new Sales();
+		//リクエストパラメータを取得しインスタンスに代入
+		String container = request.getParameter("container");
+		sample.setIce_cream_container_id(container);
+		HttpSession session = request.getSession();
+		session.setAttribute("javasrc", sample);
 
 		String action = request.getParameter("order-003");
 

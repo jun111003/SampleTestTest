@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import javasrc.Sales;
 import sampleClass.LoginLogic;
 import sampleClass.SampleClass;
 
@@ -56,6 +57,11 @@ public class ServletLogin extends HttpServlet {
 		String id = request.getParameter("ID");
 		sample.setEmployee_id(id);
 
+		//Salesのインスタンス作成
+		Sales sampleSales = new Sales();
+		//リクエストパラメータを取得しインスタンスに代入
+		sampleSales.setEmployee_id(id);
+
 		//LoginLogicクラスのメソッドを実行
 		LoginLogic loginLogic = new LoginLogic();
 		boolean isLogin = loginLogic.execute(sample);
@@ -64,6 +70,7 @@ public class ServletLogin extends HttpServlet {
 		if(isLogin) {
 			HttpSession session = request.getSession();
 			session.setAttribute("sampleClass", sample);
+			session.setAttribute("javasrc", sampleSales);
 		}
 
 		//home-001画面をフォワード

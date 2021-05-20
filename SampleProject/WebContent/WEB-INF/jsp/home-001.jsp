@@ -20,14 +20,14 @@
 <%//セッションスコープが作成されている（正常にログインできた）場合
 if(sampleClass != null) { %>
 
-	<a href = "/SampleProject/ServletTest?action=moveOrder-001">注文する</a>
+	<a href = "/SampleProject/OrderStartServlet">注文する</a>
 
 
 <%} else { %>
 
 	<p>ログインに失敗しました</p><br><br>
 
-	<a href="/SampleProject/ServletTest">ログイン画面へ</a>
+	<a href="/SampleProject/ServletLogin">ログイン画面へ</a>
 
 <% } %>
 </body>

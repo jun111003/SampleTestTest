@@ -5,8 +5,7 @@
 <meta charset="UTF-8">
 <title>31レジシステム</title>
 <link rel="stylesheet" href="/SampleProject/css/login-001.css">
-<img src=file:///C:/Users/user2021/git/SampleTestTest/SampleProject/WebContent/WEB-INF/img/31logo.png alt="31ロゴマーク"
-	width=20% height=20%>
+<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31ロゴホーム.png>
 </head>
 
 <body>
@@ -15,10 +14,10 @@
 	<form action="/SampleProject/ServletLogin" method="post">
 		<p>
 			ID:
-			<input type="text" name="ID" size="20">
+			<input type="text" name="ID" size="40">
 		</p>
 		<p>
-			<input type="submit" name="home-001" value="ログイン">
+			<input type="submit" name="home-001" value="ログイン" class="next">
 		</p>
 	</form>
 </body>

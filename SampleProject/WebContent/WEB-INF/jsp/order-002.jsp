@@ -5,8 +5,7 @@
 <meta charset="UTF-8">
 <title>31レジシステム</title>
 <link rel="stylesheet" href="/SampleProject/css/order-002.css">
-<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png alt="31ロゴマーク" width=20%
-	height=20%>
+<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png class="image-vw">
 </head>
 
 <body>

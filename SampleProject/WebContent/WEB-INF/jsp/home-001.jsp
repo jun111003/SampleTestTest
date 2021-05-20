@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="sampleClass.SampleClass"%>
 
 <%
@@ -10,26 +9,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>31レジシステム</title>
-	<link rel="stylesheet" href="/SampleProject/css/home-001.css">
-	<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png alt="" class="logo" width=60% height=60%>
+<meta charset="UTF-8">
+<title>31レジシステム</title>
+<link rel="stylesheet" href="/SampleProject/css/home-001.css">
+<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/ホーム画像.png class="image-vw">
 </head>
 
 <body>
-<%//セッションスコープが作成されている（正常にログインできた）場合
-if(sampleClass != null) { %>
+	<%
+		//セッションスコープが作成されている（正常にログインできた）場合
+		if (sampleClass != null) {
+	%>
 
-	<a href = "/SampleProject/OrderStartServlet">注文する</a>
+	<a href="/SampleProject/OrderStartServlet">注文する</a>
 
 
-<%} else { %>
+	<%
+		} else {
+	%>
 
-	<p>ログインに失敗しました</p><br><br>
+	<p>ログインに失敗しました</p>
+	<br>
+	<br>
 
 	<a href="/SampleProject/ServletLogin">ログイン画面へ</a>
 
-<% } %>
+	<%
+		}
+	%>
 </body>
 
 </html>

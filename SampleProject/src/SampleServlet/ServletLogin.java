@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import sampleClass.LoginLogic;
 import sampleClass.SampleClass;
 
 /**
@@ -49,16 +50,22 @@ public class ServletLogin extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
+		//SampleClassのインスタンス作成
 		SampleClass sample = new SampleClass();
-		HttpSession session = request.getSession();
 
-		//リクエストパラメータを取得
+		//リクエストパラメータを取得しインスタンスに代入
 		String id = request.getParameter("ID");
-
 		sample.setEmployee_id(id);
-		session.setAttribute("SampleClass", sample);
 
-//		SampleClass SA = (SampleClass) session.getAttribute("SampleClass");
+		//LoginLogicクラスのメソッドを実行
+		LoginLogic loginLogic = new LoginLogic();
+		boolean isLogin = loginLogic.execute(sample);
+
+		//正しいログインIDが入力された場合
+		if(isLogin) {
+			HttpSession session = request.getSession();
+			session.setAttribute("sampleClass", sample);
+		}
 
 		//home-001画面をフォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/home-001.jsp");

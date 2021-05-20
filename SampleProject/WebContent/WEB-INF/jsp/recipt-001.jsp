@@ -1,107 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-<%@ page import="java.sql.Connection, java.sql.DriverManager,javasrc.*,java.util.*
-                 ,java.sql.PreparedStatement, java.sql.ResultSet, java.sql.SQLException"
- %>
-<%--servletでセッションスコープの作成が必要 --%>
-<%
-	Sales sale = new Sales();
-	sale.setSales_id(1);
-	sale.setOrder_id(1);
-	Date d = new Date();
-	sale.setSales_date(d);
-	sale.setEmployee_id("E001");
-	sale.setIce_cream_container_id("C001");
-	sale.setIce_cream_inf_id("Inf006");
-	sale.setFleavor_id_1("ポッピングシャワー");
-	sale.setFleavor_id_2("キャラメルリボン");
-	sale.setFleavor_id_3("ロッキーロード");
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
+<link rel="stylesheet" href="/SampleProject/css/reciept-001.css">
 </head>
 <body>
-   <img src ="file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31ロゴ.png"
-    alt = "ロゴマーク"
-    width = "206"
-    height = "70">
+   <img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png alt="31ロゴマーク" width=20% height=20%>
 
    <h3>以下の内容でレシートを発行しました。</h3>
 
-   <p style = "text-align:center">
-    <img src ="file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31ロゴ.png"
-    alt = "ロゴマーク"
-    width = "180"
-    height = "70">
+   <p>
+    <img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png alt="31ロゴマーク" width=20% height=20%>
    </p>
-   <p style = "text-align:center">≪領収書≫</p>
+   <p>≪領収書≫</p>
 
-   <p><span style="margin-right:18em;"></span>購入日時:
-       <%=sale.getSales_date() %>
-   </p>
+   <p>日時 時間</p>
 
-   <p><span style="margin-right:18em;"></span>担当者 名前
-       <%-- try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
-          + "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")){
-    	  String code =sales.getEmployee_id();
+   <p>担当者 名前</p>
 
-		  String sql = "SELECT employee_name FROM employee WHERE employee_id =" + code ;
-		  PreparedStatement pStmt = conn.prepareStatement(sql);
+   <p>サイズ＋個数＋容器</p>
 
-		  ResultSet rs = pStmt.executeQuery();
+   <p>―フレーバー名</p>
 
-		  while (rs.next()) {
-			  String name = rs.getString("NAME");
-			  System.out.println(name);
-		  }
+   <p>―フレーバー名</p>
 
-          } catch (SQLException e) {
-                System.out.println("MySQLに接続できませんでした");
-          } catch (Exception e) {
-                e.printStackTrace();
-          }
-        --%>
-   </p>
+   &yen;小計
 
-   <p><span style="margin-right:18em;"></span>サイズ:
-		                                      個数:
-		                                      容器:
-   </p>
+   <p>小計</p>
 
-   <p><span style="margin-right:20em;"></span>―フレーバー名
+   <p>ーーーーーーーーーーーーーーーーーーーー</p>
 
-   </p>
+   <p>合計&yen;</p>
 
-   <p><span style="margin-right:20em;"></span>―フレーバー名
+   <p>お預かり&yen;</p>
 
-   </p>
+   <p>おつり&yen;</p>
 
-   <p><span style="margin-right:20em;"></span>―フレーバー名
+   <p>ーーーーーーーーーーーーーーーーーーーー</p>
 
-   </p>
+   <p>またのご利用をお待ちしております。</p>
 
-   <span style="margin-right:35em;"></span>&yen;小計
-
-   <p><span style="margin-right:18em;"></span>小計</p>
-
-   <p><span style="margin-right:18em;"></span>ーーーーーーーーーーーーーーーーーーーー</p>
-
-   <p><span style="margin-right:18em;"></span>合計<span style="margin-right:12em;"></span>&yen;</p>
-
-   <p><span style="margin-right:18em;"></span>お預かり<span style="margin-right:12em;"></span>&yen;</p>
-
-   <p><span style="margin-right:18em;"></span>おつり<span style="margin-right:12em;"></span>&yen;</p>
-
-   <p><span style="margin-right:18em;"></span>ーーーーーーーーーーーーーーーーーーーー</p>
-
-   <p style = "text-align:center">またのご利用をお待ちしております。</p>
-
-   <p><input type="reset" value="ホームへ戻る"></p>
+   <p><input type="reset" value="ホームへ戻る"class="back"></p>
 
 </body>
 </html>

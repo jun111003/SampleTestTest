@@ -1,8 +1,6 @@
 package javasrc;
 
-import java.io.Serializable;
-
-public class Sales implements Serializable{
+public class Sales {
         private String sales_id;//受注番号
 		private String order_id;//注文番号
 		private String sales_date;//売上時間
@@ -16,8 +14,11 @@ public class Sales implements Serializable{
 		private String ice_cream_count_id;//アイスクリーム個数ID
 		private String ice_cream_count_name;//アイスクリーム個数名前
 		private String fleavor_id_1;//アイスクリーム味１
+		private String fleavor_name_1;//アイスクリーム味１名前
 		private String fleavor_id_2;//アイスクリーム味２
+		private String fleavor_name_2;//アイスクリーム味２名前
 		private String fleavor_id_3;//アイスクリーム味３
+		private String fleavor_name_3;//アイスクリーム味３名前
 
 		//getter
 		public String getSales_id() {
@@ -73,12 +74,24 @@ public class Sales implements Serializable{
 			return fleavor_id_1;
 		}
 
+		public String getFleavor_name_1() {
+			return fleavor_name_1;
+		}
+
 		public String getFleavor_id_2() {
 			return fleavor_id_2;
 		}
 
+		public String getFleavor_name_2() {
+			return fleavor_name_2;
+		}
+
 		public String getFleavor_id_3() {
 			return fleavor_id_3;
+		}
+
+		public String getFleavor_name_3() {
+			return fleavor_name_3;
 		}
 
 		//setter
@@ -134,12 +147,24 @@ public class Sales implements Serializable{
 			this.fleavor_id_1 = fleavor_id_1;
 		}
 
+		public void setFleavor_name_1(String fleavor_name_1) {
+			this.fleavor_name_1 = fleavor_name_1;
+		}
+
 		public void setFleavor_id_2(String fleavor_id_2) {
 			this.fleavor_id_2 = fleavor_id_2;
 		}
 
+		public void setFleavor_name_2(String fleavor_name_2) {
+			this.fleavor_name_2 = fleavor_name_2;
+		}
+
 		public void setFleavor_id_3(String fleavor_id_3) {
 			this.fleavor_id_3 = fleavor_id_3;
+		}
+
+		public void setFleavor_name_3(String fleavor_name_3) {
+			this.fleavor_name_3 = fleavor_name_3;
 		}
 
 	}

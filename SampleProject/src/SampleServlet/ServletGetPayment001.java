@@ -1,6 +1,7 @@
 package SampleServlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -44,6 +45,8 @@ public class ServletGetPayment001 extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
+		PrintWriter out = response.getWriter();
+
 		String action = request.getParameter("payment-001");
 
 		if (action.equals("戻る")) {
@@ -53,6 +56,29 @@ public class ServletGetPayment001 extends HttpServlet {
 			dispatcher.forward(request, response);
 
 		} else if (action.equals("決済を行う")) {
+			//データベースにアクセス
+//	        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
+//	                + "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")){
+//
+//	        	String sql = "SELECT employee_name FROM employee WHERE employee_id =" + getEmployee_id();//テーブル名の設定
+//	            PreparedStatement pStmt = conn.prepareStatement(sql);
+//	            //Statement pStmt = conn.createStatement(sql);
+//
+//	            //select 実行
+//	            ResultSet rs = pStmt.executeQuery();
+//
+//	            while (rs.next()) {
+//	                //デバッグ用にMPとEXPの数値を代入
+//	                String employee_name = rs.getString("EMPLOYEE_NAME");//列名の設定
+//	                setEmployee_name(employee_name);
+//	            }
+//
+//	            pStmt.close();
+//	        } catch (SQLException e) {
+//	            System.out.println("MySQLに接続できませんでした");
+//	        } catch (Exception e) {
+//	            e.printStackTrace();
+//	        }
 
 			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/recipt-001.jsp");

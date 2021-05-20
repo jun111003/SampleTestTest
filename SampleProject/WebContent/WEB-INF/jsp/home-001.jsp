@@ -1,13 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-<%@ page import="model.SampleClass" %>
-
-<%
-//セッションスコープからユーザー情報を取得
-SampleClass sampleClass = (SampleClass)session.getAttribute("sampleClass");
-%>
-
 <%@ page import="sampleClass.SampleClass"%>
 
 <%
@@ -25,31 +17,6 @@ SampleClass sampleClass = (SampleClass)session.getAttribute("sampleClass");
 </head>
 
 <body>
-<<<<<<< HEAD
-	<%
-		//セッションスコープが作成されている（正常にログインできた）場合
-		if (sampleClass != null) {
-	%>
-	<div>
-		<a href="/SampleProject/OrderStartServlet">注文する</a>
-	</div>
-	<%
-		} else {
-	%>
-
-	<p>ログインに失敗しました</p>
-	<br>
-	<br>
-	<div>
-		<a href="/SampleProject/ServletLogin">ログイン画面へ</a>
-	</div>
-
-	<%
-		}
-	%>
-=======
-
-
 <%//セッションスコープが作成されている（正常にログインできた）場合
 if(sampleClass != null) { %>
 
@@ -63,9 +30,6 @@ if(sampleClass != null) { %>
 	<a href="/SampleProject/ServletTest">ログイン画面へ</a>
 
 <% } %>
->>>>>>> branch 'master' of https://github.com/jun111003/SampleTestTest.git
-
-
 </body>
 
 </html>

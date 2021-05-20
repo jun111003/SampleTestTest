@@ -43,21 +43,24 @@ public class ServletTest extends HttpServlet {
 
 		String action = request.getParameter("action");
 
-		if(action == null) {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/payment-001.jsp");
+		dispatcher.forward(request, response);
 
-			//login-001画面をフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/login-001.jsp");
-			dispatcher.forward(request, response);
-
-		}
-
-		else if(action.equals("moveOrder-001")) {
-
-			//order-001.jspファイルをフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/order-001.jsp");
-			dispatcher.forward(request, response);
-
-		}
+//		if(action == null) {
+//
+//			//login-001画面をフォワード
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("/login-001.jsp");
+//			dispatcher.forward(request, response);
+//
+//		}
+//
+//		else if(action.equals("moveOrder-001")) {
+//
+//			//order-001.jspファイルをフォワード
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/order-001.jsp");
+//			dispatcher.forward(request, response);
+//
+//		}
 
 	}
 

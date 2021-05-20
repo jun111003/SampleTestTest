@@ -160,7 +160,7 @@
 				<td rowspan="2">enter</td>
 			</tr>
 			<tr>
-				<td colspan="2"><button type="button" onclick="button0()">0</button></td>
+				<td colspan="2"><button type="button" onclick="click0()">0</button></td>
 				<td><button type="button" onclick="numErase()">消す</button></td>
 			</tr>
 		</table>

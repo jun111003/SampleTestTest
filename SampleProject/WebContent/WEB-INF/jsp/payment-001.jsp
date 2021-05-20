@@ -10,96 +10,96 @@
 
 	<script>
 
-		//お釣り
-		var change = 0;
+		//受取金額
+		var payment = 0;
 
 		//それぞれのボタンが押された時の処理
 
 		function click1() {
 
-			change = change * 10 + 1;
+			payment = payment * 10 + 1;
 
-			document.getElementById("numValue").innerHTML = change;
+			document.getElementById("numValue").innerHTML = payment;
 
 		}
 
 		function click2() {
 
-			change = change * 10 + 2;
+			payment = payment * 10 + 2;
 
-			document.getElementById("numValue").innerHTML = change;
+			document.getElementById("numValue").innerHTML = payment;
 
 		}
 
 		function click3() {
 
-			change = change * 10 + 3;
+			payment = payment * 10 + 3;
 
-			document.getElementById("numValue").innerHTML = change;
+			document.getElementById("numValue").innerHTML = payment;
 
 		}
 
 		function click4() {
 
-			change = change * 10 + 4;
+			payment = payment * 10 + 4;
 
-			document.getElementById("numValue").innerHTML = change;
+			document.getElementById("numValue").innerHTML = payment;
 
 		}
 
 		function click5() {
 
-			change = change * 10 + 5;
+			payment = payment * 10 + 5;
 
-			document.getElementById("numValue").innerHTML = change;
+			document.getElementById("numValue").innerHTML = payment;
 
 		}
 
 		function click6() {
 
-			change = change * 10 + 6;
+			payment = payment * 10 + 6;
 
-			document.getElementById("numValue").innerHTML = change;
+			document.getElementById("numValue").innerHTML = payment;
 
 		}
 
 		function click7() {
 
-			change = change * 10 + 7;
+			payment = payment * 10 + 7;
 
-			document.getElementById("numValue").innerHTML = change;
+			document.getElementById("numValue").innerHTML = payment;
 
 		}
 
 		function click8() {
 
-			change = change * 10 + 8;
+			payment = payment * 10 + 8;
 
-			document.getElementById("numValue").innerHTML = change;
+			document.getElementById("numValue").innerHTML = payment;
 
 		}
 
 		function click9() {
 
-			change = change * 10 + 9;
+			payment = payment * 10 + 9;
 
-			document.getElementById("numValue").innerHTML = change;
+			document.getElementById("numValue").innerHTML = payment;
 
 		}
 
 		function click0() {
 
-			change = change * 10 + 0;
+			payment = payment * 10 + 0;
 
-			document.getElementById("numValue").innerHTML = change;
+			document.getElementById("numValue").innerHTML = payment;
 
 		}
 
 		function numErase() {
 
-			change = Math.floor(change / 10);
+			payment = Math.floor(payment / 10);
 
-			document.getElementById("numValue").innerHTML = change;
+			document.getElementById("numValue").innerHTML = payment;
 
 		}
 

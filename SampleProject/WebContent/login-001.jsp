@@ -8,6 +8,7 @@
 <img src=img/31ロゴホーム.png>
 </head>
 
+
 <body>
 	<p>IDを入力</p>
 

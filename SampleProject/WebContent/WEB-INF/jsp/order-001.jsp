@@ -17,7 +17,7 @@
 		<div class="number">
         	<input id="1" type="radio" name="number" value="1">
 			<label for="1">
- 			<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/シングル.png width=20% height=20%>
+ 			<img src=file:///C:/Users/user2021/git/SampleTestTest/SampleProject/WebContent/WEB-INF/img/シングル.png width=20% height=20% class="number">
  			</label>
 
         	<input id="2" type="radio" name="number" value="2">

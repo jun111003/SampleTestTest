@@ -68,6 +68,19 @@ public class ServletGetOrder004 extends HttpServlet {
 		sample.setSales_id(SA.getSales_id());
 
 		System.out.println(SA.getEmployee_id());
+		System.out.println(SA.getIce_cream_count_id());
+		System.out.println(SA.getFlavor_id_1());
+		System.out.println(SA.getFlavor_id_2());
+		System.out.println(SA.getFlavor_id_3());
+		System.out.println(SA.getIce_cream_container_id());
+		System.out.println(SA.getIce_cream_count_id());
+		System.out.println(SA.getIce_cream_inf_id());
+		System.out.println(SA.getIce_cream_size_id());
+		System.out.println(SA.getOrder_id());
+		System.out.println(SA.getSales_id());
+
+		session.setAttribute("Sales", sample);
+
 
 		if (action.equals("注文内容を修正する")) {
 

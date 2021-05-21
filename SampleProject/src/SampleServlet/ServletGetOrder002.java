@@ -1,6 +1,11 @@
 package SampleServlet;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -69,6 +74,36 @@ public class ServletGetOrder002 extends HttpServlet {
 		sample.setIce_cream_size_id(size);
 		String flavor = request.getParameter("flavor");
 		sample.setFlavor_id_1(flavor);
+
+		try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
+				+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
+
+			//従業員の名前を取ってくる
+			String sql = "SELECT * FROM ice_cream_inf where ice_cream_size_id = '?' AND ice_cream_count_id = '?'";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			//?に値をセット
+			pStmt.setString(1, sample.getIce_cream_size_id());
+			pStmt.setString(2, sample.getIce_cream_count_id());
+			//select 実行
+			ResultSet rs = pStmt.executeQuery();
+
+			while (rs.next()) {
+				String sql_name = rs.getString("ice_cream_inf_id");
+				System.out.println(sql_name);
+				sample.setIce_cream_inf_id(sql_name);//データベースからの値をsetterでセットできる。
+			}
+
+//			String sql_name = rs.getString("ice_cream_inf_id");
+//			System.out.println(sql_name);
+//			sample.setIce_cream_inf_id(sql_name);//データベースからの値をsetterでセットできる。
+
+			pStmt.close();
+		} catch (SQLException e) {
+			System.out.println("アイス情報取得失敗");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		session.setAttribute("Sales", sample);
 
 		String action = request.getParameter("order-002");
@@ -80,7 +115,15 @@ public class ServletGetOrder002 extends HttpServlet {
 			dispatcher.forward(request, response);
 
 		} else if (action.equals("次へ")) {
-
+			//			try {
+			//				if(SA.getIce_cream_count_id().equals(2) || SA.getIce_cream_count_id().equals(3)) {
+			//					RequestDispatcher dispatcher = request.getRequestDispatcher("order-0022.jsp");
+			//					dispatcher.forward(request, response);
+			//				}
+			//			}catch(Exception e) {
+			//				RequestDispatcher dispatcher = request.getRequestDispatcher("login-001.jsp");
+			//				dispatcher.forward(request, response);
+			//			}
 			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-003.jsp");
 			dispatcher.forward(request, response);

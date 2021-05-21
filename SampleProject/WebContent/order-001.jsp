@@ -15,17 +15,17 @@
 		</div>
 
 		<div class="number">
-        	<input id="1" type="radio" name="number" value="1">
+        	<input id="1" type="radio" name="number" value="No001">
 			<label for="1">
- 			<img src=file:///C:/Users/user2021/git/SampleTestTest/SampleProject/WebContent/WEB-INF/img/シングル.png width=20% height=20%>
+ 			<img src=img/シングル.png width=20% height=20%>
  			</label>
 
-        	<input id="2" type="radio" name="number" value="2">
+        	<input id="2" type="radio" name="number" value="No002">
         	<label for="2">
 			<img src=img/ダブル.png width=20% height=20%>
     	    </label>
 
-        	<input id="3" type="radio" name="number" value="3">
+        	<input id="3" type="radio" name="number" value="No003">
         	<label for="3">
         	<img src=img/トリプル.png width=20% height=20%>
        		</label>

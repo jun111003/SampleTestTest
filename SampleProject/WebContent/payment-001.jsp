@@ -110,13 +110,10 @@
 			<h2>合計金額</h2>
 			<p class="total">\1500</p>
 
+			<!-- idを指定した箇所の値が<script>タグの「document.getElement...」によって変更される -->
 			<h2>受注金額</h2>
-			<input type="text" name="txt" size="20">
+			<input type="number" name="txt" size="20" id="numValue" value="0">
 			<br>
-			<!-- ここの中に金額を打ち込めるようにしたかったけどできませんでした -->
-
-			<span id=numValue>0</span>
-			<!-- <spanタグ内の値が<script>タグの「document.getElement...」によって変更される -->
 
 			<h2>差額</h2>
 			<p class="difference">\50</p>

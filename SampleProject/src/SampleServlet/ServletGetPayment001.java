@@ -33,7 +33,7 @@ public class ServletGetPayment001 extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/payment-001.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("payment-001.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -52,7 +52,7 @@ public class ServletGetPayment001 extends HttpServlet {
 		if (action.equals("戻る")) {
 
 			//home-001画面をフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order-004.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("order-004.jsp");
 			dispatcher.forward(request, response);
 
 		} else if (action.equals("決済を行う")) {
@@ -81,7 +81,7 @@ public class ServletGetPayment001 extends HttpServlet {
 //	        }
 
 			//order-002画面をフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/recipt-001.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("recipt-001.jsp");
 			dispatcher.forward(request, response);
 
 		}

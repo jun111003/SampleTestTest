@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
-<link rel="stylesheet" href="/SampleProject/css/payment-001.css">
+<link rel="stylesheet" href="css/payment-001.css">
 </head>
 <body>
 
@@ -105,7 +105,7 @@
 
 	<div class="main">
 		<form action="/SampleProject/ServletGetPayment001" method="post" class="receiving">
-			<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png class="image-vw">
+			<img src=img/31logo.png class="image-vw">
 
 			<h2>合計金額</h2>
 			<p class="total">\1500</p>

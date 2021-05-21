@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
-<link rel="stylesheet" href="/SampleProject/css/login-001.css">
-<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31ロゴホーム.png>
+<link rel="stylesheet" href="css/login-001.css">
+<img src=img/31ロゴホーム.png>
 </head>
 
 <body>

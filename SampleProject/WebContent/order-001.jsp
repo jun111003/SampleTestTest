@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
-<link rel="stylesheet" href="/SampleProject/css/order-001.css">
-<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png class="image-vw">
+<link rel="stylesheet" href="css/order-001.css">
+<img src=img/31logo.png class="image-vw">
 </head>
 
 <body>
@@ -17,17 +17,17 @@
 		<div class="number">
         	<input id="1" type="radio" name="number" value="1">
 			<label for="1">
- 			<img src=file:///C:/Users/user2021/git/SampleTestTest/SampleProject/WebContent/WEB-INF/img/シングル.png width=20% height=20% class="number">
+ 			<img src=file:///C:/Users/user2021/git/SampleTestTest/SampleProject/WebContent/WEB-INF/img/シングル.png width=20% height=20%>
  			</label>
 
         	<input id="2" type="radio" name="number" value="2">
         	<label for="2">
-			<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/ダブル.png width=20% height=20%>
+			<img src=img/ダブル.png width=20% height=20%>
     	    </label>
 
         	<input id="3" type="radio" name="number" value="3">
         	<label for="3">
-        	<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/トリプル.png width=20% height=20%>
+        	<img src=img/トリプル.png width=20% height=20%>
        		</label>
 		</div>
 

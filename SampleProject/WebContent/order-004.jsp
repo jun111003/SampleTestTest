@@ -4,10 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
-<link rel="stylesheet" href="/SampleProject/css/order-004.css">
+<link rel="stylesheet" href="css/order-004.css">
 </head>
 <body>
-	<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/31logo.png class="image-vw">
+	<img src=img/31logo.png class="image-vw">
 
 	<form action="/SampleProject/ServletGetOrder004" method="post">
 

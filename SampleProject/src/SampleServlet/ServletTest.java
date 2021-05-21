@@ -43,7 +43,7 @@ public class ServletTest extends HttpServlet {
 
 		String action = request.getParameter("action");
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/payment-001.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/payment-001.jsp");
 		dispatcher.forward(request, response);
 
 //		if(action == null) {
@@ -57,7 +57,7 @@ public class ServletTest extends HttpServlet {
 //		else if(action.equals("moveOrder-001")) {
 //
 //			//order-001.jspファイルをフォワード
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/order-001.jsp");
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("/order-001.jsp");
 //			dispatcher.forward(request, response);
 //
 //		}
@@ -98,7 +98,7 @@ public class ServletTest extends HttpServlet {
 		}
 
 		//home-001.jspファイルをフォワード
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home-001.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/home-001.jsp");
 		dispatcher.forward(request, response);
 
 	}

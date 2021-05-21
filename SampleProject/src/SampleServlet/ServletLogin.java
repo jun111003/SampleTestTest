@@ -38,7 +38,7 @@ public class ServletLogin extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/login-001.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("login-001.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -70,11 +70,11 @@ public class ServletLogin extends HttpServlet {
 		if(isLogin) {
 			HttpSession session = request.getSession();
 			session.setAttribute("sampleClass", sampleclass);
-			session.setAttribute("SalesLogin-001", sample);
+			session.setAttribute("Sales", sample);
 		}
 
 		//home-001画面をフォワード
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/home-001.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("home-001.jsp");
 		dispatcher.forward(request, response);
 	}
 

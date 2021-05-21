@@ -11,8 +11,8 @@
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
-<link rel="stylesheet" href="/SampleProject/css/home-001.css">
-<img src=file:///C:/pleiades/workspace/SampleProject/WebContent/WEB-INF/img/ホーム画像.png class="image-vw">
+<link rel="stylesheet" href="css/home-001.css">
+<img src=img/ホーム画像.png class="image-vw">
 </head>
 
 <body>

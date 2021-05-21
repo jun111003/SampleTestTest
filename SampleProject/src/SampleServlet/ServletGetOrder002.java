@@ -36,7 +36,7 @@ public class ServletGetOrder002 extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order-002.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("order-002.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -51,26 +51,38 @@ public class ServletGetOrder002 extends HttpServlet {
 
 		//Salesのインスタンス作成
 		Sales sample = new Sales();
+		HttpSession session = request.getSession();
+		Sales SA = (Sales) session.getAttribute("Sales");
+		sample.setEmployee_id(SA.getEmployee_id());
+		sample.setIce_cream_count_id(SA.getIce_cream_count_id());
+		sample.setFlavor_id_1(SA.getFlavor_id_1());
+		sample.setFlavor_id_2(SA.getFlavor_id_2());
+		sample.setFlavor_id_3(SA.getFlavor_id_3());
+		sample.setIce_cream_container_id(SA.getIce_cream_container_id());
+		sample.setIce_cream_count_id(SA.getIce_cream_count_id());
+		sample.setIce_cream_inf_id(SA.getIce_cream_inf_id());
+		sample.setIce_cream_size_id(SA.getIce_cream_size_id());
+		sample.setOrder_id(SA.getOrder_id());
+		sample.setSales_id(SA.getSales_id());
 		//リクエストパラメータを取得しインスタンスに代入
 		String size = request.getParameter("size");
 		sample.setIce_cream_size_id(size);
 		String flavor = request.getParameter("flavor");
 		sample.setFlavor_id_1(flavor);
-		HttpSession session = request.getSession();
-		session.setAttribute("SalesOrder-002", sample);
+		session.setAttribute("Sales", sample);
 
 		String action = request.getParameter("order-002");
 
 		if (action.equals("戻る")) {
 
 			//home-001画面をフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order-001.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
 
 		} else if (action.equals("次へ")) {
 
 			//order-002画面をフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/order-003.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("order-003.jsp");
 			dispatcher.forward(request, response);
 
 		}

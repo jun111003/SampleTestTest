@@ -53,17 +53,17 @@ public class ServletGetOrder004 extends HttpServlet {
 		HttpSession session = request.getSession();
 		Sales sales = (Sales) session.getAttribute("Sales");
 
-		System.out.println(sales.getEmployee_id());
-		System.out.println(sales.getIce_cream_count_id());
-		System.out.println(sales.getFlavor_id_1());
-		System.out.println(sales.getFlavor_id_2());
-		System.out.println(sales.getFlavor_id_3());
-		System.out.println(sales.getIce_cream_container_id());
-		System.out.println(sales.getIce_cream_count_id());
-		System.out.println(sales.getIce_cream_inf_id());
-		System.out.println(sales.getIce_cream_size_id());
-		System.out.println(sales.getOrder_id());
-		System.out.println(sales.getSales_id());
+//		System.out.println(sales.getEmployee_id());
+//		System.out.println(sales.getIce_cream_count_id());
+//		System.out.println(sales.getFlavor_id_1());
+//		System.out.println(sales.getFlavor_id_2());
+//		System.out.println(sales.getFlavor_id_3());
+//		System.out.println(sales.getIce_cream_container_id());
+//		System.out.println(sales.getIce_cream_count_id());
+//		System.out.println(sales.getIce_cream_inf_id());
+//		System.out.println(sales.getIce_cream_size_id());
+//		System.out.println(sales.getOrder_id());
+//		System.out.println(sales.getSales_id());
 
 		session.setAttribute("Sales", sales);
 

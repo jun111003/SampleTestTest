@@ -1,6 +1,11 @@
 package SampleServlet;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -65,16 +70,40 @@ public class ServletGetOrder002 extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("次へ")) {
-			session.setAttribute("Sales", sales);
-			String Flag = sales.getIce_cream_count_id();
-			if (Flag.equals("No002") || Flag.equals("No003")) {
-				//order-0022画面をフォワード
-				RequestDispatcher dispatcher = request.getRequestDispatcher("order-0022.jsp");
-				dispatcher.forward(request, response);
-			}else {
-				//order-002画面をフォワード
-				RequestDispatcher dispatcher = request.getRequestDispatcher("order-003.jsp");
-				dispatcher.forward(request, response);
+			try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
+					+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
+				//sql文の設定
+				//表結合して一気に情報を取得
+				String sql = "SELECT * FROM ice_cream_inf i JOIN ice_cream_size s ON i.ice_cream_size_id = s.ice_cream_size_id JOIN ice_cream_count c ON i.ice_cream_count_id = c.ice_cream_count_id where i.ice_cream_size_id = ? AND i.ice_cream_count_id = ?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+				//?に値をセット
+				pStmt.setString(1, sales.getIce_cream_size_id());
+				pStmt.setString(2, sales.getIce_cream_count_id());
+				//select 実行
+				ResultSet rs = pStmt.executeQuery();
+				while (rs.next()) {
+					sales.setIce_cream_inf_id(rs.getString("ice_cream_inf_id"));
+					sales.setIce_cream_price(rs.getInt("ice_cream_price"));
+					sales.setIce_cream_count_name(rs.getString("ice_cream_count_name"));
+					sales.setIce_cream_size_name(rs.getString("ice_cream_size_name"));
+					session.setAttribute("Sales", sales);
+					String Flag = sales.getIce_cream_count_id();
+					if (Flag.equals("No002") || Flag.equals("No003")) {
+						//order-0022画面をフォワード
+						RequestDispatcher dispatcher = request.getRequestDispatcher("order-0022.jsp");
+						dispatcher.forward(request, response);
+					} else {
+						//order-002画面をフォワード
+						RequestDispatcher dispatcher = request.getRequestDispatcher("order-003.jsp");
+						dispatcher.forward(request, response);
+					}
+				}
+				//おまじない
+				pStmt.close();
+			} catch (SQLException e) {
+				System.out.println("MySQLに接続できませんでした");
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 	}

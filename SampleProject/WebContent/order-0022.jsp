@@ -38,53 +38,53 @@
 		<p class="title2">2つめのフレーバーの種類を選んでください</p>
 
 		<div class="flavor">
-			<input id="a" type="radio" name="flavor" value="a">
+			<input id="a" type="radio" name="flavor" value="F001">
 			<label for="a">
 				<img src=img/ポッピングシャワー.png width=15% height=15%>
 			</label>
 
-			<input id="b" type="radio" name="flavor" value="b">
+			<input id="b" type="radio" name="flavor" value="F002">
 			<label for="b">
 				<img src=img/ストロベリーチーズケーキ.png width=15% height=15%>
 			</label>
 
-			<input id="c" type="radio" name="flavor" value="c">
+			<input id="c" type="radio" name="flavor" value="F003">
 			<label for="c">
 				<img src=img/キャラメルリボン.png width=15% height=15%>
 			</label>
 
-			<input id="d" type="radio" name="flavor" value="d">
+			<input id="d" type="radio" name="flavor" value="F004">
 			<label for="d">
 				<img src=img/クッキーアンドクリーム.png width=15% height=15%>
 			</label>
 
-			<input id="e" type="radio" name="flavor" value="e">
+			<input id="e" type="radio" name="flavor" value="F005">
 			<label for="e">
 				<img src=img/抹茶.png width=15% height=15%>
 			</label>
 		</div>
 
 		<div class="flavor">
-			<input id="f" type="radio" name="flavor" value="f">
+			<input id="f" type="radio" name="flavor" value="F006">
 			<label for="f">
 				<img src=img/チョップドチョコレート.png width=15% height=15%>
 			</label>
 
-			<input id="g" type="radio" name="flavor" value="g">
+			<input id="g" type="radio" name="flavor" value="F007">
 			<label for="g">
 				<img src=img/ベリーベリーストロベリー.png width=15% height=15%>
 			</label>
 
-			<input id="h" type="radio" name="flavor" value="h">
+			<input id="h" type="radio" name="flavor" value="F008">
 			<label for="h">
 				<img src=img/ロッキーロード.png width=15% height=15%>
 			</label>
 
-			<input id="i" type="radio" name="flavor" value="i">
+			<input id="i" type="radio" name="flavor" value="F009">
 			<label for="i">
 				<img src=img/チョコレートミント.png width=15% height=15%>
 			</label>
-			<input id="j" type="radio" name="flavor" value="j">
+			<input id="j" type="radio" name="flavor" value="F010">
 			<label for="j">
 				<img src=img/レモンシャーベット.png width=15% height=15%>
 			</label>

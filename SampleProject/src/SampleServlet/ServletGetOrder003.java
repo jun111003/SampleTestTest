@@ -1,6 +1,11 @@
 package SampleServlet;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -62,6 +67,57 @@ public class ServletGetOrder003 extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-002.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("次へ")) {
+
+			try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
+					+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
+				//sql文の設定
+				String sql = "SELECT * FROM ice_cream_container where ice_cream_container_id = ?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+				//?に値をセット
+				pStmt.setString(1, sales.getIce_cream_container_id());
+				//select 実行
+				ResultSet rs = pStmt.executeQuery();
+				while (rs.next()) {
+					sales.setIce_cream_container_name(rs.getString("ice_cream_container_name"));
+					sales.setIce_cream_container_price(rs.getInt("ice_cream_container_price"));
+				}
+				sql = "SELECT * FROM ice_cream_flavor where ice_cream_flavor_id = ?";
+				pStmt = conn.prepareStatement(sql);
+				pStmt.setString(1, sales.getFlavor_id_1());
+				rs = pStmt.executeQuery();
+				while (rs.next()) {
+					sales.setFlavor_name_1(rs.getString("ice_cream_flavor_name"));
+				}
+
+				String Flag = sales.getIce_cream_count_id();
+				if (Flag.equals("No002") || Flag.equals("No003")) {
+					sql = "SELECT * FROM ice_cream_flavor where ice_cream_flavor_id = ?";
+					pStmt = conn.prepareStatement(sql);
+					pStmt.setString(1, sales.getFlavor_id_2());
+					rs = pStmt.executeQuery();
+					while (rs.next()) {
+						sales.setFlavor_name_2(rs.getString("ice_cream_flavor_name"));
+					}
+				}else {
+					//Nothing to do
+				}
+				if (Flag.equals("No003")) {
+					sql = "SELECT * FROM ice_cream_flavor where ice_cream_flavor_id = ?";
+					pStmt = conn.prepareStatement(sql);
+					pStmt.setString(1, sales.getFlavor_id_3());
+					rs = pStmt.executeQuery();
+					while (rs.next()) {
+						sales.setFlavor_name_3(rs.getString("ice_cream_flavor_name"));
+					}
+				}else {
+					//Nothing to do
+				}
+				pStmt.close();
+			} catch (SQLException e) {
+				System.out.println("MySQLに接続できませんでした");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			session.setAttribute("Sales", sales);
 			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-004.jsp");

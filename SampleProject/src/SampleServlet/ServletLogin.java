@@ -75,17 +75,13 @@ public class ServletLogin extends HttpServlet {
 			ResultSet rs = pStmt.executeQuery();
 			while (rs.next()) {
 				String nameFromDB = rs.getString("employee_name");
-				if (nameFromDB != null) {
-					sales.setEmployee_id(id);
-					sales.setEmployee_name(nameFromDB);
-					HttpSession session = request.getSession();
-					session.setAttribute("Sales", sales);
-					//きちんと入力されていたらhome-001に遷移
-					RequestDispatcher dispatcher = request.getRequestDispatcher("home-001.jsp");
-					dispatcher.forward(request, response);
-				} else {
-					//Nothing to do
-				}
+				sales.setEmployee_id(id);
+				sales.setEmployee_name(nameFromDB);
+				HttpSession session = request.getSession();
+				session.setAttribute("Sales", sales);
+				//きちんと入力されていたらhome-001に遷移
+				RequestDispatcher dispatcher = request.getRequestDispatcher("home-001.jsp");
+				dispatcher.forward(request, response);
 			}
 			//DBに入力されたIDとPASSがなければログイン画面を表示しなおす
 			RequestDispatcher dispatcher = request.getRequestDispatcher("login-001.jsp");

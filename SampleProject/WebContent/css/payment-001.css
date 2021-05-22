@@ -12,15 +12,18 @@ body {
   width : 100vw ;
 }
 
+
 div.main {
 	float: left;
+	margin-left: 300px;
+	margin-top: 30px;
 }
 
 div.calculator {
     position: absolute;
-	left: 500px;
-	top: 110px;
-	bottom: 50px;
+	margin-left: 900px;
+	margin-top: 30px;
+	margin-bottom: 50px;
 }
 
 /* ページの枠組み
@@ -34,34 +37,49 @@ div.calculator {
 ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
 .main {
 	position: absolute;
-	left: 30px;
+	margin-left: 30px;
+}
+
+h2 {
+	width: 500px;
+	height: 33px;
+	text-indent: 0.5em;
+	font-weight: bold;
+	color : white;
+	background-color : #f20c90;
 }
 
 /*合計金額*/
 .total {
-	padding: 0.5em 0.5em;
-    margin: 2em 40em 2em 0;
+	width : 250px;
+	height : 40px;
+    margin: 0 0 30px 250px;
+    text-align: center;
+    font-size: 30px;
     font-weight: nomal;
     border: solid 1px #808080;
 }
 
-.box1 p {
-	margin: 0;
-	padding: 0;
-}
 
 /*受取金額*/
+.put{
+	width : 250px;
+	height : 40px;
+	margin-left : 250px;
+	text-align: center;
+    font-size: 30px;
+}
+
 
 /*差額*/
 p.difference{
-	padding: 0.5em 0.5em;
-    margin: 2em 40em 2em 0;
+	width : 250px;
+	height : 40px;
+    margin: 0 0 30px 250px;
+    text-align: center;
+    font-size: 30px;
     font-weight: nomal;
     border: solid 1px #808080;
-}
-.box1 p {
-    margin: 0;
-    padding: 0;
 }
 
 /*電卓*/
@@ -81,28 +99,39 @@ table {
 	margin-right: auto;
 }
 
+
 table th, table td {
-	padding: 10px 0;
+	padding: 10px;
 	text-align: center;
 }
 
-table tr:nth-child(1) {
+.upside {
 	font-weight: bold;
 	background-color: #808080;
-	color: white;
+	color: #ffffff;
+	border: 3px solid #ffffff;
 }
 
 table tr td:nth-of-type(4) {
 	font-weight: bold;
 	background-color: #808080;
 	color: white;
+	border: 3px solid #ffffff;
 }
+
+.push{
+	width: 110%;
+	height: 110%;
+	border-radius: 10px;
+	font-size: 30px;
+}
+
 
 /*ボタン*/
 .next {
 	/*float: right;*/
 	position: absolute;
-	left: 200px;
+	left: 390px;
 	display: inline-block;
 	border-radius: 20%; /* 角丸       */
 	font-size: 10pt; /* 文字サイズ */

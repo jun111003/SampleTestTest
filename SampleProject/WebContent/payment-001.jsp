@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
-<link rel="stylesheet" href="css/payment-001.css">
+<link rel="stylesheet" href="/SampleProject123456/CSS/payment-001.css">
 </head>
 <body>
 
@@ -18,7 +18,7 @@
 
 			payment = payment * 10 + 1;
 
-			document.getElementById("numValue").innerHTML = payment;
+			document.getElementById("numValue").value = payment;
 
 		}
 
@@ -26,7 +26,7 @@
 
 			payment = payment * 10 + 2;
 
-			document.getElementById("numValue").innerHTML = payment;
+			document.getElementById("numValue").value = payment;
 
 		}
 
@@ -34,7 +34,7 @@
 
 			payment = payment * 10 + 3;
 
-			document.getElementById("numValue").innerHTML = payment;
+			document.getElementById("numValue").value = payment;
 
 		}
 
@@ -42,7 +42,7 @@
 
 			payment = payment * 10 + 4;
 
-			document.getElementById("numValue").innerHTML = payment;
+			document.getElementById("numValue").value= payment;
 
 		}
 
@@ -50,7 +50,7 @@
 
 			payment = payment * 10 + 5;
 
-			document.getElementById("numValue").innerHTML = payment;
+			document.getElementById("numValue").value= payment;
 
 		}
 
@@ -58,7 +58,7 @@
 
 			payment = payment * 10 + 6;
 
-			document.getElementById("numValue").innerHTML = payment;
+			document.getElementById("numValue").value = payment;
 
 		}
 
@@ -66,7 +66,7 @@
 
 			payment = payment * 10 + 7;
 
-			document.getElementById("numValue").innerHTML = payment;
+			document.getElementById("numValue").value = payment;
 
 		}
 
@@ -74,7 +74,7 @@
 
 			payment = payment * 10 + 8;
 
-			document.getElementById("numValue").innerHTML = payment;
+			document.getElementById("numValue").value= payment;
 
 		}
 
@@ -82,7 +82,7 @@
 
 			payment = payment * 10 + 9;
 
-			document.getElementById("numValue").innerHTML = payment;
+			document.getElementById("numValue").value = payment;
 
 		}
 
@@ -90,7 +90,7 @@
 
 			payment = payment * 10 + 0;
 
-			document.getElementById("numValue").innerHTML = payment;
+			document.getElementById("numValue").value= payment;
 
 		}
 
@@ -98,22 +98,25 @@
 
 			payment = Math.floor(payment / 10);
 
-			document.getElementById("numValue").innerHTML = payment;
+			document.getElementById("numValue").value = payment;
 
 		}
 	</script>
 
-	<div class="main">
-		<form action="/SampleProject/ServletGetPayment001" method="post" class="receiving">
+
+	<form action="/SampleProject/ServletGetPayment001" method="post" class="receiving">
 			<img src=img/31logo.png class="image-vw">
 
+        <div class="main">
 			<h2>合計金額</h2>
 			<p class="total">\1500</p>
 
+
 			<!-- idを指定した箇所の値が<script>タグの「document.getElement...」によって変更される -->
-			<h2>受注金額</h2>
-			<input type="number" name="txt" size="20" id="numValue" value="0">
-			<br>
+            <h2>受取金額</h2>
+            <input type="number" name="txt" id="numValue" value="0" class="put">
+            <br>
+
 
 			<h2>差額</h2>
 			<p class="difference">\50</p>
@@ -122,38 +125,38 @@
 				<input type="submit" name="payment-001" value="戻る" class="back">
 				<input type="submit" name="payment-001" value="決済を行う" class="next">
 			</p>
+         </div>
+	</form>
 
-		</form>
-	</div>
 
 	<div class="calculator">
-		<table border="1">
+		<table border="0">
 			<tr>
-				<td>num</td>
-				<td>/</td>
-				<td>*</td>
-				<td>-</td>
+				<td class ="upside">num</td>
+				<td class ="upside">/</td>
+				<td class ="upside">*</td>
+				<td class ="upside">-</td>
 			</tr>
 			<tr>
-				<td><button type="button" onclick="click7()">7</button></td>
-				<td><button type="button" onclick="click8()">8</button></td>
-				<td><button type="button" onclick="click9()">9</button></td>
+				<td><button type="button" onclick="click7()" class="push">7</button></td>
+				<td><button type="button" onclick="click8()" class="push">8</button></td>
+				<td><button type="button" onclick="click9()" class="push">9</button></td>
 				<td rowspan="2">+</td>
 			</tr>
 			<tr>
-				<td><button type="button" onclick="click4()">4</button></td>
-				<td><button type="button" onclick="click5()">5</button></td>
-				<td><button type="button" onclick="click6()">6</button></td>
+				<td><button type="button" onclick="click4()" class="push">4</button></td>
+				<td><button type="button" onclick="click5()" class="push">5</button></td>
+				<td><button type="button" onclick="click6()" class="push">6</button></td>
 			</tr>
 			<tr>
-				<td><button type="button" onclick="click1()">1</button></td>
-				<td><button type="button" onclick="click2()">2</button></td>
-				<td><button type="button" onclick="click3()">3</button></td>
+				<td><button type="button" onclick="click1()" class="push">1</button></td>
+				<td><button type="button" onclick="click2()" class="push">2</button></td>
+				<td><button type="button" onclick="click3()" class="push">3</button></td>
 				<td rowspan="2">enter</td>
 			</tr>
 			<tr>
-				<td colspan="2"><button type="button" onclick="click0()">0</button></td>
-				<td><button type="button" onclick="numErase()">消す</button></td>
+				<td colspan="2"><button type="button" onclick="click0()" class="push">0</button></td>
+				<td><button type="button" onclick="numErase()" class="push">消す</button></td>
 			</tr>
 		</table>
 	</div>

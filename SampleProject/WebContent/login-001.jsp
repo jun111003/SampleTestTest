@@ -10,13 +10,17 @@
 
 
 <body>
-	<p>IDを入力</p>
 
 	<form action="/SampleProject/ServletLogin" method="post">
 		<p>
 			ID:
-			<input type="text" name="ID" size="40">
+			<input type="text" name="id" size="40">
 		</p>
+		<p>
+			PS
+			<input type="text" name="ps">
+		</p>
+
 		<p>
 			<input type="submit" name="home-001" value="ログイン" class="next">
 		</p>

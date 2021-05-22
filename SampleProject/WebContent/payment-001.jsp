@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
-<link rel="stylesheet" href="/SampleProject123456/CSS/payment-001.css">
+<link rel="stylesheet" href="/SampleProject/css/payment-001.css">
 </head>
 <body>
 

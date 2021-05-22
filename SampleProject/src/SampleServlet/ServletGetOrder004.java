@@ -35,7 +35,6 @@ public class ServletGetOrder004 extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-
 		RequestDispatcher dispatcher = request.getRequestDispatcher("order-004.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -53,25 +52,13 @@ public class ServletGetOrder004 extends HttpServlet {
 		HttpSession session = request.getSession();
 		Sales sales = (Sales) session.getAttribute("Sales");
 
-//		System.out.println(sales.getEmployee_id());
-//		System.out.println(sales.getIce_cream_count_id());
-//		System.out.println(sales.getFlavor_id_1());
-//		System.out.println(sales.getFlavor_id_2());
-//		System.out.println(sales.getFlavor_id_3());
-//		System.out.println(sales.getIce_cream_container_id());
-//		System.out.println(sales.getIce_cream_count_id());
-//		System.out.println(sales.getIce_cream_inf_id());
-//		System.out.println(sales.getIce_cream_size_id());
-//		System.out.println(sales.getOrder_id());
-//		System.out.println(sales.getSales_id());
-
 		session.setAttribute("Sales", sales);
 
 		String action = request.getParameter("order-004");
 		if (action.equals("注文内容を修正する")) {
 
 			//home-001画面をフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("order-003.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
 
 		} else if (action.equals("注文を確定させる")) {

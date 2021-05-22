@@ -49,39 +49,25 @@ public class ServletGetOrder004 extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
-		String action = request.getParameter("order-004");
-
 		//Salesのインスタンス作成
-		Sales sample = new Sales();
 		HttpSession session = request.getSession();
-		Sales SA = (Sales) session.getAttribute("Sales");
-		sample.setEmployee_id(SA.getEmployee_id());
-		sample.setIce_cream_count_id(SA.getIce_cream_count_id());
-		sample.setFlavor_id_1(SA.getFlavor_id_1());
-		sample.setFlavor_id_2(SA.getFlavor_id_2());
-		sample.setFlavor_id_3(SA.getFlavor_id_3());
-		sample.setIce_cream_container_id(SA.getIce_cream_container_id());
-		sample.setIce_cream_count_id(SA.getIce_cream_count_id());
-		sample.setIce_cream_inf_id(SA.getIce_cream_inf_id());
-		sample.setIce_cream_size_id(SA.getIce_cream_size_id());
-		sample.setOrder_id(SA.getOrder_id());
-		sample.setSales_id(SA.getSales_id());
+		Sales sales = (Sales) session.getAttribute("Sales");
 
-		System.out.println(SA.getEmployee_id());
-		System.out.println(SA.getIce_cream_count_id());
-		System.out.println(SA.getFlavor_id_1());
-		System.out.println(SA.getFlavor_id_2());
-		System.out.println(SA.getFlavor_id_3());
-		System.out.println(SA.getIce_cream_container_id());
-		System.out.println(SA.getIce_cream_count_id());
-		System.out.println(SA.getIce_cream_inf_id());
-		System.out.println(SA.getIce_cream_size_id());
-		System.out.println(SA.getOrder_id());
-		System.out.println(SA.getSales_id());
+		System.out.println(sales.getEmployee_id());
+		System.out.println(sales.getIce_cream_count_id());
+		System.out.println(sales.getFlavor_id_1());
+		System.out.println(sales.getFlavor_id_2());
+		System.out.println(sales.getFlavor_id_3());
+		System.out.println(sales.getIce_cream_container_id());
+		System.out.println(sales.getIce_cream_count_id());
+		System.out.println(sales.getIce_cream_inf_id());
+		System.out.println(sales.getIce_cream_size_id());
+		System.out.println(sales.getOrder_id());
+		System.out.println(sales.getSales_id());
 
-		session.setAttribute("Sales", sample);
+		session.setAttribute("Sales", sales);
 
-
+		String action = request.getParameter("order-004");
 		if (action.equals("注文内容を修正する")) {
 
 			//home-001画面をフォワード

@@ -3,8 +3,8 @@ package javasrc;
 import java.io.Serializable;
 
 public class Sales implements Serializable {
-	private String sales_id;//受注番号
-	private String order_id;//注文番号
+	private int sales_id;//受注番号
+	private int order_id;//注文番号
 	private String sales_date;//売上時間
 	private String employee_id;//従業員番号
 	private String employee_name;//従業員名前
@@ -25,12 +25,18 @@ public class Sales implements Serializable {
 	private String flavor_name_3;//アイスクリーム味３名前
 	private int money;//受取金額
 
+	public Sales(){
+		sales_id = 0;
+		order_id = 0;
+		money = 0;
+	}
+
 	//getter
-	public String getSales_id() {
+	public int getSales_id() {
 		return sales_id;
 	}
 
-	public String getOrder_id() {
+	public int getOrder_id() {
 		return order_id;
 	}
 
@@ -111,11 +117,11 @@ public class Sales implements Serializable {
 	}
 
 	//setter
-	public void setSales_id(String sales_id) {
+	public void setSales_id(int sales_id) {
 		this.sales_id = sales_id;
 	}
 
-	public void setOrder_id(String order_id) {
+	public void setOrder_id(int order_id) {
 		this.order_id = order_id;
 	}
 

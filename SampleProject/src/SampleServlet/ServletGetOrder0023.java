@@ -48,37 +48,23 @@ public class ServletGetOrder0023 extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		//Salesのインスタンス作成
-		Sales sample = new Sales();
 		HttpSession session = request.getSession();
-		Sales SA = (Sales) session.getAttribute("Sales");
-		sample.setEmployee_id(SA.getEmployee_id());
-		sample.setIce_cream_count_id(SA.getIce_cream_count_id());
-		sample.setFlavor_id_1(SA.getFlavor_id_1());
-		sample.setFlavor_id_2(SA.getFlavor_id_2());
-		sample.setFlavor_id_3(SA.getFlavor_id_3());
-		sample.setIce_cream_container_id(SA.getIce_cream_container_id());
-		sample.setIce_cream_count_id(SA.getIce_cream_count_id());
-		sample.setIce_cream_inf_id(SA.getIce_cream_inf_id());
-		sample.setIce_cream_size_id(SA.getIce_cream_size_id());
-		sample.setOrder_id(SA.getOrder_id());
-		sample.setSales_id(SA.getSales_id());
+		Sales sales = (Sales) session.getAttribute("Sales");
 		//リクエストパラメータを取得しインスタンスに代入
 		String size = request.getParameter("size");
-		sample.setIce_cream_size_id(size);
+		sales.setIce_cream_size_id(size);
 		String flavor = request.getParameter("flavor");
-		sample.setFlavor_id_1(flavor);
-		session.setAttribute("Sales", sample);
+		sales.setFlavor_id_3(flavor);
 
-		String action = request.getParameter("order-002");
+		String action = request.getParameter("order-0023");
 
 
 		if (action.equals("戻る")) {
-
 			//home-001画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
-
 		} else if (action.equals("次へ")) {
+			session.setAttribute("Sales", sales);
 			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-003.jsp");
 			dispatcher.forward(request, response);

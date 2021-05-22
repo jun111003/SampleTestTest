@@ -1,7 +1,6 @@
 package SampleServlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -59,13 +58,10 @@ public class ServletLogin extends HttpServlet {
 		//リクエストパラメータを取得しインスタンスに代入
 		String id = request.getParameter("id");
 		String ps = request.getParameter("ps");
-		//リクエストパラメータを取得しインスタンスに代入
-		sales.setEmployee_id(id);
 
-		PrintWriter out = response.getWriter();
 		try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
 				+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
-
+			//sql文の設定
 			String sql = "SELECT * FROM employee where employee_id = ? AND employee_ps = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			//?に値をセット
@@ -74,10 +70,12 @@ public class ServletLogin extends HttpServlet {
 			//select 実行
 			ResultSet rs = pStmt.executeQuery();
 			while (rs.next()) {
-				String nameFromDB = rs.getString("employee_name");
+				//入力と一致する行が発見されなければwhileの中は実行されない
+				//つまりwhere分で主キーを条件にセットすれば間違えていた時に実行されない
 				sales.setEmployee_id(id);
-				sales.setEmployee_name(nameFromDB);
+				sales.setEmployee_name(rs.getString("employee_name"));
 				HttpSession session = request.getSession();
+				//セッションスコープに保存
 				session.setAttribute("Sales", sales);
 				//きちんと入力されていたらhome-001に遷移
 				RequestDispatcher dispatcher = request.getRequestDispatcher("home-001.jsp");
@@ -94,5 +92,4 @@ public class ServletLogin extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
 }

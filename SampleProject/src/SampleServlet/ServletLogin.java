@@ -17,8 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import javasrc.Sales;
-import sampleClass.LoginLogic;
-import sampleClass.SampleClass;
 
 /**
  * Servlet implementation class ServletLogin
@@ -56,70 +54,49 @@ public class ServletLogin extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-
-		//SampleClassのインスタンス作成
-		SampleClass sampleclass = new SampleClass();
+		//Salesのインスタンス作成
+		Sales sales = new Sales();
 		//リクエストパラメータを取得しインスタンスに代入
 		String id = request.getParameter("id");
-		sampleclass.setEmployee_id(id);
 		String ps = request.getParameter("ps");
-
-		//Salesのインスタンス作成
-		Sales sale = new Sales();
 		//リクエストパラメータを取得しインスタンスに代入
-		sale.setEmployee_id(id);
+		sales.setEmployee_id(id);
 
-		//LoginLogicクラスのメソッドを実行
-		LoginLogic loginLogic = new LoginLogic();
-		boolean isLogin = loginLogic.execute(sampleclass);
+		PrintWriter out = response.getWriter();
+		try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
+				+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
 
-		//リクエストパラメータのチェック
-		String errorMsg = "";
-		if (id == null || id.length() == 0) {
-			errorMsg += "IDが入力されていません<br>";
-		}
-		if (ps == null || ps.length() == 0) {
-			errorMsg += "PSが入力されていません<br>";
-		} else {
-			PrintWriter out = response.getWriter();
-			try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
-					+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
-
-				String sql = "SELECT * FROM employee";
-				PreparedStatement pStmt = conn.prepareStatement(sql);
-				//Statement pStmt = conn.createStatement(sql);
-
-				//select 実行
-				ResultSet rs = pStmt.executeQuery();
-
-				while (rs.next()) {
-					//employeeテーブルからid,nameを取得
-					String id_db = rs.getString("employee_id");
-					String name = rs.getString("employee_name");
-					//取得したidとインスタンス化されたidを比較して条件分岐
-					if (id_db.equals(sale.getEmployee_id())) {
-						sale.setEmployee_name(name);//データベースからの値をsetterでセットできる。
-					}
+			String sql = "SELECT * FROM employee where employee_id = ? AND employee_ps = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			//?に値をセット
+			pStmt.setString(1, id);
+			pStmt.setString(2, ps);
+			//select 実行
+			ResultSet rs = pStmt.executeQuery();
+			while (rs.next()) {
+				String nameFromDB = rs.getString("employee_name");
+				if (nameFromDB != null) {
+					sales.setEmployee_id(id);
+					sales.setEmployee_name(nameFromDB);
+					HttpSession session = request.getSession();
+					session.setAttribute("Sales", sales);
+					//きちんと入力されていたらhome-001に遷移
+					RequestDispatcher dispatcher = request.getRequestDispatcher("home-001.jsp");
+					dispatcher.forward(request, response);
+				} else {
+					//Nothing to do
 				}
-
-				pStmt.close();
-			} catch (SQLException e) {
-				System.out.println("MySQLに接続できませんでした");
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
-			//##############################################################################################################
+			//DBに入力されたIDとPASSがなければログイン画面を表示しなおす
+			RequestDispatcher dispatcher = request.getRequestDispatcher("login-001.jsp");
+			dispatcher.forward(request, response);
+			//おまじない
+			pStmt.close();
+		} catch (SQLException e) {
+			System.out.println("MySQLに接続できませんでした");
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		//正しいログインIDが入力された場合
-		if (isLogin) {
-			HttpSession session = request.getSession();
-			session.setAttribute("sampleClass", sampleclass);
-			session.setAttribute("Sales", sale);
-		}
-
-		//home-001画面をフォワード
-		RequestDispatcher dispatcher = request.getRequestDispatcher("home-001.jsp");
-		dispatcher.forward(request, response);
 	}
 
 }

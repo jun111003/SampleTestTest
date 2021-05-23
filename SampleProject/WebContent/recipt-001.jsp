@@ -100,10 +100,11 @@
 
 		<p class="center">またのご利用をお待ちしております。</p>
 	</div>
-
-	<p>
-		<input type="reset" name="recipt-001" value="ホームへ戻る" class="back">
-	</p>
+	<form action="/SampleProject/ServletGetRecipt001" method="post">
+		<p>
+			<input type="submit" name="recipt-001" value="ホームへ戻る" class="back">
+		</p>
+	</form>
 
 </body>
 </html>

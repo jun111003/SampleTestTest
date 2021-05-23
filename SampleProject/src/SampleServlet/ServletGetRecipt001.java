@@ -15,14 +15,14 @@ import javasrc.Sales;
 /**
  * Servlet implementation class ServletGetRecipt
  */
-@WebServlet("/ServletGetRecipt")
-public class ServletGetRecipt extends HttpServlet {
+@WebServlet("/ServletGetRecipt001")
+public class ServletGetRecipt001 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ServletGetRecipt() {
+	public ServletGetRecipt001() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -58,6 +58,7 @@ public class ServletGetRecipt extends HttpServlet {
 
 		session.removeAttribute("Sales");
 		session.setAttribute("Sales", sales2);
+
 		//home-001画面をフォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher("home-001.jsp");
 		dispatcher.forward(request, response);

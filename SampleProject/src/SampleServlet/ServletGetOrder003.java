@@ -60,6 +60,7 @@ public class ServletGetOrder003 extends HttpServlet {
 		Order order = (Order) session.getAttribute("Order");
 		int i = order.getOrder_id();
 		String sessionInstanceName = "Sales" + Integer.toString(i);
+		System.out.println(sessionInstanceName);
 		Sales sales = (Sales) session.getAttribute(sessionInstanceName);
 		//リクエストパラメータを取得しインスタンスに代入
 		String container = request.getParameter("container");

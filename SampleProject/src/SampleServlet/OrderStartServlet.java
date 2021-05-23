@@ -87,17 +87,26 @@ public class OrderStartServlet extends HttpServlet {
 						order.setOrder_id(1);
 						//セッションスコープに保存
 						session.setAttribute("Order", order);
-						Sales sales = new Sales();
-						session.setAttribute("Sales1", sales);
-						session.setAttribute("Sales2", sales);
-						session.setAttribute("Sales3", sales);
-						session.setAttribute("Sales4", sales);
-						session.setAttribute("Sales5", sales);
-						session.setAttribute("Sales6", sales);
-						session.setAttribute("Sales7", sales);
-						session.setAttribute("Sales8", sales);
-						session.setAttribute("Sales9", sales);
-						session.setAttribute("Sales10", sales);
+						Sales sales1 = new Sales();
+						Sales sales2 = new Sales();
+						Sales sales3 = new Sales();
+						Sales sales4 = new Sales();
+						Sales sales5 = new Sales();
+						Sales sales6 = new Sales();
+						Sales sales7 = new Sales();
+						Sales sales8 = new Sales();
+						Sales sales9 = new Sales();
+						Sales sales10 = new Sales();
+						session.setAttribute("Sales1", sales1);
+						session.setAttribute("Sales2", sales2);
+						session.setAttribute("Sales3", sales3);
+						session.setAttribute("Sales4", sales4);
+						session.setAttribute("Sales5", sales5);
+						session.setAttribute("Sales6", sales6);
+						session.setAttribute("Sales7", sales7);
+						session.setAttribute("Sales8", sales8);
+						session.setAttribute("Sales9", sales9);
+						session.setAttribute("Sales10", sales10);
 					}
 					//おまじない
 					pStmt.close();

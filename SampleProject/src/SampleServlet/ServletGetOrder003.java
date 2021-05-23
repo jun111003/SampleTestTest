@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import javasrc.Order;
 import javasrc.Sales;
 
 /**
@@ -56,7 +57,10 @@ public class ServletGetOrder003 extends HttpServlet {
 
 		//Salesのインスタンス作成
 		HttpSession session = request.getSession();
-		Sales sales = (Sales) session.getAttribute("Sales");
+		Order order = (Order) session.getAttribute("Order");
+		int i = order.getOrder_id();
+		String sessionInstanceName = "Sales" + Integer.toString(i);
+		Sales sales = (Sales) session.getAttribute(sessionInstanceName);
 		//リクエストパラメータを取得しインスタンスに代入
 		String container = request.getParameter("container");
 		sales.setIce_cream_container_id(container);
@@ -67,7 +71,6 @@ public class ServletGetOrder003 extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-002.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("次へ")) {
-
 			try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
 					+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
 				//sql文の設定
@@ -118,7 +121,7 @@ public class ServletGetOrder003 extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			session.setAttribute("Sales", sales);
+			session.setAttribute(sessionInstanceName, sales);
 			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-004.jsp");
 			dispatcher.forward(request, response);

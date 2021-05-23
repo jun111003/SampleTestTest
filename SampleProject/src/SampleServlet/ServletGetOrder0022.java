@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import javasrc.Order;
 import javasrc.Sales;
 
 /**
@@ -49,7 +50,10 @@ public class ServletGetOrder0022 extends HttpServlet {
 
 		//Salesのインスタンス作成
 		HttpSession session = request.getSession();
-		Sales sales = (Sales) session.getAttribute("Sales");
+		Order order = (Order) session.getAttribute("Order");
+		int i = order.getOrder_id();
+		String sessionInstanceName = "Sales" + Integer.toString(i);
+		Sales sales = (Sales) session.getAttribute(sessionInstanceName);
 		//リクエストパラメータを取得しインスタンスに代入
 		String size = request.getParameter("size");
 		sales.setIce_cream_size_id(size);
@@ -66,7 +70,7 @@ public class ServletGetOrder0022 extends HttpServlet {
 			dispatcher.forward(request, response);
 
 		} else if (action.equals("次へ")) {
-			session.setAttribute("Sales", sales);
+			session.setAttribute(sessionInstanceName, sales);
 			String Flag = sales.getIce_cream_count_id();
 			if (Flag.equals("No003")) {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("order-0023.jsp");

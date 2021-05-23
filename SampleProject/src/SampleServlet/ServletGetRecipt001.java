@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import javasrc.Sales;
+import javasrc.Order;
 
 /**
  * Servlet implementation class ServletGetRecipt
@@ -50,14 +50,17 @@ public class ServletGetRecipt001 extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		//Salesのインスタンス作成
 		HttpSession session = request.getSession();
-		Sales sales = (Sales) session.getAttribute("Sales");
+		Order order = (Order) session.getAttribute("Order");
+		int i = order.getOrder_id();
+		String sessionInstanceName;
 
-		Sales sales2 = new Sales();
-		sales2.setEmployee_id(sales.getEmployee_id());
-		sales2.setEmployee_name(sales.getEmployee_name());
+		for (int j = 0; j < i; j++) {
+			sessionInstanceName = "Sales" + Integer.toString(j + 1);
+			session.removeAttribute(sessionInstanceName);
+		}
 
-		session.removeAttribute("Sales");
-		session.setAttribute("Sales", sales2);
+		order.setSales_id(0);
+		order.setOrder_id(0);
 
 		//home-001画面をフォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher("home-001.jsp");

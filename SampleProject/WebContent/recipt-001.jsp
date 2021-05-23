@@ -1,7 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="javasrc.*,java.util.*,java.text.SimpleDateFormat,java.io.PrintWriter"%>
 <%
-	Sales sales = (Sales) session.getAttribute("Sales");
+	Order order = (Order) session.getAttribute("Order");
+	Sales sales1 = (Sales) session.getAttribute("Sales1");
+	Sales sales2 = (Sales) session.getAttribute("Sales2");
+	Sales sales3 = (Sales) session.getAttribute("Sales3");
+	Sales sales4 = (Sales) session.getAttribute("Sales4");
+	Sales sales5 = (Sales) session.getAttribute("Sales5");
+	Sales sales6 = (Sales) session.getAttribute("Sales6");
+	Sales sales7 = (Sales) session.getAttribute("Sales7");
+	Sales sales8 = (Sales) session.getAttribute("Sales8");
+	Sales sales9 = (Sales) session.getAttribute("Sales9");
+	Sales sales10 = (Sales) session.getAttribute("Sales10");
 %>
 <!DOCTYPE html>
 <html>
@@ -27,9 +37,9 @@
 			SimpleDateFormat f = new SimpleDateFormat("YYYY年MM月dd日 HH時mm分ss秒");
 			Date now = new Date();
 			String d = f.format(now);
-			sales.setSales_date(d);
+			order.setSales_date(d);
 		%>
-			<%=sales.getSales_date()%>
+			<%=order.getSales_date()%>
 			<%
 				now = null;
 			%>
@@ -37,43 +47,43 @@
 
 		<p class="left">
 			担当者 名前
-			<%=sales.getEmployee_name()%></p>
+			<%=order.getEmployee_name()%></p>
 
 		<%--ループ処理：購入個数分のインスタンスを利用して出力--%>
 		<p class="left">
 			サイズ
-			<%=sales.getIce_cream_size_name()%>
+			<%=sales1.getIce_cream_size_name()%>
 			個数
-			<%=sales.getIce_cream_count_name()%>
+			<%=sales1.getIce_cream_count_name()%>
 			容器
-			<%=sales.getIce_cream_container_name()%></p>
+			<%=sales1.getIce_cream_container_name()%></p>
 
 		<p class="middle-left">
 			―フレーバー名
-			<%=sales.getFlavor_name_1()%></p>
+			<%=sales1.getFlavor_name_1()%></p>
 
 		<%
-			if (sales.getIce_cream_count_id().equals("No003") || sales.getIce_cream_count_id().equals("No002")) {
+			if (sales1.getIce_cream_count_id().equals("No003") || sales1.getIce_cream_count_id().equals("No002")) {
 		%>
 		<p class="middle-left">
 			―フレーバー名
-			<%=sales.getFlavor_name_2()%></p>
+			<%=sales1.getFlavor_name_2()%></p>
 		<%
 			}
 		%>
 		<%
-			if (sales.getIce_cream_count_id().equals("No003")) {
+			if (sales1.getIce_cream_count_id().equals("No003")) {
 		%>
 		<p class="middle-left">
 			―フレーバー名
-			<%=sales.getFlavor_name_3()%></p>
+			<%=sales1.getFlavor_name_3()%></p>
 		<%
 			}
 		%>
 
 
 		<%
-			int sum = sales.getIce_cream_container_price() + sales.getIce_cream_price();
+			int sum = sales1.getMoney();
 		%>
 		<p class="right">
 			&yen;<%=sum%></p>
@@ -87,12 +97,12 @@
 
 		<p class="left">
 			お預かり
-			<%=sales.getMoney()%>&yen;
+			<%=sales1.getMoney()%>&yen;
 		</p>
 
 		<p class="left">
 			おつり
-			<%=sales.getMoney() - sum%>&yen;
+			<%=sales1.getMoney() - sum%>&yen;
 		</p>
 
 		<p class="center">------------------------------------------------------------------</p>

@@ -13,22 +13,22 @@
 		<p class="title">2つめのフレーバーのサイズを選んでください</p>
 
 		<div class="size">
-			<input id="1" type="radio" name="size" value="1">
+			<input id="1" type="radio" name="size" value="S001">
 			<label for="1">
 				<img src=img/キッズ.png width=15% height=15%>
 			</label>
 
-			<input id="2" type="radio" name="size" value="2">
+			<input id="2" type="radio" name="size" value="S002">
 			<label for="2">
 				<img src=img/スモール.png width=15% height=15%>
 			</label>
 
-			<input id="3" type="radio" name="size" value="3">
+			<input id="3" type="radio" name="size" value="S003">
 			<label for="3">
 				<img src=img/レギュラー.png width=15% height=15%>
 			</label>
 
-			<input id="4" type="radio" name="size" value="4">
+			<input id="4" type="radio" name="size" value="S004">
 			<label for="4">
 				<img src=img/キング.png width=15% height=15%>
 			</label>

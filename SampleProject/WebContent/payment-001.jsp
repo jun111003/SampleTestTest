@@ -2,7 +2,17 @@
 <%@ page import="javasrc.*,java.util.*,java.text.SimpleDateFormat,java.io.PrintWriter"%>
 <%--以下テスト用インスタンス --%>
 <%
-	Sales sales = (Sales) session.getAttribute("Sales");
+	Order order = (Order) session.getAttribute("Order");
+	Sales sales1 = (Sales) session.getAttribute("Sales1");
+	Sales sales2 = (Sales) session.getAttribute("Sales2");
+	Sales sales3 = (Sales) session.getAttribute("Sales3");
+	Sales sales4 = (Sales) session.getAttribute("Sales4");
+	Sales sales5 = (Sales) session.getAttribute("Sales5");
+	Sales sales6 = (Sales) session.getAttribute("Sales6");
+	Sales sales7 = (Sales) session.getAttribute("Sales7");
+	Sales sales8 = (Sales) session.getAttribute("Sales8");
+	Sales sales9 = (Sales) session.getAttribute("Sales9");
+	Sales sales10 = (Sales) session.getAttribute("Sales10");
 %>
 <!DOCTYPE html>
 <html>
@@ -114,7 +124,7 @@
 
 		<div class="main">
 			<h2>合計金額</h2>
-			<p class="total"><%=sales.getMoney()%></p>
+			<p class="total"><%=order.getMoney()%></p>
 
 
 			<!-- idを指定した箇所の値が<script>タグの「document.getElement...」によって変更される -->
@@ -124,7 +134,7 @@
 
 
 			<h2>差額</h2>
-			<p class="difference">50${ sales.getMoney() - payment }</p>
+			<p class="difference">${ sales.getMoney() - payment }</p>
 
 			<p>
 				<input type="submit" name="payment-001" value="戻る" class="back">

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import javasrc.Sales;
+import javasrc.Order;
 
 /**
  * Servlet implementation class ServletLogin
@@ -53,8 +53,8 @@ public class ServletLogin extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		//Salesのインスタンス作成
-		Sales sales = new Sales();
+		//Orderのインスタンス作成
+		Order order = new Order();
 		//リクエストパラメータを取得しインスタンスに代入
 		String id = request.getParameter("id");
 		String ps = request.getParameter("ps");
@@ -72,11 +72,11 @@ public class ServletLogin extends HttpServlet {
 			while (rs.next()) {
 				//入力と一致する行が発見されなければwhileの中は実行されない
 				//つまりwhere分で主キーを条件にセットすれば間違えていた時に実行されない
-				sales.setEmployee_id(id);
-				sales.setEmployee_name(rs.getString("employee_name"));
+				order.setEmployee_id(id);
+				order.setEmployee_name(rs.getString("employee_name"));
 				HttpSession session = request.getSession();
 				//セッションスコープに保存
-				session.setAttribute("Sales", sales);
+				session.setAttribute("Order", order);
 				//きちんと入力されていたらhome-001に遷移
 				RequestDispatcher dispatcher = request.getRequestDispatcher("home-001.jsp");
 				dispatcher.forward(request, response);

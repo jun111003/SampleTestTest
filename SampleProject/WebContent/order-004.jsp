@@ -1,7 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="javasrc.*,java.util.*,java.text.SimpleDateFormat,java.io.PrintWriter"%>
 <%
-	Sales sales = (Sales) session.getAttribute("Sales");
+	Order order = (Order) session.getAttribute("Order");
+	Sales sales1 = (Sales) session.getAttribute("Sales1");
+	Sales sales2 = (Sales) session.getAttribute("Sales2");
+	Sales sales3 = (Sales) session.getAttribute("Sales3");
+	Sales sales4 = (Sales) session.getAttribute("Sales4");
+	Sales sales5 = (Sales) session.getAttribute("Sales5");
+	Sales sales6 = (Sales) session.getAttribute("Sales6");
+	Sales sales7 = (Sales) session.getAttribute("Sales7");
+	Sales sales8 = (Sales) session.getAttribute("Sales8");
+	Sales sales9 = (Sales) session.getAttribute("Sales9");
+	Sales sales10 = (Sales) session.getAttribute("Sales10");
 %>
 <!DOCTYPE html>
 <html>
@@ -31,14 +41,104 @@
 				<td>修正</td>
 			</tr>
 			<tr>
-				<td rowspan="2"><%=sales.getIce_cream_count_name()%></td>
-				<td><%=sales.getIce_cream_size_name()%></td>
-				<td><%=sales.getFlavor_name_1()%></td>
-				<td><%=sales.getFlavor_name_2()%></td>
-				<td><%=sales.getFlavor_name_3()%></td>
-				<td><%=sales.getIce_cream_container_name()%></td>
-				<td><%=sales.getIce_cream_price()%></td>
-				<td><input type="submit" name="order-004" value="注文内容を修正する" class="back"></td>
+				<td rowspan="2"><%=sales1.getIce_cream_count_name()%></td>
+				<td><%=sales1.getIce_cream_size_name()%></td>
+				<td><%=sales1.getFlavor_name_1()%></td>
+				<td><%=sales1.getFlavor_name_2()%></td>
+				<td><%=sales1.getFlavor_name_3()%></td>
+				<td><%=sales1.getIce_cream_container_name()%></td>
+				<td><%=sales1.getIce_cream_price()%></td>
+				<td><input type="submit" name="order-004" value="注文1を修正" class="back"></td>
+			</tr>
+						<tr>
+				<td rowspan="2"><%=sales2.getIce_cream_count_name()%></td>
+				<td><%=sales2.getIce_cream_size_name()%></td>
+				<td><%=sales2.getFlavor_name_1()%></td>
+				<td><%=sales2.getFlavor_name_2()%></td>
+				<td><%=sales2.getFlavor_name_3()%></td>
+				<td><%=sales2.getIce_cream_container_name()%></td>
+				<td><%=sales2.getIce_cream_price()%></td>
+				<td><input type="submit" name="order-004" value=注文2を修正 class="back"></td>
+			</tr>
+						<tr>
+				<td rowspan="2"><%=sales3.getIce_cream_count_name()%></td>
+				<td><%=sales3.getIce_cream_size_name()%></td>
+				<td><%=sales3.getFlavor_name_1()%></td>
+				<td><%=sales3.getFlavor_name_2()%></td>
+				<td><%=sales3.getFlavor_name_3()%></td>
+				<td><%=sales3.getIce_cream_container_name()%></td>
+				<td><%=sales3.getIce_cream_price()%></td>
+				<td><input type="submit" name="order-004" value="注文3を修正" class="back"></td>
+			</tr>
+						<tr>
+				<td rowspan="2"><%=sales4.getIce_cream_count_name()%></td>
+				<td><%=sales4.getIce_cream_size_name()%></td>
+				<td><%=sales4.getFlavor_name_1()%></td>
+				<td><%=sales4.getFlavor_name_2()%></td>
+				<td><%=sales4.getFlavor_name_3()%></td>
+				<td><%=sales4.getIce_cream_container_name()%></td>
+				<td><%=sales4.getIce_cream_price()%></td>
+				<td><input type="submit" name="order-004" value="注文4を修正" class="back"></td>
+			</tr>
+						<tr>
+				<td rowspan="2"><%=sales5.getIce_cream_count_name()%></td>
+				<td><%=sales5.getIce_cream_size_name()%></td>
+				<td><%=sales5.getFlavor_name_1()%></td>
+				<td><%=sales5.getFlavor_name_2()%></td>
+				<td><%=sales5.getFlavor_name_3()%></td>
+				<td><%=sales5.getIce_cream_container_name()%></td>
+				<td><%=sales5.getIce_cream_price()%></td>
+				<td><input type="submit" name="order-004" value="注文5を修正" class="back"></td>
+			</tr>
+						<tr>
+				<td rowspan="2"><%=sales6.getIce_cream_count_name()%></td>
+				<td><%=sales6.getIce_cream_size_name()%></td>
+				<td><%=sales6.getFlavor_name_1()%></td>
+				<td><%=sales6.getFlavor_name_2()%></td>
+				<td><%=sales6.getFlavor_name_3()%></td>
+				<td><%=sales6.getIce_cream_container_name()%></td>
+				<td><%=sales6.getIce_cream_price()%></td>
+				<td><input type="submit" name="order-004" value="注文6を修正" class="back"></td>
+			</tr>
+						<tr>
+				<td rowspan="2"><%=sales7.getIce_cream_count_name()%></td>
+				<td><%=sales7.getIce_cream_size_name()%></td>
+				<td><%=sales7.getFlavor_name_1()%></td>
+				<td><%=sales7.getFlavor_name_2()%></td>
+				<td><%=sales7.getFlavor_name_3()%></td>
+				<td><%=sales7.getIce_cream_container_name()%></td>
+				<td><%=sales7.getIce_cream_price()%></td>
+				<td><input type="submit" name="order-004" value="注文7を修正" class="back"></td>
+			</tr>
+						<tr>
+				<td rowspan="2"><%=sales8.getIce_cream_count_name()%></td>
+				<td><%=sales8.getIce_cream_size_name()%></td>
+				<td><%=sales8.getFlavor_name_1()%></td>
+				<td><%=sales8.getFlavor_name_2()%></td>
+				<td><%=sales8.getFlavor_name_3()%></td>
+				<td><%=sales8.getIce_cream_container_name()%></td>
+				<td><%=sales8.getIce_cream_price()%></td>
+				<td><input type="submit" name="order-004" value="注文8を修正" class="back"></td>
+			</tr>
+						<tr>
+				<td rowspan="2"><%=sales9.getIce_cream_count_name()%></td>
+				<td><%=sales9.getIce_cream_size_name()%></td>
+				<td><%=sales9.getFlavor_name_1()%></td>
+				<td><%=sales9.getFlavor_name_2()%></td>
+				<td><%=sales9.getFlavor_name_3()%></td>
+				<td><%=sales9.getIce_cream_container_name()%></td>
+				<td><%=sales9.getIce_cream_price()%></td>
+				<td><input type="submit" name="order-004" value="注文9を修正" class="back"></td>
+			</tr>
+						<tr>
+				<td rowspan="2"><%=sales10.getIce_cream_count_name()%></td>
+				<td><%=sales10.getIce_cream_size_name()%></td>
+				<td><%=sales10.getFlavor_name_1()%></td>
+				<td><%=sales10.getFlavor_name_2()%></td>
+				<td><%=sales10.getFlavor_name_3()%></td>
+				<td><%=sales10.getIce_cream_container_name()%></td>
+				<td><%=sales10.getIce_cream_price()%></td>
+				<td><input type="submit" name="order-004" value="注文10を修正" class="back"></td>
 			</tr>
 		</table>
 

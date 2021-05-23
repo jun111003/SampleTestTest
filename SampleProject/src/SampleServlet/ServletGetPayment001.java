@@ -248,94 +248,94 @@ public class ServletGetPayment001 extends HttpServlet {
 			}
 			//##############################################################################################################
 			//データベースにアクセスice_cream_flavor_name_2（フレーバー名）の取得
-			//			if (sales.getIce_cream_count_id().equals("No003") || sales.getIce_cream_count_id().equals("No002")) {
-			//				try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
-			//						+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
-			//
-			//					String sql = "SELECT * FROM ice_cream_flavor";
-			//					PreparedStatement pStmt = conn.prepareStatement(sql);
-			//					//Statement pStmt = conn.createStatement(sql);
-			//
-			//					//select 実行
-			//					ResultSet rs = pStmt.executeQuery();
-			//
-			//					while (rs.next()) {
-			//						//employeeテーブルからid,nameを取得
-			//						String sql_id = rs.getString("ice_cream_flavor_id");
-			//						String sql_name = rs.getString("ice_cream_flavor_name");
-			//						//取得したidとインスタンス化されたidを比較して条件分岐
-			//						if (sql_id.equals(sales.getFlavor_id_2())) {
-			//							sales.setFlavor_name_2(sql_name);
-			//						}
-			//					}
-			//
-			//					pStmt.close();
-			//				} catch (SQLException e) {
-			//					System.out.println("MySQLに接続できませんでした");
-			//				} catch (Exception e) {
-			//					e.printStackTrace();
-			//				}
-			//				//##############################################################################################################
-			//			} else if (sales.getIce_cream_count_id().equals("No003")) {
-			//				//データベースにアクセスice_cream_flavor_name_3（フレーバー名）の取得
-			//				if (sales.getIce_cream_count_id().equals("No003") || sales.getIce_cream_count_id().equals("No002")) {
-			//					try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
-			//							+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
-			//
-			//						String sql = "SELECT * FROM ice_cream_flavor";
-			//						PreparedStatement pStmt = conn.prepareStatement(sql);
-			//						//Statement pStmt = conn.createStatement(sql);
-			//
-			//						//select 実行
-			//						ResultSet rs = pStmt.executeQuery();
-			//
-			//						while (rs.next()) {
-			//							//employeeテーブルからid,nameを取得
-			//							String sql_id = rs.getString("ice_cream_flavor_id");
-			//							String sql_name = rs.getString("ice_cream_flavor_name");
-			//							//取得したidとインスタンス化されたidを比較して条件分岐
-			//							if (sql_id.equals(sales.getFlavor_id_3())) {
-			//								sales.setFlavor_name_3(sql_name);
-			//							}
-			//						}
-			//
-			//						pStmt.close();
-			//					} catch (SQLException e) {
-			//						System.out.println("MySQLに接続できませんでした");
-			//					} catch (Exception e) {
-			//						e.printStackTrace();
-			//					}
-			//				}
-			//##############################################################################################################
-			//データベースにアクセスice_cream_flavor_inf_price（商品金額）の取得
-//			try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
-//					+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
-//
-//				String sql = "SELECT * FROM ice_cream_inf";
-//				PreparedStatement pStmt = conn.prepareStatement(sql);
-//				//Statement pStmt = conn.createStatement(sql);
-//
-//				//select 実行
-//				ResultSet rs = pStmt.executeQuery();
-//
-//				while (rs.next()) {
-//					//employeeテーブルからid,nameを取得
-//					String sql_id = rs.getString("ice_cream_inf_id");
-//					int sql_price = rs.getInt("ice_cream_inf_price");
-//					//取得したidとインスタンス化されたidを比較して条件分岐
-//					if (sql_id.equals(sales.getIce_cream_inf_id())) {
-//						sales.setIce_cream_price(sql_price);
-//					}
-//				}
-//
-//				pStmt.close();
-//			} catch (SQLException e) {
-//				System.out.println("合計金額");
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-			//##############################################################################################################
-			//}
+			if (sales.getIce_cream_count_id().equals("No003") || sales.getIce_cream_count_id().equals("No002")) {
+				try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
+						+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
+
+					String sql = "SELECT * FROM ice_cream_flavor";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+					//Statement pStmt = conn.createStatement(sql);
+
+					//select 実行
+					ResultSet rs = pStmt.executeQuery();
+
+					while (rs.next()) {
+						//employeeテーブルからid,nameを取得
+						String sql_id = rs.getString("ice_cream_flavor_id");
+						String sql_name = rs.getString("ice_cream_flavor_name");
+						//取得したidとインスタンス化されたidを比較して条件分岐
+						if (sql_id.equals(sales.getFlavor_id_2())) {
+							sales.setFlavor_name_2(sql_name);
+						}
+					}
+
+					pStmt.close();
+				} catch (SQLException e) {
+					System.out.println("MySQLに接続できませんでした");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				//##############################################################################################################
+			} else if (sales.getIce_cream_count_id().equals("No003")) {
+				//データベースにアクセスice_cream_flavor_name_3（フレーバー名）の取得
+				if (sales.getIce_cream_count_id().equals("No003") || sales.getIce_cream_count_id().equals("No002")) {
+					try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
+							+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
+
+						String sql = "SELECT * FROM ice_cream_flavor";
+						PreparedStatement pStmt = conn.prepareStatement(sql);
+						//Statement pStmt = conn.createStatement(sql);
+
+						//select 実行
+						ResultSet rs = pStmt.executeQuery();
+
+						while (rs.next()) {
+							//employeeテーブルからid,nameを取得
+							String sql_id = rs.getString("ice_cream_flavor_id");
+							String sql_name = rs.getString("ice_cream_flavor_name");
+							//取得したidとインスタンス化されたidを比較して条件分岐
+							if (sql_id.equals(sales.getFlavor_id_3())) {
+								sales.setFlavor_name_3(sql_name);
+							}
+						}
+
+						pStmt.close();
+					} catch (SQLException e) {
+						System.out.println("MySQLに接続できませんでした");
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+				//##############################################################################################################
+				//データベースにアクセスice_cream_flavor_inf_price（商品金額）の取得
+				try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
+						+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
+
+					String sql = "SELECT * FROM ice_cream_inf";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+					//Statement pStmt = conn.createStatement(sql);
+
+					//select 実行
+					ResultSet rs = pStmt.executeQuery();
+
+					while (rs.next()) {
+						//employeeテーブルからid,nameを取得
+						String sql_id = rs.getString("ice_cream_inf_id");
+						int sql_price = rs.getInt("ice_cream_inf_price");
+						//取得したidとインスタンス化されたidを比較して条件分岐
+						if (sql_id.equals(sales.getIce_cream_inf_id())) {
+							sales.setIce_cream_price(sql_price);
+						}
+					}
+
+					pStmt.close();
+				} catch (SQLException e) {
+					System.out.println("合計金額");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				//##############################################################################################################
+			}
 			session.setAttribute("Sales", sales);
 
 			//order-002画面をフォワード

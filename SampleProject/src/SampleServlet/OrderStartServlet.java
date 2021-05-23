@@ -56,12 +56,17 @@ public class OrderStartServlet extends HttpServlet {
 		//ボタンによって処理を変えている
 		if (action.equals("戻る")) {
 			//ここで戻るを押したときに従業員IDを保持したまま全ての受注情報を消去
-			Sales sales1 = new Sales();
+			//Salesのインスタンス作成
 			HttpSession session = request.getSession();
-			Sales sales = (Sales) session.getAttribute("Sales1");
-			sales1.setEmployee_id(sales.getEmployee_id());
-			session.removeAttribute("Sales2");
-			session.setAttribute("Sales1", sales1);
+			Order order = (Order) session.getAttribute("Order");
+			int i = order.getOrder_id();
+			String sessionInstanceName;
+			for (int j = 0; j < i; j++) {
+				sessionInstanceName = "Sales" + Integer.toString(j + 1);
+				session.removeAttribute(sessionInstanceName);
+			}
+			order.setSales_id(0);
+			order.setOrder_id(0);
 
 			//入力情報を保持せずhome-001画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("home-001.jsp");

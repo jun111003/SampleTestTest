@@ -32,11 +32,11 @@
 			</tr>
 			<tr>
 				<td rowspan="2"><%=sales.getIce_cream_count_name()%></td>
-				<td><%=sales.getIce_cream_size_id()%></td>
+				<td><%=sales.getIce_cream_size_name()%></td>
 				<td><%=sales.getFlavor_name_1()%></td>
 				<td><%=sales.getFlavor_name_2()%></td>
 				<td><%=sales.getFlavor_name_3()%></td>
-				<td><%=sales.getIce_cream_container_id()%></td>
+				<td><%=sales.getIce_cream_container_name()%></td>
 				<td><%=sales.getIce_cream_price()%></td>
 				<td><input type="submit" name="order-004" value="注文内容を修正する" class="back"></td>
 			</tr>

@@ -62,6 +62,10 @@ public class ServletGetOrder004 extends HttpServlet {
 			dispatcher.forward(request, response);
 
 		} else if (action.equals("注文を確定させる")) {
+			//合計金額の算出
+			//小計
+			sales.setMoney(sales.getIce_cream_container_price() + sales.getIce_cream_price());
+			session.setAttribute("Sales", sales);
 
 			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("payment-001.jsp");

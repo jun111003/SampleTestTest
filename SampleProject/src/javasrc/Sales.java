@@ -31,6 +31,30 @@ public class Sales implements Serializable {
 		money = 0;
 	}
 
+	public void check() {
+		System.out.println(sales_id);
+		System.out.println(order_id);
+		System.out.println(sales_date);
+		System.out.println(employee_id);
+		System.out.println(employee_name);
+		System.out.println(ice_cream_container_id);
+		System.out.println(ice_cream_container_name);
+		System.out.println(ice_cream_container_price);
+		System.out.println(ice_cream_inf_id);
+		System.out.println(ice_cream_size_id);
+		System.out.println(ice_cream_size_name);
+		System.out.println(ice_cream_count_id);
+		System.out.println(ice_cream_count_name);
+		System.out.println(ice_cream_price);
+		System.out.println(flavor_id_1);
+		System.out.println(flavor_name_1);
+		System.out.println(flavor_id_2);
+		System.out.println(flavor_name_2);
+		System.out.println(flavor_id_3);
+		System.out.println(flavor_name_3);
+		System.out.println(money);
+	}
+
 	//getter
 	public int getSales_id() {
 		return sales_id;

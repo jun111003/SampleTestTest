@@ -1,4 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="javasrc.*,java.util.*,java.text.SimpleDateFormat,java.io.PrintWriter"%>
+<%--以下テスト用インスタンス --%>
+<%
+	Sales sales = (Sales) session.getAttribute("Sales");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +47,7 @@
 
 			payment = payment * 10 + 4;
 
-			document.getElementById("numValue").value= payment;
+			document.getElementById("numValue").value = payment;
 
 		}
 
@@ -50,7 +55,7 @@
 
 			payment = payment * 10 + 5;
 
-			document.getElementById("numValue").value= payment;
+			document.getElementById("numValue").value = payment;
 
 		}
 
@@ -74,7 +79,7 @@
 
 			payment = payment * 10 + 8;
 
-			document.getElementById("numValue").value= payment;
+			document.getElementById("numValue").value = payment;
 
 		}
 
@@ -90,7 +95,7 @@
 
 			payment = payment * 10 + 0;
 
-			document.getElementById("numValue").value= payment;
+			document.getElementById("numValue").value = payment;
 
 		}
 
@@ -105,37 +110,37 @@
 
 
 	<form action="/SampleProject/ServletGetPayment001" method="post" class="receiving">
-			<img src=img/31logo.png class="image-vw">
+		<img src=img/31logo.png class="image-vw">
 
-        <div class="main">
+		<div class="main">
 			<h2>合計金額</h2>
-			<p class="total">\1500</p>
+			<p class="total"><%=sales.getMoney()%></p>
 
 
 			<!-- idを指定した箇所の値が<script>タグの「document.getElement...」によって変更される -->
-            <h2>受取金額</h2>
-            <input type="number" name="txt" id="numValue" value="0" class="put">
-            <br>
+			<h2>受取金額</h2>
+			<input type="number" name="txt" id="numValue" value="0" class="put">
+			<br>
 
 
 			<h2>差額</h2>
-			<p class="difference">\50</p>
+			<p class="difference">50${ sales.getMoney() - payment }</p>
 
 			<p>
 				<input type="submit" name="payment-001" value="戻る" class="back">
 				<input type="submit" name="payment-001" value="決済を行う" class="next">
 			</p>
-         </div>
+		</div>
 	</form>
 
 
 	<div class="calculator">
 		<table border="0">
 			<tr>
-				<td class ="upside">num</td>
-				<td class ="upside">/</td>
-				<td class ="upside">*</td>
-				<td class ="upside">-</td>
+				<td class="upside">num</td>
+				<td class="upside">/</td>
+				<td class="upside">*</td>
+				<td class="upside">-</td>
 			</tr>
 			<tr>
 				<td><button type="button" onclick="click7()" class="push">7</button></td>

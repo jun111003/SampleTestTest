@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="javasrc.*,java.util.*,java.text.SimpleDateFormat,java.io.PrintWriter"%>
-<%--以下テスト用インスタンス --%>
 <%
 	Sales sales = (Sales) session.getAttribute("Sales");
 %>
@@ -105,6 +104,5 @@
 			<input type="submit" name="recipt-001" value="ホームへ戻る" class="back">
 		</p>
 	</form>
-
 </body>
 </html>

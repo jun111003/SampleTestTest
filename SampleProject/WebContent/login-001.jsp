@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <title>31レジシステム</title>
 <link rel="stylesheet" href="css/login-001.css">
-<img src=img/31ロゴホーム.png>
+<img src=img/31ロゴ.png>
 </head>
 <script>
 	function check() {

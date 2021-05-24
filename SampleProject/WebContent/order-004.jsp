@@ -73,7 +73,7 @@
 			<% } %>
 
 
-            <%if(sales3 == null) {%>
+            <%if(sales3.getIce_cream_count_name() == null) {%>
 
 			<% }else{ %>
 			<tr>
@@ -89,7 +89,7 @@
 			<% } %>
 
 
-			<%if(sales4 == null) {%>
+			<%if(sales4.getIce_cream_count_name() == null) {%>
 
 			<% }else{ %>
 			<tr>
@@ -105,7 +105,7 @@
 			<% } %>
 
 
-			<%if(sales5 == null) {%>
+			<%if(sales5.getIce_cream_count_name() == null) {%>
 
 			<% }else{ %>
 			<tr>
@@ -121,7 +121,7 @@
 			<% } %>
 
 
-			<%if(sales6 == null) {%>
+			<%if(sales6.getIce_cream_count_name() == null) {%>
 
 			<% }else{ %>
 			<tr>
@@ -137,7 +137,7 @@
 			<% } %>
 
 
-			<%if(sales7 == null) {%>
+			<%if(sales7.getIce_cream_count_name() == null) {%>
 
 			<% }else{ %>
 			<tr>
@@ -153,7 +153,7 @@
 			<% } %>
 
 
-			<%if(sales8 == null) {%>
+			<%if(sales8.getIce_cream_count_name() == null) {%>
 
 			<% }else{ %>
 			<tr>
@@ -169,7 +169,7 @@
 			<% } %>
 
 
-			<%if(sales9 == null) {%>
+			<%if(sales9.getIce_cream_count_name() == null) {%>
 
 			<% }else{ %>
 			<tr>
@@ -185,7 +185,7 @@
 			<% } %>
 
 
-			<%if(sales10 == null) {%>
+			<%if(sales10.getIce_cream_count_name() == null) {%>
 
 			<% }else{ %>
 			<tr>

@@ -83,7 +83,6 @@ public class ServletGetOrder004 extends HttpServlet {
 			//注文番号を加算する
 			if (order.getOrder_id() < 10) {
 				order.setOrder_id(order.getOrder_id() + 1);
-				session.setAttribute(sessionInstanceName, sales);
 			} else {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("payment-001.jsp");
 				dispatcher.forward(request, response);
@@ -94,6 +93,7 @@ public class ServletGetOrder004 extends HttpServlet {
 			order.setOrder_id(1);
 			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
 			session.removeAttribute(sessionInstanceName);
+			sales = (Sales) session.getAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
@@ -101,6 +101,7 @@ public class ServletGetOrder004 extends HttpServlet {
 			order.setOrder_id(2);
 			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
 			session.removeAttribute(sessionInstanceName);
+			sales = (Sales) session.getAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
@@ -108,6 +109,7 @@ public class ServletGetOrder004 extends HttpServlet {
 			order.setOrder_id(3);
 			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
 			session.removeAttribute(sessionInstanceName);
+			sales = (Sales) session.getAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
@@ -115,6 +117,7 @@ public class ServletGetOrder004 extends HttpServlet {
 			order.setOrder_id(4);
 			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
 			session.removeAttribute(sessionInstanceName);
+			sales = (Sales) session.getAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
@@ -122,6 +125,7 @@ public class ServletGetOrder004 extends HttpServlet {
 			order.setOrder_id(5);
 			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
 			session.removeAttribute(sessionInstanceName);
+			sales = (Sales) session.getAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
@@ -129,6 +133,7 @@ public class ServletGetOrder004 extends HttpServlet {
 			order.setOrder_id(6);
 			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
 			session.removeAttribute(sessionInstanceName);
+			sales = (Sales) session.getAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
@@ -136,6 +141,7 @@ public class ServletGetOrder004 extends HttpServlet {
 			order.setOrder_id(7);
 			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
 			session.removeAttribute(sessionInstanceName);
+			sales = (Sales) session.getAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
@@ -143,6 +149,7 @@ public class ServletGetOrder004 extends HttpServlet {
 			order.setOrder_id(8);
 			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
 			session.removeAttribute(sessionInstanceName);
+			sales = (Sales) session.getAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
@@ -150,6 +157,7 @@ public class ServletGetOrder004 extends HttpServlet {
 			order.setOrder_id(9);
 			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
 			session.removeAttribute(sessionInstanceName);
+			sales = (Sales) session.getAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
@@ -157,6 +165,7 @@ public class ServletGetOrder004 extends HttpServlet {
 			order.setOrder_id(10);
 			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
 			session.removeAttribute(sessionInstanceName);
+			sales = (Sales) session.getAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);

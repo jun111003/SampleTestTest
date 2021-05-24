@@ -63,7 +63,6 @@ public class ServletGetPayment001 extends HttpServlet {
 			String sessionInstanceName = "Sales" + Integer.toString(i);
 			Sales sales = (Sales) session.getAttribute(sessionInstanceName);
 
-			sales.check();
 			session.setAttribute(sessionInstanceName, sales);
 
 			//order-002画面をフォワード

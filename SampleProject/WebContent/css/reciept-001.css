@@ -4,6 +4,7 @@
 body{
 	font-family: Yu Gothic;
 	font-size: 1em;
+	font-weight: bold;
 }
 
 .image-vw {
@@ -27,7 +28,7 @@ h3 {
 	padding : 2px;
 	margin : 0px 0px 10px 0px;
 	/*text-align : center;*/
-	margin : 0 200px;
+	margin : 0 520px;
 }
 
 .center {
@@ -35,15 +36,16 @@ h3 {
 }
 
 .left {
-   margin-left : 60px;
+   margin-left : 40px;
 }
 
 .middle-left {
-   margin-left : 90px;
+   margin-left : 60px;
 }
 
 .right {
-	margin-left : 300px;
+	text-align: right;
+	margin-right : 40px;
 }
 
 

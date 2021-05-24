@@ -1,14 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
 <link rel="stylesheet" href="css/order-003.css">
-<img src=img/31logo.png class="image-vw">
 </head>
 
 <body>
+<img src="img/31logo.png" class="image-vw">
 	<form action="/SampleProjectMaster/ServletGetOrder003" method="post">
 		<p class="title">容器の種類を選んでください</p>
 

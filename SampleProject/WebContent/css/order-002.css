@@ -42,7 +42,7 @@ label img {
 }
 
 .size input[type="radio"]:checked + label img {
-  background: #f3d0ec;
+  background: #fbdcea;
 }
 
 .flavor input[type="radio"] {
@@ -50,7 +50,7 @@ label img {
 }
 
 .flavor input[type="radio"]:checked + label img {
-  background: #b7ceea;
+  background: #deddeb;
 }
 
 /*次へ戻るボタン*/

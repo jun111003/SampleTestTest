@@ -25,8 +25,7 @@ img:hover {
 }
 
 label img {
-  margin: 3px 30px 3px;                 /* 画像部分に余白を持たせる */
-
+  margin: 3px 40px 3px;                 /* 画像部分に余白を持たせる */
   padding: 8px;
 }
 
@@ -36,7 +35,7 @@ label img {
 }
 
 .size input[type="radio"]:checked + label img {
-  background: #f3d0ec;
+  background: #fbdcea;
 }
 
 /*次へ戻るボタン*/

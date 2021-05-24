@@ -21,14 +21,14 @@
 <link rel="stylesheet" href="css/reciept-001.css">
 </head>
 <body>
-	<img src=img/31logo.png alt="31ロゴマーク" width=20% height=20%>
+<img src="img/31logo.png" class="image-vw">
 
 	<h3>以下の内容でレシートを発行しました。</h3>
 
 	<div class="receipt">
-		<p class="center">
-			<img src=img/31logo.png alt="31ロゴマーク" width=180px height=70px>
-		</p>
+      <p class = "center">
+       <img src="img/31ロゴレシート.png" width=45% height=45%>
+      </p>
 		<p class="center">≪領収書≫</p>
 
 		<p class="left">

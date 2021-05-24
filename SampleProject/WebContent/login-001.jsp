@@ -5,7 +5,6 @@
 <meta charset="UTF-8">
 <title>31レジシステム</title>
 <link rel="stylesheet" href="css/login-001.css">
-<img src=img/31ロゴ.png>
 </head>
 <script>
 	function check() {
@@ -26,19 +25,22 @@
 </script>
 
 <body>
-	<form action="/SampleProjectMaster/ServletLogin" method="post" name="form1" onSubmit="return check()">
+<img src="img/31logo.png" class="image-vw">
+<form action="/SampleProjectMaster/ServletLogin" method="post">
+	<p>ID・パスワードを入力</p>
 		<p>
 			ID:
 			<input type="text" name="id" size="40">
 		</p>
 		<p>
-			PS
-			<input type="text" name="ps">
+		    PS:
+		    <input type="password" name="ps" size="40">
 		</p>
-
 		<p>
 			<input type="submit" name="home-001" value="ログイン" class="next">
 		</p>
 	</form>
 </body>
 </html>
+
+<!-- 変更点　パスの書き方変える、31logo.pngの位置変える -->

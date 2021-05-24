@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import javasrc.LoginMsg;
 import javasrc.Order;
 
 /**
@@ -59,6 +60,9 @@ public class ServletLogin extends HttpServlet {
 		String id = request.getParameter("id");
 		String ps = request.getParameter("ps");
 
+		//リクエストパラメータのチェック
+		String errorMsg = "";
+
 		try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
 				+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
 			//sql文の設定
@@ -69,6 +73,9 @@ public class ServletLogin extends HttpServlet {
 			pStmt.setString(2, ps);
 			//select 実行
 			ResultSet rs = pStmt.executeQuery();
+
+			boolean setting = false;
+			String msg = "";
 			while (rs.next()) {
 				//入力と一致する行が発見されなければwhileの中は実行されない
 				//つまりwhere分で主キーを条件にセットすれば間違えていた時に実行されない
@@ -77,13 +84,29 @@ public class ServletLogin extends HttpServlet {
 				HttpSession session = request.getSession();
 				//セッションスコープに保存
 				session.setAttribute("Order", order);
-				//きちんと入力されていたらhome-001に遷移
-				RequestDispatcher dispatcher = request.getRequestDispatcher("home-001.jsp");
-				dispatcher.forward(request, response);
+				setting = true;
+				errorMsg ="";
+
+				msg = "ようこそ" + id + ":" + order.getEmployee_name() +  "さん";
+				//リクエストスコープ使用処理
+				LoginMsg req_msg = new LoginMsg();
+				req_msg.setMsg(msg);
+				request.setAttribute("req_msg", req_msg);
+			    //ログイン成功時のフォワード処理
+			    RequestDispatcher dispatcher = request.getRequestDispatcher("loginSuccess-001.jsp");
+	            dispatcher.forward(request, response);
 			}
-			//DBに入力されたIDとPASSがなければログイン画面を表示しなおす
-			RequestDispatcher dispatcher = request.getRequestDispatcher("login-001.jsp");
-			dispatcher.forward(request, response);
+			//もしid,psが一致しなかった場合のエラー
+            errorMsg = "入力内容が正しくありません";
+    		//リクエストスコープ使用処理
+			LoginMsg req_msg = new LoginMsg();
+			//エラーメッセージ処理
+			msg = errorMsg;
+			req_msg.setMsg(msg);
+			request.setAttribute("req_msg", req_msg);
+			//エラー時のフォワード処理
+			RequestDispatcher dispatcher = request.getRequestDispatcher("loginError-001.jsp");
+	        dispatcher.forward(request, response);
 			//おまじない
 			pStmt.close();
 		} catch (SQLException e) {

@@ -26,7 +26,7 @@
 
 <body>
 <img src="img/31logo.png" class="image-vw">
-<form action="/SampleProjectMaster/ServletLogin" method="post">
+<form action="/SampleProjectMaster/ServletLogin" method="post" name="form1" onSubmit="return check()">
 	<p>ID・パスワードを入力</p>
 		<p>
 			ID:

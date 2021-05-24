@@ -51,7 +51,7 @@
 				<td><%=sales1.getFlavor_name_2()%></td>
 				<td><%=sales1.getFlavor_name_3()%></td>
 				<td><%=sales1.getIce_cream_container_name()%></td>
-				<td><%=sales1.getIce_cream_price()%></td>
+				<td><%=sales1.getMoney()%></td>
 				<td><input type="submit" name="order-004" value="注文1を修正" class="delete"></td>
 			</tr>
 			<% } %>
@@ -67,7 +67,7 @@
 				<td><%=sales2.getFlavor_name_2()%></td>
 				<td><%=sales2.getFlavor_name_3()%></td>
 				<td><%=sales2.getIce_cream_container_name()%></td>
-				<td><%=sales2.getIce_cream_price()%></td>
+				<td><%=sales2.getMoney()%></td>
 				<td><input type="submit" name="order-004" value=注文2を修正 class="delete"></td>
 			</tr>
 			<% } %>
@@ -83,7 +83,7 @@
 				<td><%=sales3.getFlavor_name_2()%></td>
 				<td><%=sales3.getFlavor_name_3()%></td>
 				<td><%=sales3.getIce_cream_container_name()%></td>
-				<td><%=sales3.getIce_cream_price()%></td>
+				<td><%=sales3.getMoney()%></td>
 				<td><input type="submit" name="order-004" value="注文3を修正" class="delete"></td>
 			</tr>
 			<% } %>
@@ -99,7 +99,7 @@
 				<td><%=sales4.getFlavor_name_2()%></td>
 				<td><%=sales4.getFlavor_name_3()%></td>
 				<td><%=sales4.getIce_cream_container_name()%></td>
-				<td><%=sales4.getIce_cream_price()%></td>
+				<td><%=sales4.getMoney()%></td>
 				<td><input type="submit" name="order-004" value="注文4を修正" class="delete"></td>
 			</tr>
 			<% } %>
@@ -115,7 +115,7 @@
 				<td><%=sales5.getFlavor_name_2()%></td>
 				<td><%=sales5.getFlavor_name_3()%></td>
 				<td><%=sales5.getIce_cream_container_name()%></td>
-				<td><%=sales5.getIce_cream_price()%></td>
+				<td><%=sales5.getMoney()%></td>
 				<td><input type="submit" name="order-004" value="注文5を修正" class="delete"></td>
 			</tr>
 			<% } %>
@@ -131,7 +131,7 @@
 				<td><%=sales6.getFlavor_name_2()%></td>
 				<td><%=sales6.getFlavor_name_3()%></td>
 				<td><%=sales6.getIce_cream_container_name()%></td>
-				<td><%=sales6.getIce_cream_price()%></td>
+				<td><%=sales6.getMoney()%></td>
 				<td><input type="submit" name="order-004" value="注文6を修正" class="delete"></td>
 			</tr>
 			<% } %>
@@ -147,7 +147,7 @@
 				<td><%=sales7.getFlavor_name_2()%></td>
 				<td><%=sales7.getFlavor_name_3()%></td>
 				<td><%=sales7.getIce_cream_container_name()%></td>
-				<td><%=sales7.getIce_cream_price()%></td>
+				<td><%=sales7.getMoney()%></td>
 				<td><input type="submit" name="order-004" value="注文7を修正" class="delete"></td>
 			</tr>
 			<% } %>
@@ -163,7 +163,7 @@
 				<td><%=sales8.getFlavor_name_2()%></td>
 				<td><%=sales8.getFlavor_name_3()%></td>
 				<td><%=sales8.getIce_cream_container_name()%></td>
-				<td><%=sales8.getIce_cream_price()%></td>
+				<td><%=sales8.getMoney()%></td>
 				<td><input type="submit" name="order-004" value="注文8を修正" class="delete"></td>
 			</tr>
 			<% } %>
@@ -179,7 +179,7 @@
 				<td><%=sales9.getFlavor_name_2()%></td>
 				<td><%=sales9.getFlavor_name_3()%></td>
 				<td><%=sales9.getIce_cream_container_name()%></td>
-				<td><%=sales9.getIce_cream_price()%></td>
+				<td><%=sales9.getMoney()%></td>
 				<td><input type="submit" name="order-004" value="注文9を修正" class="delete"></td>
 			</tr>
 			<% } %>
@@ -195,7 +195,7 @@
 				<td><%=sales10.getFlavor_name_2()%></td>
 				<td><%=sales10.getFlavor_name_3()%></td>
 				<td><%=sales10.getIce_cream_container_name()%></td>
-				<td><%=sales10.getIce_cream_price()%></td>
+				<td><%=sales10.getMoney()%></td>
 				<td><input type="submit" name="order-004" value="注文10を修正" class="delete"></td>
 			</tr>
 			<% } %>

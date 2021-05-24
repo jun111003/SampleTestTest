@@ -13,12 +13,16 @@ public class Order {
 	private String sales_date;//売上時間
 	private String employee_id;//従業員番号
 	private String employee_name;//従業員名前
-	private int money;//受取金額
+	private int sumMoney;//合計金額
+	private int payment;//受取金額
+	private int change;//おつり
 
 	public Order(){
 		sales_id = 0;
 		order_id = 0;
-		money = 0;
+		sumMoney = 0;
+		payment = 0;
+		change = 0;
 	}
 
 	public void check() {
@@ -27,7 +31,7 @@ public class Order {
 		System.out.println(sales_date);
 		System.out.println(employee_id);
 		System.out.println(employee_name);
-		System.out.println(money);
+		System.out.println(sumMoney);
 	}
 
 	public int getSales_id() {
@@ -38,8 +42,8 @@ public class Order {
 		return order_id;
 	}
 
-	public int getMoney() {
-		return money;
+	public int getSumMoney() {
+		return sumMoney;
 	}
 
 	public String getSales_date() {
@@ -63,8 +67,8 @@ public class Order {
 		this.order_id = order_id;
 	}
 
-	public void setMoney(int money) {
-		this.money = money;
+	public void setSumMoney(int money) {
+		this.sumMoney = money;
 	}
 
 	public void setSales_date(String sales_date) {
@@ -77,5 +81,21 @@ public class Order {
 
 	public void setEmployee_name(String employee_name) {
 		this.employee_name = employee_name;
+	}
+
+	public int getPayment() {
+		return payment;
+	}
+
+	public void setPayment(int payment) {
+		this.payment = payment;
+	}
+
+	public int getChange() {
+		return change;
+	}
+
+	public void setChange(int change) {
+		this.change = change;
 	}
 }

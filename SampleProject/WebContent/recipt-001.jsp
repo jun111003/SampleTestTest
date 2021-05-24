@@ -83,7 +83,7 @@
 
 
 		<%
-			int sum = sales1.getMoney();
+			int sum = order.getMoney();
 		%>
 		<p class="right">
 			&yen;<%=sum%></p>

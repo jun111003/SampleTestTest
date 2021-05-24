@@ -63,8 +63,18 @@ public class ServletGetOrder004 extends HttpServlet {
 			dispatcher.forward(request, response);
 		} else if (action.equals("注文を確定させる")) {
 			//合計金額の算出
-			//小計
-			sales.setMoney(sales.getIce_cream_container_price() + sales.getIce_cream_price());
+			Sales salesSet = new Sales();
+			int sum = 0;
+			for(int j=0;j<10;j++) {
+				String sessionInstanceNameSum = "Sales" + Integer.toString(j+1);
+				salesSet = (Sales) session.getAttribute(sessionInstanceNameSum);
+				//小計
+				salesSet.setMoney(salesSet.getIce_cream_container_price() + salesSet.getIce_cream_price());
+				session.setAttribute(sessionInstanceNameSum, salesSet);
+				sum += salesSet.getMoney();
+			}
+			//合計
+			order.setMoney(sum);
 			session.setAttribute(sessionInstanceName, sales);
 			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("payment-001.jsp");
@@ -75,11 +85,9 @@ public class ServletGetOrder004 extends HttpServlet {
 				order.setOrder_id(order.getOrder_id() + 1);
 				session.setAttribute(sessionInstanceName, sales);
 			} else {
-				//order-002画面をフォワード
 				RequestDispatcher dispatcher = request.getRequestDispatcher("payment-001.jsp");
 				dispatcher.forward(request, response);
 			}
-			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("注文1を修正")) {//ここから下は注文内容の修正

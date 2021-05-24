@@ -25,9 +25,11 @@ public class Sales implements Serializable {
 	private String flavor_name_3;//アイスクリーム味３名前
 	private int money;//受取金額
 
-	public Sales(){
+	public Sales() {
 		sales_id = 0;
 		order_id = 0;
+		ice_cream_container_price = 0;
+		ice_cream_price = 0;
 		money = 0;
 	}
 

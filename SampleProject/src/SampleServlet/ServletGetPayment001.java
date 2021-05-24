@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import javasrc.Order;
-import javasrc.Sales;
 
 /**
  * Servlet implementation class ServletGetPayment001
@@ -56,14 +55,22 @@ public class ServletGetPayment001 extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-004.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("決済を行う")) {
+			//リクエストパラメータの取得
+			int payment = Integer.parseInt(request.getParameter("payment"));
+			int change = Integer.parseInt(request.getParameter("differentMoney"));
+
 			//Salesのインスタンス作成
 			HttpSession session = request.getSession();
 			Order order = (Order) session.getAttribute("Order");
-			int i = order.getOrder_id();
-			String sessionInstanceName = "Sales" + Integer.toString(i);
-			Sales sales = (Sales) session.getAttribute(sessionInstanceName);
+//			int i = order.getOrder_id();
+//			String sessionInstanceName = "Sales" + Integer.toString(i);
+//			Sales sales = (Sales) session.getAttribute(sessionInstanceName);
 
-			session.setAttribute(sessionInstanceName, sales);
+			//お釣りをorderインスタンスとsalesインスタンスにセット
+			order.setPayment(payment);
+			order.setChange(change);
+
+			session.setAttribute("Order", order);
 
 			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("recipt-001.jsp");

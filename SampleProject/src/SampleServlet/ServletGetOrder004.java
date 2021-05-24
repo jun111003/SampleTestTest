@@ -74,7 +74,7 @@ public class ServletGetOrder004 extends HttpServlet {
 				sum += salesSet.getMoney();
 			}
 			//合計
-			order.setMoney(sum);
+			order.setSumMoney(sum);
 			session.setAttribute(sessionInstanceName, sales);
 			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("payment-001.jsp");

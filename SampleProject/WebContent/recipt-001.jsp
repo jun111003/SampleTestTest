@@ -83,7 +83,7 @@
 
 
 		<%
-			int sum = order.getMoney();
+			int sum = order.getSumMoney();
 		%>
 		<p class="right">
 			&yen;<%=sum%></p>
@@ -97,12 +97,12 @@
 
 		<p class="left">
 			お預かり
-			<%=sales1.getMoney()%>&yen;
+			<%=order.getPayment()%>&yen;
 		</p>
 
 		<p class="left">
 			おつり
-			<%=sales1.getMoney() - sum%>&yen;
+			<%=order.getChange()%>&yen;
 		</p>
 
 		<p class="center">------------------------------------------------------------------</p>

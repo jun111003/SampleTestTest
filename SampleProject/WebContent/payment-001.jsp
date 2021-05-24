@@ -19,13 +19,18 @@
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
-<link rel="stylesheet" href="/SampleProjectMaster/css/payment-001.css">
+<link rel="stylesheet" href="css/payment-001.css">
 </head>
 <body>
 
 	<script>
+
+		//合計金額
+		var sumMoney;
 		//受取金額
 		var payment = 0;
+		//差額
+		var differentMoney;
 
 		//それぞれのボタンが押された時の処理
 
@@ -33,7 +38,11 @@
 
 			payment = payment * 10 + 1;
 
+			sumMoney = document.getElementById("sumNum").value;
+
 			document.getElementById("numValue").value = payment;
+
+			document.getElementById("differentNum").value = payment - sumMoney;
 
 		}
 
@@ -41,7 +50,13 @@
 
 			payment = payment * 10 + 2;
 
+			sumMoney = document.getElementById("sumNum").value;
+
 			document.getElementById("numValue").value = payment;
+
+			document.getElementById("differentNum").value = payment - sumMoney;
+
+
 
 		}
 
@@ -49,7 +64,11 @@
 
 			payment = payment * 10 + 3;
 
+			sumMoney = document.getElementById("sumNum").value;
+
 			document.getElementById("numValue").value = payment;
+
+			document.getElementById("differentNum").value = payment - sumMoney;
 
 		}
 
@@ -57,7 +76,11 @@
 
 			payment = payment * 10 + 4;
 
+			sumMoney = document.getElementById("sumNum").value;
+
 			document.getElementById("numValue").value = payment;
+
+			document.getElementById("differentNum").value = payment - sumMoney;
 
 		}
 
@@ -65,7 +88,11 @@
 
 			payment = payment * 10 + 5;
 
+			sumMoney = document.getElementById("sumNum").value;
+
 			document.getElementById("numValue").value = payment;
+
+			document.getElementById("differentNum").value = payment - sumMoney;
 
 		}
 
@@ -73,7 +100,11 @@
 
 			payment = payment * 10 + 6;
 
+			sumMoney = document.getElementById("sumNum").value;
+
 			document.getElementById("numValue").value = payment;
+
+			document.getElementById("differentNum").value = payment - sumMoney;
 
 		}
 
@@ -81,7 +112,11 @@
 
 			payment = payment * 10 + 7;
 
+			sumMoney = document.getElementById("sumNum").value;
+
 			document.getElementById("numValue").value = payment;
+
+			document.getElementById("differentNum").value = payment - sumMoney;
 
 		}
 
@@ -89,7 +124,11 @@
 
 			payment = payment * 10 + 8;
 
+			sumMoney = document.getElementById("sumNum").value;
+
 			document.getElementById("numValue").value = payment;
+
+			document.getElementById("differentNum").value = payment - sumMoney;
 
 		}
 
@@ -97,7 +136,11 @@
 
 			payment = payment * 10 + 9;
 
+			sumMoney = document.getElementById("sumNum").value;
+
 			document.getElementById("numValue").value = payment;
+
+			document.getElementById("differentNum").value = payment - sumMoney;
 
 		}
 
@@ -105,7 +148,11 @@
 
 			payment = payment * 10 + 0;
 
+			sumMoney = document.getElementById("sumNum").value;
+
 			document.getElementById("numValue").value = payment;
+
+			document.getElementById("differentNum").value = payment - sumMoney;
 
 		}
 
@@ -113,10 +160,24 @@
 
 			payment = Math.floor(payment / 10);
 
+			sumMoney = document.getElementById("sumNum").value;
+
 			document.getElementById("numValue").value = payment;
 
+			document.getElementById("differentNum").value = payment - sumMoney;
+
 		}
+
+
 	</script>
+
+	<!-- <style>
+
+		.differentMoney {
+			color: red;
+		}
+
+	</style>  -->
 
 
 	<form action="/SampleProjectMaster/ServletGetPayment001" method="post" class="receiving">
@@ -124,17 +185,20 @@
 
 		<div class="main">
 			<h2>合計金額</h2>
-			<p class="total"><%=order.getMoney()%></p>
+			<input type="number" name="txt" id="sumNum" value=<%=order.getSumMoney()%> class="put">
 
 
 			<!-- idを指定した箇所の値が<script>タグの「document.getElement...」によって変更される -->
 			<h2>受取金額</h2>
-			<input type="number" name="txt" id="numValue" value="0" class="put">
+			<input type="number" name="payment" id="numValue" value="0" class="put">
 			<br>
 
 
 			<h2>差額</h2>
-			<p class="difference">${ sales.getMoney() - payment }</p>
+			<div class = "differentMoney">
+				<input type="number" name="differentMoney" id="differentNum" value="0" class="put">
+				<!-- <p class="difference">${ sales.getMoney() - payment }</p> -->
+			</div>
 
 			<p>
 				<input type="submit" name="payment-001" value="戻る" class="back">
@@ -168,6 +232,12 @@
 				<td><button type="button" onclick="click2()" class="push">2</button></td>
 				<td><button type="button" onclick="click3()" class="push">3</button></td>
 				<td rowspan="2">enter</td>
+
+				<!-- <form action="/SampleProject/ServletGetPayment001" method="post" class="receiving">
+					<!-- <td rowspan="2"><button type="button" name="enter" class="push">Enter</button></td>
+					<td rowspan="2"><input type="submit" name="payment-001" value="確定" class="next"></td>
+				</form>  -->
+
 			</tr>
 			<tr>
 				<td colspan="2"><button type="button" onclick="click0()" class="push">0</button></td>

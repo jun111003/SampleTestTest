@@ -23,7 +23,7 @@
 <body>
 	<img src=img/31logo.png class="image-vw">
 
-	<form action="/SampleProject/ServletGetOrder004" method="post">
+	<form action="/SampleProjectMaster/ServletGetOrder004" method="post">
 
 		<div class="title">
 			<p>ご注文内容を確定させてよろしいですか？</p>

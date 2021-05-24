@@ -109,7 +109,7 @@
 
 		<p class="center">またのご利用をお待ちしております。</p>
 	</div>
-	<form action="/SampleProject/ServletGetRecipt001" method="post">
+	<form action="/SampleProjectMaster/ServletGetRecipt001" method="post">
 		<p>
 			<input type="submit" name="recipt-001" value="ホームへ戻る" class="back">
 		</p>

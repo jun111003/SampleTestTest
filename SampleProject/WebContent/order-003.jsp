@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<form action="/SampleProject/ServletGetOrder003" method="post">
+	<form action="/SampleProjectMaster/ServletGetOrder003" method="post">
 		<p class="title">容器の種類を選んでください</p>
 
 		<div class="size">

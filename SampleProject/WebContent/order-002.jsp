@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<form action="/SampleProject/ServletGetOrder002" method="post">
+	<form action="/SampleProjectMaster/ServletGetOrder002" method="post">
 		<p class="title">1つめのフレーバーのサイズを選んでください</p>
 
 		<div class="size">

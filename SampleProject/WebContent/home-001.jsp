@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<a href="/SampleProject/OrderStartServlet">注文する</a>
+	<a href="/SampleProjectMaster/OrderStartServlet">注文する</a>
 </body>
 
 </html>

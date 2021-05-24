@@ -10,7 +10,6 @@ package javasrc;
 public class Order {
 	private int sales_id;//受注番号
 	private int order_id;//注文番号
-	private String instanceName;//インスタンスの名前
 	private String sales_date;//売上時間
 	private String employee_id;//従業員番号
 	private String employee_name;//従業員名前

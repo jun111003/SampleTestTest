@@ -19,7 +19,7 @@
 <head>
 <meta charset="UTF-8">
 <title>31レジシステム</title>
-<link rel="stylesheet" href="/SampleProject/css/payment-001.css">
+<link rel="stylesheet" href="/SampleProjectMaster/css/payment-001.css">
 </head>
 <body>
 
@@ -119,7 +119,7 @@
 	</script>
 
 
-	<form action="/SampleProject/ServletGetPayment001" method="post" class="receiving">
+	<form action="/SampleProjectMaster/ServletGetPayment001" method="post" class="receiving">
 		<img src=img/31logo.png class="image-vw">
 
 		<div class="main">

@@ -92,62 +92,72 @@ public class ServletGetOrder004 extends HttpServlet {
 			dispatcher.forward(request, response);
 		} else if (action.equals("注文1を修正")) {//ここから下は注文内容の修正
 			order.setOrder_id(1);
+			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
+			session.removeAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
-			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("注文2を修正")) {
 			order.setOrder_id(2);
+			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
+			session.removeAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
-			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("注文3を修正")) {
 			order.setOrder_id(3);
+			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
+			session.removeAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
-			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("注文4を修正")) {
 			order.setOrder_id(4);
+			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
+			session.removeAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
-			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("注文5を修正")) {
 			order.setOrder_id(5);
+			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
+			session.removeAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
-			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("注文6を修正")) {
 			order.setOrder_id(6);
+			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
+			session.removeAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
-			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("注文7を修正")) {
 			order.setOrder_id(7);
+			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
+			session.removeAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
-			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("注文8を修正")) {
 			order.setOrder_id(8);
+			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
+			session.removeAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
-			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("注文9を修正")) {
 			order.setOrder_id(9);
+			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
+			session.removeAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
-			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("注文10を修正")) {
 			order.setOrder_id(10);
+			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
+			session.removeAttribute(sessionInstanceName);
 			session.setAttribute(sessionInstanceName, sales);
-			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
 			dispatcher.forward(request, response);
 		}

@@ -26,7 +26,7 @@
 </script>
 
 <body>
-	<form action="/SampleProject/ServletLogin" method="post" name="form1" onSubmit="return check()">
+	<form action="/SampleProjectMaster/ServletLogin" method="post" name="form1" onSubmit="return check()">
 		<p>
 			ID:
 			<input type="text" name="id" size="40">

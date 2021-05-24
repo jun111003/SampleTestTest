@@ -3,11 +3,6 @@ package javasrc;
 import java.io.Serializable;
 
 public class Sales implements Serializable {
-	private int sales_id;//受注番号
-	private int order_id;//注文番号
-	private String sales_date;//売上時間
-	private String employee_id;//従業員番号
-	private String employee_name;//従業員名前
 	private String ice_cream_container_id;//アイスクリーム容器ID
 	private String ice_cream_container_name;//アイスクリーム容器名前
 	private int ice_cream_container_price;//アイスクリーム容器金額
@@ -26,19 +21,12 @@ public class Sales implements Serializable {
 	private int money;//受取金額
 
 	public Sales() {
-		sales_id = 0;
-		order_id = 0;
 		ice_cream_container_price = 0;
 		ice_cream_price = 0;
 		money = 0;
 	}
 
 	public void check() {
-		System.out.println(sales_id);
-		System.out.println(order_id);
-		System.out.println(sales_date);
-		System.out.println(employee_id);
-		System.out.println(employee_name);
 		System.out.println(ice_cream_container_id);
 		System.out.println(ice_cream_container_name);
 		System.out.println(ice_cream_container_price);
@@ -58,26 +46,6 @@ public class Sales implements Serializable {
 	}
 
 	//getter
-	public int getSales_id() {
-		return sales_id;
-	}
-
-	public int getOrder_id() {
-		return order_id;
-	}
-
-	public String getSales_date() {
-		return sales_date;
-	}
-
-	public String getEmployee_id() {
-		return employee_id;
-	}
-
-	public String getEmployee_name() {
-		return employee_name;
-	}
-
 	public String getIce_cream_container_id() {
 		return ice_cream_container_id;
 	}
@@ -143,26 +111,6 @@ public class Sales implements Serializable {
 	}
 
 	//setter
-	public void setSales_id(int sales_id) {
-		this.sales_id = sales_id;
-	}
-
-	public void setOrder_id(int order_id) {
-		this.order_id = order_id;
-	}
-
-	public void setSales_date(String sales_date) {
-		this.sales_date = sales_date;
-	}
-
-	public void setEmployee_id(String employee_id) {
-		this.employee_id = employee_id;
-	}
-
-	public void setEmployee_name(String employee_name) {
-		this.employee_name = employee_name;
-	}
-
 	public void setIce_cream_container_id(String ice_cream_container_id) {
 		this.ice_cream_container_id = ice_cream_container_id;
 	}

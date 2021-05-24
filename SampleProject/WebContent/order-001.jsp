@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<form action="/SampleProject/OrderStartServlet" method="post">
+	<form action="/SampleProjectMaster/OrderStartServlet" method="post">
 		<div class="title">
 		<p>アイスの個数を選択してください</p>
 		</div>

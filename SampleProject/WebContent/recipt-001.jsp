@@ -27,12 +27,12 @@
 
 	<div class="receipt">
       <p class = "center">
-       <img src="img/31ロゴレシート.png" width=45% height=45%>
+       <img src="img/31ロゴ縮小.png" width=45% height=45%>
       </p>
 		<p class="center">≪領収書≫</p>
 
 		<p class="left">
-			購入時刻
+			購入時刻:
 			<%
 			SimpleDateFormat f = new SimpleDateFormat("YYYY年MM月dd日 HH時mm分ss秒");
 			Date now = new Date();
@@ -46,16 +46,16 @@
 		</p>
 
 		<p class="left">
-			担当者 名前
+			担当者:
 			<%=order.getEmployee_name()%></p>
 
 		<%--ループ処理：購入個数分のインスタンスを利用して出力--%>
 		<p class="left">
-			サイズ
+			サイズ:
 			<%=sales1.getIce_cream_size_name()%>
-			個数
+			個数:
 			<%=sales1.getIce_cream_count_name()%>
-			容器
+			容器:
 			<%=sales1.getIce_cream_container_name()%></p>
 
 		<p class="middle-left">
@@ -105,7 +105,7 @@
 			<%=order.getChange()%>&yen;
 		</p>
 
-		<p class="center">------------------------------------------------------------------</p>
+		<p class="center">ーーーーーーーーーーーーーーーーーーーーーーー</p>
 
 		<p class="center">またのご利用をお待ちしております。</p>
 	</div>

@@ -41,7 +41,7 @@
 				<td>修正</td>
 			</tr>
 
-			<%if(sales1 == null) {%>
+			<%if(sales1.getIce_cream_count_name() == null) {%>
 
 			<% }else{ %>
 			<tr>

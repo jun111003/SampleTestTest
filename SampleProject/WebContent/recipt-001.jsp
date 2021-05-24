@@ -90,17 +90,17 @@
 
 		<p class="center">------------------------------------------------------------------</p>
 
-		<p class="left">
+		<p class="right">
 			合計
 			<%=sum%>&yen;
 		</p>
 
-		<p class="left">
+		<p class="right">
 			お預かり
 			<%=order.getPayment()%>&yen;
 		</p>
 
-		<p class="left">
+		<p class="right">
 			おつり
 			<%=order.getChange()%>&yen;
 		</p>

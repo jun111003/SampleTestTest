@@ -24,22 +24,6 @@
 <body>
 
 	<script>
-		function check() {
-			var flag = 0;
-			if (document.getElementById("numValue").value == 0) {
-				flag = 1;
-			} else if (document.getElementById("differentNum").value < 0) {
-				flag = 1;
-			}
-
-			if (flag == 1) {
-				window.alert('お金が足りません');
-				return false;
-			} else {
-				return true;
-			}
-		}
-
 		//合計金額
 		var sumMoney;
 		//受取金額
@@ -66,8 +50,10 @@
 			//受取金額がマイナスの時
 			if (differentMoney < 0) {
 				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+				document.getElementById("next").setAttribute("disabled", true);
 			} else {
 				document.getElementById("differentNumCheck").innerHTML = "";
+				document.getElementById("next").removeAttribute("disabled");
 			}
 
 		}
@@ -89,8 +75,10 @@
 			//受取金額がマイナスの時
 			if (differentMoney < 0) {
 				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+				document.getElementById("next").setAttribute("disabled", true);
 			} else {
 				document.getElementById("differentNumCheck").innerHTML = "";
+				document.getElementById("next").removeAttribute("disabled");
 			}
 
 		}
@@ -112,8 +100,10 @@
 			//受取金額がマイナスの時
 			if (differentMoney < 0) {
 				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+				document.getElementById("next").setAttribute("disabled", true);
 			} else {
 				document.getElementById("differentNumCheck").innerHTML = "";
+				document.getElementById("next").removeAttribute("disabled");
 			}
 
 		}
@@ -135,8 +125,10 @@
 			//受取金額がマイナスの時
 			if (differentMoney < 0) {
 				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+				document.getElementById("next").setAttribute("disabled", true);
 			} else {
 				document.getElementById("differentNumCheck").innerHTML = "";
+				document.getElementById("next").removeAttribute("disabled");
 			}
 
 		}
@@ -158,8 +150,10 @@
 			//受取金額がマイナスの時
 			if (differentMoney < 0) {
 				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+				document.getElementById("next").setAttribute("disabled", true);
 			} else {
 				document.getElementById("differentNumCheck").innerHTML = "";
+				document.getElementById("next").removeAttribute("disabled");
 			}
 
 		}
@@ -181,8 +175,10 @@
 			//受取金額がマイナスの時
 			if (differentMoney < 0) {
 				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+				document.getElementById("next").setAttribute("disabled", true);
 			} else {
 				document.getElementById("differentNumCheck").innerHTML = "";
+				document.getElementById("next").removeAttribute("disabled");
 			}
 
 		}
@@ -204,8 +200,10 @@
 			//受取金額がマイナスの時
 			if (differentMoney < 0) {
 				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+				document.getElementById("next").setAttribute("disabled", true);
 			} else {
 				document.getElementById("differentNumCheck").innerHTML = "";
+				document.getElementById("next").removeAttribute("disabled");
 			}
 
 		}
@@ -227,8 +225,10 @@
 			//受取金額がマイナスの時
 			if (differentMoney < 0) {
 				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+				document.getElementById("next").setAttribute("disabled", true);
 			} else {
 				document.getElementById("differentNumCheck").innerHTML = "";
+				document.getElementById("next").removeAttribute("disabled");
 			}
 
 		}
@@ -250,8 +250,10 @@
 			//受取金額がマイナスの時
 			if (differentMoney < 0) {
 				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+				document.getElementById("next").setAttribute("disabled", true);
 			} else {
 				document.getElementById("differentNumCheck").innerHTML = "";
+				document.getElementById("next").removeAttribute("disabled");
 			}
 
 		}
@@ -273,8 +275,10 @@
 			//受取金額がマイナスの時
 			if (differentMoney < 0) {
 				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+				document.getElementById("next").setAttribute("disabled", true);
 			} else {
 				document.getElementById("differentNumCheck").innerHTML = "";
+				document.getElementById("next").removeAttribute("disabled");
 			}
 
 		}
@@ -296,8 +300,10 @@
 			//受取金額がマイナスの時
 			if (differentMoney < 0) {
 				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+				document.getElementById("next").setAttribute("disabled", true);
 			} else {
 				document.getElementById("differentNumCheck").innerHTML = "";
+				document.getElementById("next").removeAttribute("disabled");
 			}
 
 		}
@@ -312,7 +318,8 @@
 	</style>  -->
 
 
-	<form action="/SampleProjectMaster/ServletGetPayment001" method="post" name="form1" onSubmit="return check()" class="receiving">
+	<form action="/SampleProjectMaster/ServletGetPayment001" method="post" name="form1" onSubmit="return check()"
+		class="receiving">
 		<img src=img/31logo.png class="image-vw">
 
 		<div class="main">
@@ -332,8 +339,8 @@
 			</div>
 
 			<p>
-				<input type="submit" name="payment-001" value="戻る" class="back">
-				<input type="submit" name="payment-001" value="決済を行う" class="next">
+				<input type="submit" id="back" name="payment-001" value="戻る" class="back" onClick="back()">
+				<input type="submit" id="next" name="payment-001" value="決済を行う" class="next" disabled>
 			</p>
 			<br> <br>
 			<div class="differentNumCheck">

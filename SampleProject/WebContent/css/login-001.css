@@ -25,6 +25,15 @@ input[type="text"]:focus {
   outline: 0;
 }
 
+input[type="password"] {
+  border: 1px solid #808080;
+}
+input[type="password"]:focus {
+  background: #feebf6;
+  border: 1px solid #f20c90;
+  outline: 0;
+}
+
 /*次へボタン*/
 .next {
   display       : inline-block;

@@ -50,9 +50,13 @@
 				<td><%=sales1.getFlavor_name_1()%></td>
 				<%if(sales1.getIce_cream_count_id().equals("No002") || sales1.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales1.getFlavor_name_2()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<%if(sales1.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales1.getFlavor_name_3()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<td><%=sales1.getIce_cream_container_name()%></td>
 				<td><%=sales1.getMoney()%></td>
@@ -70,9 +74,13 @@
 				<td><%=sales2.getFlavor_name_1()%></td>
 				<%if(sales2.getIce_cream_count_id().equals("No002") || sales2.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales2.getFlavor_name_2()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<%if(sales2.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales2.getFlavor_name_3()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<td><%=sales2.getIce_cream_container_name()%></td>
 				<td><%=sales2.getMoney()%></td>
@@ -90,9 +98,13 @@
 				<td><%=sales3.getFlavor_name_1()%></td>
 				<%if(sales3.getIce_cream_count_id().equals("No002") || sales3.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales3.getFlavor_name_2()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<%if(sales3.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales3.getFlavor_name_3()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<td><%=sales3.getIce_cream_container_name()%></td>
 				<td><%=sales3.getMoney()%></td>
@@ -110,9 +122,13 @@
 				<td><%=sales4.getFlavor_name_1()%></td>
 				<%if(sales4.getIce_cream_count_id().equals("No002") || sales4.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales4.getFlavor_name_2()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<%if(sales4.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales4.getFlavor_name_3()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<td><%=sales4.getIce_cream_container_name()%></td>
 				<td><%=sales4.getMoney()%></td>
@@ -130,9 +146,13 @@
 				<td><%=sales5.getFlavor_name_1()%></td>
 				<%if(sales5.getIce_cream_count_id().equals("No002") || sales5.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales5.getFlavor_name_2()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<%if(sales5.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales5.getFlavor_name_3()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<td><%=sales5.getIce_cream_container_name()%></td>
 				<td><%=sales5.getMoney()%></td>
@@ -150,9 +170,13 @@
 				<td><%=sales6.getFlavor_name_1()%></td>
 				<%if(sales6.getIce_cream_count_id().equals("No002") || sales6.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales6.getFlavor_name_2()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<%if(sales6.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales6.getFlavor_name_3()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<td><%=sales6.getIce_cream_container_name()%></td>
 				<td><%=sales6.getMoney()%></td>
@@ -170,9 +194,13 @@
 				<td><%=sales7.getFlavor_name_1()%></td>
 				<%if(sales7.getIce_cream_count_id().equals("No002") || sales7.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales7.getFlavor_name_2()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<%if(sales7.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales7.getFlavor_name_3()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<td><%=sales7.getIce_cream_container_name()%></td>
 				<td><%=sales7.getMoney()%></td>
@@ -190,9 +218,13 @@
 				<td><%=sales8.getFlavor_name_1()%></td>
 				<%if(sales8.getIce_cream_count_id().equals("No002") || sales8.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales8.getFlavor_name_2()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<%if(sales8.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales8.getFlavor_name_3()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<td><%=sales8.getIce_cream_container_name()%></td>
 				<td><%=sales8.getMoney()%></td>
@@ -210,9 +242,13 @@
 				<td><%=sales9.getFlavor_name_1()%></td>
 				<%if(sales9.getIce_cream_count_id().equals("No002") || sales9.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales9.getFlavor_name_2()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<%if(sales9.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales9.getFlavor_name_3()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<td><%=sales9.getIce_cream_container_name()%></td>
 				<td><%=sales9.getMoney()%></td>
@@ -230,9 +266,13 @@
 				<td><%=sales10.getFlavor_name_1()%></td>
 				<%if(sales10.getIce_cream_count_id().equals("No002") || sales10.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales10.getFlavor_name_2()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<%if(sales10.getIce_cream_count_id().equals("No003")) { %>
 				<td><%=sales10.getFlavor_name_3()%></td>
+				<%}else{ %>
+				<td>*****</td>
 				<%} %>
 				<td><%=sales10.getIce_cream_container_name()%></td>
 				<td><%=sales10.getMoney()%></td>

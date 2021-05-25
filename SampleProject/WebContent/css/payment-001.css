@@ -82,6 +82,18 @@ p.difference{
     border: solid 1px #808080;
 }
 
+
+/*差額チェック(反映されていない)*/
+.differentNumCheck{
+	color: red;
+    font-family: Yu Gothic;
+	font-size: 1.5em;
+	font-weight: bold;
+
+
+}
+
+
 /*電卓*/
 table {
 	/*おそらくwidthを％表示にしていることから横に並ばないと考えられる

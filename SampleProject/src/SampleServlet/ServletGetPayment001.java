@@ -62,13 +62,12 @@ public class ServletGetPayment001 extends HttpServlet {
 			//Salesのインスタンス作成
 			HttpSession session = request.getSession();
 			Order order = (Order) session.getAttribute("Order");
-//			int i = order.getOrder_id();
-//			String sessionInstanceName = "Sales" + Integer.toString(i);
-//			Sales sales = (Sales) session.getAttribute(sessionInstanceName);
 
 			//お釣りをorderインスタンスとsalesインスタンスにセット
 			order.setPayment(payment);
 			order.setChange(change);
+
+
 
 			session.setAttribute("Order", order);
 

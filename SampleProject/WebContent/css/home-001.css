@@ -18,7 +18,9 @@ div{
 
 /*次へボタン*/
 .next {
-  margin-top: 20px;
+  margin-right  : auto;
+  margin-left   : auto;
+  margin-top    : 20px;
   display       : inline-block;
   border-radius : 20%;          /* 角丸       */
   font-size     : 10pt;        /* 文字サイズ */

@@ -36,7 +36,9 @@ div.title {
 
 /*表*/
 table{
-  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  width: 90%;
   border-collapse: collapse;
   table-layout : fixed;
   border-spacing: 0;
@@ -45,17 +47,26 @@ table{
 table th,table td{
   padding: 10px 0;
   text-align: center;
+  border: 0.75px #aeaeae solid;
 }
 
-table tr:nth-child(odd){
+.top{
   font-weight : bold;
-  background-color: #07219b;
+  background-color: #f20c90;;
   color : white;
 }
 
+.pink{
+	background-color: #fbdcea;
+}
+
+.white{
+	background-color: #ffffff;
+}
 
 /*ボタン*/
 .next {
+  margin-right  : 50px;
   float : right;
   display       : inline-block;
   border-radius : 20%;          /* 角丸       */
@@ -76,6 +87,7 @@ table tr:nth-child(odd){
 
 
 .back {
+  margin-left  : 50px;
   display       : inline-block;
   border-radius : 20%;          /* 角丸       */
   font-size     : 10pt;        /* 文字サイズ */
@@ -89,6 +101,24 @@ table tr:nth-child(odd){
   border        : 2px solid #07219b;    /* 枠の指定 */
 }
 .back:hover {
+  color         : #07219b;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+.delete{
+  display       : inline-block;
+  border-radius : 20%;          /* 角丸       */
+  font-size     : 10pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 15px 27px;   /* 余白       */
+  background    : #07219b;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border        : 2px solid #07219b;    /* 枠の指定 */
+}
+.delete:hover {
   color         : #07219b;     /* 背景色     */
   background    : #ffffff;     /* 文字色     */
 }

@@ -24,6 +24,21 @@
 <body>
 
 	<script>
+		function check() {
+			var flag = 0;
+			if (document.getElementById("numValue").value == 0) {
+				flag = 1;
+			} else if (document.getElementById("differentNum").value < 0) {
+				flag = 1;
+			}
+
+			if (flag == 1) {
+				window.alert('お金が足りません');
+				return false;
+			} else {
+				return true;
+			}
+		}
 
 		//合計金額
 		var sumMoney;
@@ -38,11 +53,22 @@
 
 			payment = payment * 10 + 1;
 
+			//合計金額の値を取得
 			sumMoney = document.getElementById("sumNum").value;
 
+			//変更された受取金額を表示
 			document.getElementById("numValue").value = payment;
 
-			document.getElementById("differentNum").value = payment - sumMoney;
+			//変更された差額を表示
+			differentMoney = payment - sumMoney;
+			document.getElementById("differentNum").value = differentMoney;
+
+			//受取金額がマイナスの時
+			if (differentMoney < 0) {
+				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+			} else {
+				document.getElementById("differentNumCheck").innerHTML = "";
+			}
 
 		}
 
@@ -50,13 +76,22 @@
 
 			payment = payment * 10 + 2;
 
+			//合計金額の値を取得
 			sumMoney = document.getElementById("sumNum").value;
 
+			//変更された受取金額を表示
 			document.getElementById("numValue").value = payment;
 
-			document.getElementById("differentNum").value = payment - sumMoney;
+			//変更された差額を表示
+			differentMoney = payment - sumMoney;
+			document.getElementById("differentNum").value = differentMoney;
 
-
+			//受取金額がマイナスの時
+			if (differentMoney < 0) {
+				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+			} else {
+				document.getElementById("differentNumCheck").innerHTML = "";
+			}
 
 		}
 
@@ -64,11 +99,22 @@
 
 			payment = payment * 10 + 3;
 
+			//合計金額の値を取得
 			sumMoney = document.getElementById("sumNum").value;
 
+			//変更された受取金額を表示
 			document.getElementById("numValue").value = payment;
 
-			document.getElementById("differentNum").value = payment - sumMoney;
+			//変更された差額を表示
+			differentMoney = payment - sumMoney;
+			document.getElementById("differentNum").value = differentMoney;
+
+			//受取金額がマイナスの時
+			if (differentMoney < 0) {
+				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+			} else {
+				document.getElementById("differentNumCheck").innerHTML = "";
+			}
 
 		}
 
@@ -76,11 +122,22 @@
 
 			payment = payment * 10 + 4;
 
+			//合計金額の値を取得
 			sumMoney = document.getElementById("sumNum").value;
 
+			//変更された受取金額を表示
 			document.getElementById("numValue").value = payment;
 
-			document.getElementById("differentNum").value = payment - sumMoney;
+			//変更された差額を表示
+			differentMoney = payment - sumMoney;
+			document.getElementById("differentNum").value = differentMoney;
+
+			//受取金額がマイナスの時
+			if (differentMoney < 0) {
+				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+			} else {
+				document.getElementById("differentNumCheck").innerHTML = "";
+			}
 
 		}
 
@@ -88,11 +145,22 @@
 
 			payment = payment * 10 + 5;
 
+			//合計金額の値を取得
 			sumMoney = document.getElementById("sumNum").value;
 
+			//変更された受取金額を表示
 			document.getElementById("numValue").value = payment;
 
-			document.getElementById("differentNum").value = payment - sumMoney;
+			//変更された差額を表示
+			differentMoney = payment - sumMoney;
+			document.getElementById("differentNum").value = differentMoney;
+
+			//受取金額がマイナスの時
+			if (differentMoney < 0) {
+				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+			} else {
+				document.getElementById("differentNumCheck").innerHTML = "";
+			}
 
 		}
 
@@ -100,11 +168,22 @@
 
 			payment = payment * 10 + 6;
 
+			//合計金額の値を取得
 			sumMoney = document.getElementById("sumNum").value;
 
+			//変更された受取金額を表示
 			document.getElementById("numValue").value = payment;
 
-			document.getElementById("differentNum").value = payment - sumMoney;
+			//変更された差額を表示
+			differentMoney = payment - sumMoney;
+			document.getElementById("differentNum").value = differentMoney;
+
+			//受取金額がマイナスの時
+			if (differentMoney < 0) {
+				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+			} else {
+				document.getElementById("differentNumCheck").innerHTML = "";
+			}
 
 		}
 
@@ -112,11 +191,22 @@
 
 			payment = payment * 10 + 7;
 
+			//合計金額の値を取得
 			sumMoney = document.getElementById("sumNum").value;
 
+			//変更された受取金額を表示
 			document.getElementById("numValue").value = payment;
 
-			document.getElementById("differentNum").value = payment - sumMoney;
+			//変更された差額を表示
+			differentMoney = payment - sumMoney;
+			document.getElementById("differentNum").value = differentMoney;
+
+			//受取金額がマイナスの時
+			if (differentMoney < 0) {
+				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+			} else {
+				document.getElementById("differentNumCheck").innerHTML = "";
+			}
 
 		}
 
@@ -124,11 +214,22 @@
 
 			payment = payment * 10 + 8;
 
+			//合計金額の値を取得
 			sumMoney = document.getElementById("sumNum").value;
 
+			//変更された受取金額を表示
 			document.getElementById("numValue").value = payment;
 
-			document.getElementById("differentNum").value = payment - sumMoney;
+			//変更された差額を表示
+			differentMoney = payment - sumMoney;
+			document.getElementById("differentNum").value = differentMoney;
+
+			//受取金額がマイナスの時
+			if (differentMoney < 0) {
+				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+			} else {
+				document.getElementById("differentNumCheck").innerHTML = "";
+			}
 
 		}
 
@@ -136,11 +237,22 @@
 
 			payment = payment * 10 + 9;
 
+			//合計金額の値を取得
 			sumMoney = document.getElementById("sumNum").value;
 
+			//変更された受取金額を表示
 			document.getElementById("numValue").value = payment;
 
-			document.getElementById("differentNum").value = payment - sumMoney;
+			//変更された差額を表示
+			differentMoney = payment - sumMoney;
+			document.getElementById("differentNum").value = differentMoney;
+
+			//受取金額がマイナスの時
+			if (differentMoney < 0) {
+				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+			} else {
+				document.getElementById("differentNumCheck").innerHTML = "";
+			}
 
 		}
 
@@ -148,11 +260,22 @@
 
 			payment = payment * 10 + 0;
 
+			//合計金額の値を取得
 			sumMoney = document.getElementById("sumNum").value;
 
+			//変更された受取金額を表示
 			document.getElementById("numValue").value = payment;
 
-			document.getElementById("differentNum").value = payment - sumMoney;
+			//変更された差額を表示
+			differentMoney = payment - sumMoney;
+			document.getElementById("differentNum").value = differentMoney;
+
+			//受取金額がマイナスの時
+			if (differentMoney < 0) {
+				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+			} else {
+				document.getElementById("differentNumCheck").innerHTML = "";
+			}
 
 		}
 
@@ -160,15 +283,24 @@
 
 			payment = Math.floor(payment / 10);
 
+			//合計金額の値を取得
 			sumMoney = document.getElementById("sumNum").value;
 
+			//変更された受取金額を表示
 			document.getElementById("numValue").value = payment;
 
-			document.getElementById("differentNum").value = payment - sumMoney;
+			//変更された差額を表示
+			differentMoney = payment - sumMoney;
+			document.getElementById("differentNum").value = differentMoney;
+
+			//受取金額がマイナスの時
+			if (differentMoney < 0) {
+				document.getElementById("differentNumCheck").innerHTML = "※金額が不足しています";
+			} else {
+				document.getElementById("differentNumCheck").innerHTML = "";
+			}
 
 		}
-
-
 	</script>
 
 	<!-- <style>
@@ -180,7 +312,7 @@
 	</style>  -->
 
 
-	<form action="/SampleProjectMaster/ServletGetPayment001" method="post" class="receiving">
+	<form action="/SampleProjectMaster/ServletGetPayment001" method="post" name="form1" onSubmit="return check()" class="receiving">
 		<img src=img/31logo.png class="image-vw">
 
 		<div class="main">
@@ -195,15 +327,18 @@
 
 
 			<h2>差額</h2>
-			<div class = "differentMoney">
+			<div class="differentMoney">
 				<input type="number" name="differentMoney" id="differentNum" value="0" class="put">
-				<!-- <p class="difference">${ sales.getMoney() - payment }</p> -->
 			</div>
 
 			<p>
 				<input type="submit" name="payment-001" value="戻る" class="back">
 				<input type="submit" name="payment-001" value="決済を行う" class="next">
 			</p>
+			<br> <br>
+			<div class="differentNumCheck">
+				<span id="differentNumCheck"></span>
+			</div>
 		</div>
 	</form>
 

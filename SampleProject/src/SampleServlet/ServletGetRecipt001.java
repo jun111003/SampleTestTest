@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import javasrc.Order;
+import javasrc.Sales;
 
 /**
  * Servlet implementation class ServletGetRecipt
@@ -56,7 +57,7 @@ public class ServletGetRecipt001 extends HttpServlet {
 
 		for (int j = 0; j < i; j++) {
 			sessionInstanceName = "Sales" + Integer.toString(j + 1);
-//			Sales sales = (Sales) session.getAttribute(sessionInstanceName);
+			Sales sales = (Sales) session.getAttribute(sessionInstanceName);
 //			try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/workspace?"
 //					+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
 //				//sql文の設定
@@ -64,8 +65,15 @@ public class ServletGetRecipt001 extends HttpServlet {
 //				String sql = "INSERT INTO sales (sales_id, order_id, sales_date, employee_id, ice_cream_container_id, ice_cream_inf_id, flavor_id_1, flavor_id_2, flavor_id_3) values (?,?,?,?,?,?,?,?,?);";
 //				PreparedStatement pStmt = conn.prepareStatement(sql);
 //				//?に値をセット
-//				pStmt.setString(1, order.getSales_id());
-//				pStmt.setString(2, sales.getIce_cream_count_id());
+//				pStmt.setString(1, String.valueOf(order.getSales_id()));
+//				pStmt.setString(2, String.valueOf(j));
+//				pStmt.setString(3, order.getSales_date());
+//				pStmt.setString(4, order.getEmployee_id());
+//				pStmt.setString(5, sales.getIce_cream_container_id());
+//				pStmt.setString(6, sales.getIce_cream_inf_id());
+//				pStmt.setString(7, sales.getFlavor_id_1());
+//				pStmt.setString(8, sales.getFlavor_id_2());
+//				pStmt.setString(9, sales.getFlavor_id_3());
 //				//select 実行
 //				ResultSet rs = pStmt.executeQuery();
 //				while (rs.next()) {

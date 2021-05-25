@@ -324,7 +324,7 @@
 
 		<div class="main">
 			<h2>合計金額</h2>
-			<input type="number" name="txt" id="sumNum" value=<%=order.getSumMoney()%> class="put">
+			<input type="number" name="txt" id="sumNum" value=<%=order.getSumMoney()%> class="put" disabled>
 
 
 			<!-- idを指定した箇所の値が<script>タグの「document.getElement...」によって変更される -->

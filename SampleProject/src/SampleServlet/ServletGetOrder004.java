@@ -65,8 +65,8 @@ public class ServletGetOrder004 extends HttpServlet {
 			//合計金額の算出
 			Sales salesSet = new Sales();
 			int sum = 0;
-			for(int j=0;j<10;j++) {
-				String sessionInstanceNameSum = "Sales" + Integer.toString(j+1);
+			for (int j = 0; j < 10; j++) {
+				String sessionInstanceNameSum = "Sales" + Integer.toString(j + 1);
 				salesSet = (Sales) session.getAttribute(sessionInstanceNameSum);
 				//小計
 				salesSet.setMoney(salesSet.getIce_cream_container_price() + salesSet.getIce_cream_price());
@@ -81,13 +81,36 @@ public class ServletGetOrder004 extends HttpServlet {
 			dispatcher.forward(request, response);
 		} else if (action.equals("追加で注文する")) {
 			//注文番号を加算する
-			if (order.getOrder_id() < 10) {
-				order.setOrder_id(order.getOrder_id() + 1);
-			} else {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("payment-001.jsp");
-				dispatcher.forward(request, response);
+			for (int j = 0; j < 10; j++) {
+				sessionInstanceName = "Sales" + Integer.toString(j + 1);
+				sales = (Sales) session.getAttribute(sessionInstanceName);
+				sales.check();
+				if (sales.getIce_cream_size_id() != null) {
+					order.setOrder_id(j + 2);
+					RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
+					dispatcher.forward(request, response);
+				} else {
+					//Nothing to do
+				}
 			}
-			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
+			//注文を確定した時の処理を注文件数が10件を超えた場合に行う
+			//強制的に支払い画面に遷移
+			//合計金額の算出
+			Sales salesSet = new Sales();
+			int sum = 0;
+			for (int j = 0; j < 10; j++) {
+				String sessionInstanceNameSum = "Sales" + Integer.toString(j + 1);
+				salesSet = (Sales) session.getAttribute(sessionInstanceNameSum);
+				//小計
+				salesSet.setMoney(salesSet.getIce_cream_container_price() + salesSet.getIce_cream_price());
+				session.setAttribute(sessionInstanceNameSum, salesSet);
+				sum += salesSet.getMoney();
+			}
+			//合計
+			order.setSumMoney(sum);
+			session.setAttribute(sessionInstanceName, sales);
+			//order-002画面をフォワード
+			RequestDispatcher dispatcher = request.getRequestDispatcher("payment-001.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("注文1を修正")) {//ここから下は注文内容の修正
 			order.setOrder_id(1);

@@ -294,7 +294,7 @@
 
 
 		<p>
-			<input type="submit" name="order-004" value="注文内容を修正する" class="back">
+			<input type="submit" name="order-004" value="注文内容を全て削除してホームへ" class="back">
 			<input type="submit" name="order-004" value="追加で注文する" class="back">
 			<input type="submit" name="order-004" value="注文を確定させる" class="next">
 		</p>

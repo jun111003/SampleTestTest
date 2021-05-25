@@ -69,11 +69,9 @@ public class ServletGetRecipt001 extends HttpServlet {
 				//表結合して一気に情報を取得
 				String sql = "INSERT INTO sales (sales_id, order_id, sales_date, employee_id, ice_cream_container_id, ice_cream_inf_id, flavor_id_1, flavor_id_2, flavor_id_3) values (?,?,?,?,?,?,?,?,?);";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
-				order.check();
 				//?に値をセット
 				pStmt.setString(1, String.valueOf(order.getSales_id()));
 				pStmt.setString(2, String.valueOf(j + 1));
-				//pStmt.setString(3, order.getSales_date());
 				pStmt.setDate(3, new java.sql.Date(new java.util.Date().getTime()));
 				pStmt.setString(4, order.getEmployee_id());
 				pStmt.setString(5, sales.getIce_cream_container_id());

@@ -57,9 +57,17 @@ public class ServletGetOrder004 extends HttpServlet {
 		Sales sales = (Sales) session.getAttribute(sessionInstanceName);
 
 		String action = request.getParameter("order-004");
-		if (action.equals("注文内容を修正する")) {
-			//home-001画面をフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
+		if (action.equals("注文内容を全て削除してホームへ")) {
+			//従業員IDを保持したまま全ての受注情報を消去
+			for (int j = 0; j < 10; j++) {
+				sessionInstanceName = "Sales" + Integer.toString(j + 1);
+				session.removeAttribute(sessionInstanceName);
+			}
+			order.setSales_id(0);
+			order.setOrder_id(0);
+
+			//入力情報を保持せずhome-001画面をフォワード
+			RequestDispatcher dispatcher = request.getRequestDispatcher("home-001.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("注文を確定させる")) {
 			//合計金額の算出
@@ -75,43 +83,44 @@ public class ServletGetOrder004 extends HttpServlet {
 			}
 			//合計
 			order.setSumMoney(sum);
-			session.setAttribute(sessionInstanceName, sales);
 			//order-002画面をフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("payment-001.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("追加で注文する")) {
 			//注文番号を加算する
+			int counter = 0;
 			for (int j = 0; j < 10; j++) {
 				sessionInstanceName = "Sales" + Integer.toString(j + 1);
 				sales = (Sales) session.getAttribute(sessionInstanceName);
-				sales.check();
 				if (sales.getIce_cream_size_id() != null) {
 					order.setOrder_id(j + 2);
-					RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
-					dispatcher.forward(request, response);
+					counter++;
 				} else {
 					//Nothing to do
 				}
 			}
 			//注文を確定した時の処理を注文件数が10件を超えた場合に行う
 			//強制的に支払い画面に遷移
-			//合計金額の算出
-			Sales salesSet = new Sales();
-			int sum = 0;
-			for (int j = 0; j < 10; j++) {
-				String sessionInstanceNameSum = "Sales" + Integer.toString(j + 1);
-				salesSet = (Sales) session.getAttribute(sessionInstanceNameSum);
-				//小計
-				salesSet.setMoney(salesSet.getIce_cream_container_price() + salesSet.getIce_cream_price());
-				session.setAttribute(sessionInstanceNameSum, salesSet);
-				sum += salesSet.getMoney();
+			if (counter == 10) {
+				//合計金額の算出
+				Sales salesSet = new Sales();
+				int sum = 0;
+				for (int j = 0; j < 10; j++) {
+					String sessionInstanceNameSum = "Sales" + Integer.toString(j + 1);
+					salesSet = (Sales) session.getAttribute(sessionInstanceNameSum);
+					//小計
+					salesSet.setMoney(salesSet.getIce_cream_container_price() + salesSet.getIce_cream_price());
+					sum += salesSet.getMoney();
+				}
+				//合計をセット
+				order.setSumMoney(sum);
+				//注文が11件目になると強制的にpayment-001画面をフォワード
+				RequestDispatcher dispatcher = request.getRequestDispatcher("payment-001.jsp");
+				dispatcher.forward(request, response);
+			} else {
+				RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
+				dispatcher.forward(request, response);
 			}
-			//合計
-			order.setSumMoney(sum);
-			session.setAttribute(sessionInstanceName, sales);
-			//order-002画面をフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("payment-001.jsp");
-			dispatcher.forward(request, response);
 		} else if (action.equals("注文1を修正")) {//ここから下は注文内容の修正
 			order.setOrder_id(1);
 			sessionInstanceName = "Sales" + Integer.toString(order.getOrder_id());
@@ -191,6 +200,266 @@ public class ServletGetOrder004 extends HttpServlet {
 			sales = new Sales();
 			session.setAttribute(sessionInstanceName, sales);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
+			dispatcher.forward(request, response);
+		} else if (action.equals("注文1を削除")) {//ここから注文削除処理
+			//修正する注文番号を得る為のフラグ
+			int Flag = 0;
+			for (int j = 0; j < 9; j++) {
+				if (Flag == 1) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+				} else {
+					//Nothing to do
+				}
+				if (j == 0) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+					Flag = 1;
+				} else {
+					//Nothing to do
+				}
+			}
+			RequestDispatcher dispatcher = request.getRequestDispatcher("order-004.jsp");
+			dispatcher.forward(request, response);
+		} else if (action.equals("注文2を削除")) {
+			//修正する注文番号を得る為のフラグ
+			int Flag = 0;
+			for (int j = 0; j < 9; j++) {
+				if (Flag == 1) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+				} else {
+					//Nothing to do
+				}
+				if (j == 1) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+					Flag = 1;
+				} else {
+					//Nothing to do
+				}
+			}
+			RequestDispatcher dispatcher = request.getRequestDispatcher("order-004.jsp");
+			dispatcher.forward(request, response);
+		} else if (action.equals("注文3を削除")) {
+			//修正する注文番号を得る為のフラグ
+			int Flag = 0;
+			for (int j = 0; j < 9; j++) {
+				if (Flag == 1) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+				} else {
+					//Nothing to do
+				}
+				if (j == 2) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+					Flag = 1;
+				} else {
+					//Nothing to do
+				}
+			}
+			RequestDispatcher dispatcher = request.getRequestDispatcher("order-004.jsp");
+			dispatcher.forward(request, response);
+		} else if (action.equals("注文4を削除")) {
+			//修正する注文番号を得る為のフラグ
+			int Flag = 0;
+			for (int j = 0; j < 9; j++) {
+				if (Flag == 1) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+				} else {
+					//Nothing to do
+				}
+				if (j == 3) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+					Flag = 1;
+				} else {
+					//Nothing to do
+				}
+			}
+			RequestDispatcher dispatcher = request.getRequestDispatcher("order-004.jsp");
+			dispatcher.forward(request, response);
+		} else if (action.equals("注文5を削除")) {
+			//修正する注文番号を得る為のフラグ
+			int Flag = 0;
+			for (int j = 0; j < 9; j++) {
+				if (Flag == 1) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+				} else {
+					//Nothing to do
+				}
+				if (j == 4) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+					Flag = 1;
+				} else {
+					//Nothing to do
+				}
+			}
+			RequestDispatcher dispatcher = request.getRequestDispatcher("order-004.jsp");
+			dispatcher.forward(request, response);
+		} else if (action.equals("注文6を削除")) {
+			//修正する注文番号を得る為のフラグ
+			int Flag = 0;
+			for (int j = 0; j < 9; j++) {
+				if (Flag == 1) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+				} else {
+					//Nothing to do
+				}
+				if (j == 5) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+					Flag = 1;
+				} else {
+					//Nothing to do
+				}
+			}
+			RequestDispatcher dispatcher = request.getRequestDispatcher("order-004.jsp");
+			dispatcher.forward(request, response);
+		} else if (action.equals("注文7を削除")) {
+			//修正する注文番号を得る為のフラグ
+			int Flag = 0;
+			for (int j = 0; j < 9; j++) {
+				if (Flag == 1) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+				} else {
+					//Nothing to do
+				}
+				if (j == 6) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+					Flag = 1;
+				} else {
+					//Nothing to do
+				}
+			}
+			RequestDispatcher dispatcher = request.getRequestDispatcher("order-004.jsp");
+			dispatcher.forward(request, response);
+		} else if (action.equals("注文8を削除")) {
+			//修正する注文番号を得る為のフラグ
+			int Flag = 0;
+			for (int j = 0; j < 9; j++) {
+				if (Flag == 1) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+				} else {
+					//Nothing to do
+				}
+				if (j == 7) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+					Flag = 1;
+				} else {
+					//Nothing to do
+				}
+			}
+			RequestDispatcher dispatcher = request.getRequestDispatcher("order-004.jsp");
+			dispatcher.forward(request, response);
+		} else if (action.equals("注文9を削除")) {
+			//修正する注文番号を得る為のフラグ
+			int Flag = 0;
+			for (int j = 0; j < 9; j++) {
+				if (Flag == 1) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+				} else {
+					//Nothing to do
+				}
+				if (j == 8) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+					Flag = 1;
+				} else {
+					//Nothing to do
+				}
+			}
+			RequestDispatcher dispatcher = request.getRequestDispatcher("order-004.jsp");
+			dispatcher.forward(request, response);
+		} else if (action.equals("注文10を削除")) {
+			//修正する注文番号を得る為のフラグ
+			int Flag = 0;
+			for (int j = 0; j < 9; j++) {
+				if (Flag == 1) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+				} else {
+					//Nothing to do
+				}
+				if (j == 9) {
+					String removeSessionInstanceName = "Sales" + Integer.toString(j + 1);
+					String replaseSessionInstanceName = "Sales" + Integer.toString(j + 2);
+					session.removeAttribute(removeSessionInstanceName);
+					sales = (Sales) session.getAttribute(replaseSessionInstanceName);
+					session.setAttribute(removeSessionInstanceName, sales);
+					Flag = 1;
+				} else {
+					//Nothing to do
+				}
+			}
+			RequestDispatcher dispatcher = request.getRequestDispatcher("order-004.jsp");
 			dispatcher.forward(request, response);
 		}
 	}

@@ -15,7 +15,7 @@
 		</div>
 
 		<div class="number">
-        	<input id="1" type="radio" name="number" value="No001">
+        	<input id="1" type="radio" name="number" value="No001" checked>
 			<label for="1">
  			<img src=img/シングル.png width=15% height=15%>
  			</label>

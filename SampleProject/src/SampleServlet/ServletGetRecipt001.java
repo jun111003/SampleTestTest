@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpSession;
 
 import javasrc.Order;
 import javasrc.Sales;
+import javasrc.Stock;
 
 /**
  * Servlet implementation class ServletGetRecipt
@@ -82,6 +84,30 @@ public class ServletGetRecipt001 extends HttpServlet {
 				//select 実行
 				int rs = pStmt.executeUpdate();
 				conn.commit();// 一連の処理の確定
+
+				//容器の現在のStockを取得
+				sql = "SELECT ice_cream_container_stock FROM ice_cream_container where ice_cream_container_id = ?";
+				pStmt = conn.prepareStatement(sql);
+				pStmt.setString(1,sales.getIce_cream_container_id());
+				//select 実行
+				ResultSet rs2 = pStmt.executeQuery();
+
+				Stock stock = new Stock();
+				while (rs2.next()) {
+					stock.setContainer(rs2.getInt("ice_cream_container_stock"));
+				}
+
+				//flavorのStockを取得
+				sql = "SELECT ice_cream_flavor_volume FROM ice_cream_flavor where ice_cream_flavor_id = ?";
+				pStmt = conn.prepareStatement(sql);
+				pStmt.setString(1,sales.getIce_cream_container_id());
+				//select 実行
+				ResultSet rs2 = pStmt.executeQuery();
+
+				Stock stock = new Stock();
+				while (rs2.next()) {
+					stock.setContainer(rs2.getInt("ice_cream_container_stock"));
+				}
 				//おまじない
 				pStmt.close();
 			} catch (SQLException e) {

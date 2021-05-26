@@ -150,7 +150,7 @@ String ice_cream_size_name = sales.getIce_cream_size_name();
 		<p class="title2">3つめのフレーバーの種類を選んでください</p>
 
 		<div class="flavor">
-			<input id="a" type="radio" name="flavor" value="F001">
+			<input id="a" type="radio" name="flavor" value="F001" checked>
 			<label for="a">
 				<img src=img/ポッピングシャワー.png width=15% height=15%>
 			</label>

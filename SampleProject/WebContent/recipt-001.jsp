@@ -33,16 +33,7 @@
 
 		<p class="left">
 			購入時刻:
-			<%
-			SimpleDateFormat f = new SimpleDateFormat("YYYY年MM月dd日 HH時mm分ss秒");
-			Date now = new Date();
-			String d = f.format(now);
-			order.setSales_date(d);
-		%>
 			<%=order.getSales_date()%>
-			<%
-				now = null;
-			%>
 		</p>
 
 		<p class="left">

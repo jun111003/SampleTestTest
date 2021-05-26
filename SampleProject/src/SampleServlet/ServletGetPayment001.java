@@ -1,6 +1,8 @@
 package SampleServlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -66,6 +68,12 @@ public class ServletGetPayment001 extends HttpServlet {
 			//お釣りをorderインスタンスとsalesインスタンスにセット
 			order.setPayment(payment);
 			order.setChange(change);
+
+			//時間をorderインスタンスにセット
+			SimpleDateFormat f = new SimpleDateFormat("YYYY年MM月dd日 HH時mm分ss秒");
+			Date now = new Date();
+			String d = f.format(now);
+			order.setSales_date(d);
 
 
 

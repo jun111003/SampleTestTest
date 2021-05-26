@@ -9,7 +9,8 @@
 </head>
 
 <body>
-	<a href="/SampleProjectMaster/OrderStartServlet">注文する</a>
+	<a href="/SampleProjectMaster/OrderStartServlet" class="next">注文する</a>
+	<a href="/SampleProjectMaster/ServletLogout" class="back">ログアウト</a>
 </body>
 
 </html>

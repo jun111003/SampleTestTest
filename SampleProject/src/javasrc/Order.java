@@ -98,4 +98,5 @@ public class Order {
 	public void setChange(int change) {
 		this.change = change;
 	}
+
 }

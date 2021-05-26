@@ -27,7 +27,17 @@ div{
 }
 
 /*画面の透明度変える*/
-img:hover {
+/*img:hover {
+   opacity: 0.5;
+}*/
+
+/*マウスのカーソルを当てたら画面の透明度を変える*/
+.selectImg:hover {
+   opacity: 0.5;
+}
+
+/*選択できない項目の透明度を変える*/
+.noSelectImg {
    opacity: 0.5;
 }
 

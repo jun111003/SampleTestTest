@@ -17,6 +17,8 @@
 	<img src="img/31logo.png" class="image-vw">
 	<p>
 		<%=msg.getMsg()%></p>
-	<a href="home-001.jsp">ホーム画面へ</a>
+	<p>
+	<a href="home-001.jsp" class="next">ホーム画面へ</a>
+	</p>
 </body>
 </html>

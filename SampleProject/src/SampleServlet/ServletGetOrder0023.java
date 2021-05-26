@@ -65,7 +65,7 @@ public class ServletGetOrder0023 extends HttpServlet {
 
 		if (action.equals("戻る")) {
 			//home-001画面をフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("order-001.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("order-0022.jsp");
 			dispatcher.forward(request, response);
 		} else if (action.equals("次へ")) {
 			session.setAttribute(sessionInstanceName, sales);

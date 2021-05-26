@@ -34,9 +34,9 @@ String ice_cream_count_id = sales.getIce_cream_count_id();
 			<% if(ice_cream_count_id.equals("No001") || ice_cream_count_id.equals("No002")) { %>
 
 				<% //コーンを選択できる %>
-				<input id="1" type="radio" name="container" value="C002">
+				<input id="1" type="radio" name="container" value="C002" checked>
 				<label for="1">
-				<img src=img/コーン.png width=10% height=10% class="selectImg" checked>
+				<img src=img/コーン.png width=10% height=10% class="selectImg">
 				</label>
 
 				<% //カップを選択できる %>

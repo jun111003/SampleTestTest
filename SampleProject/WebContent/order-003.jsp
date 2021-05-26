@@ -29,8 +29,6 @@ String ice_cream_count_id = sales.getIce_cream_count_id();
 
 		<div class="size">
 
-			<% //デバッグ用  %>
-			<!-- <% System.out.println("sales.getIce_cream_count_id():" + sales.getIce_cream_count_id()); %> -->
 
 			<% //シングルまたはダブルを選択したとき  %>
 			<% if(ice_cream_count_id.equals("No001") || ice_cream_count_id.equals("No002")) { %>

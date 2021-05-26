@@ -74,7 +74,7 @@ public class ServletLogin extends HttpServlet {
 			//select 実行
 			ResultSet rs = pStmt.executeQuery();
 
-			boolean setting = false;
+			int Flag = 0;
 			String msg = "";
 			while (rs.next()) {
 				//入力と一致する行が発見されなければwhileの中は実行されない
@@ -84,7 +84,6 @@ public class ServletLogin extends HttpServlet {
 				HttpSession session = request.getSession();
 				//セッションスコープに保存
 				session.setAttribute("Order", order);
-				setting = true;
 				errorMsg ="";
 
 				msg = "ようこそ" + id + ":" + order.getEmployee_name() +  "さん";
@@ -95,18 +94,21 @@ public class ServletLogin extends HttpServlet {
 			    //ログイン成功時のフォワード処理
 			    RequestDispatcher dispatcher = request.getRequestDispatcher("loginSuccess-001.jsp");
 	            dispatcher.forward(request, response);
+	            Flag = 1;
 			}
-			//もしid,psが一致しなかった場合のエラー
-            errorMsg = "入力内容が正しくありません";
-    		//リクエストスコープ使用処理
-			LoginMsg req_msg = new LoginMsg();
-			//エラーメッセージ処理
-			msg = errorMsg;
-			req_msg.setMsg(msg);
-			request.setAttribute("req_msg", req_msg);
-			//エラー時のフォワード処理
-			RequestDispatcher dispatcher = request.getRequestDispatcher("loginError-001.jsp");
-	        dispatcher.forward(request, response);
+			if(Flag == 0) {
+				//もしid,psが一致しなかった場合のエラー
+	            errorMsg = "入力内容が正しくありません";
+	    		//リクエストスコープ使用処理
+				LoginMsg req_msg = new LoginMsg();
+				//エラーメッセージ処理
+				msg = errorMsg;
+				req_msg.setMsg(msg);
+				request.setAttribute("req_msg", req_msg);
+				//エラー時のフォワード処理
+				RequestDispatcher dispatcher = request.getRequestDispatcher("loginError-001.jsp");
+		        dispatcher.forward(request, response);
+			}
 			//おまじない
 			pStmt.close();
 		} catch (SQLException e) {

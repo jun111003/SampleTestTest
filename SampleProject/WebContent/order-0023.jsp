@@ -30,8 +30,6 @@ String ice_cream_size_name = sales.getIce_cream_size_name();
 
 		<div class="size">
 
-			<% //デバッグ用  %>
-			<!-- <% System.out.println("sales.getIce_cream_size_name():" + sales.getIce_cream_size_name()); %> -->
 
 			<% //キッズを選択したとき  %>
 			<% if(ice_cream_size_name.equals("キッズ")) { %>

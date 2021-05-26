@@ -75,10 +75,11 @@ public class ServletGetOrder0022 extends HttpServlet {
 			if (Flag.equals("No003")) {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("order-0023.jsp");
 				dispatcher.forward(request, response);
+			}else {
+				//order-002画面をフォワード
+				RequestDispatcher dispatcher = request.getRequestDispatcher("order-003.jsp");
+				dispatcher.forward(request, response);
 			}
-			//order-002画面をフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("order-003.jsp");
-			dispatcher.forward(request, response);
 
 		}
 	}

@@ -10,6 +10,7 @@
 
 <body>
 	<a href="/SampleProjectMaster/OrderStartServlet" class="next">注文する</a>
+	<a href="/SampleProjectMaster/ServletStockControl" class="next">在庫管理</a>
 	<a href="/SampleProjectMaster/ServletLogout" class="back">ログアウト</a>
 </body>
 

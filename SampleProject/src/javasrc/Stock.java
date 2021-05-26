@@ -12,6 +12,14 @@ public class Stock {
 	private int flavor1;
 	private int flavor2;
 	private int flavor3;
+	private int size;
+
+	public Stock() {
+		container = 0;
+		flavor1 = 0;
+		flavor2 = 0;
+		flavor3 = 0;
+	}
 
 	public int getContainer() {
 		return container;
@@ -43,6 +51,14 @@ public class Stock {
 
 	public void setFlavor3(int flavor3) {
 		this.flavor3 = flavor3;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
 	}
 
 }

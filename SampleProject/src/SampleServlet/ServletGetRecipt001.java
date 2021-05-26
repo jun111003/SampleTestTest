@@ -68,7 +68,6 @@ public class ServletGetRecipt001 extends HttpServlet {
 					+ "serverTimezone=JST&useUnicode=true&characterEncoding=UTF-8", "root", "root")) {
 				conn.setAutoCommit(false);
 				//sql文の設定
-				//表結合して一気に情報を取得
 				String sql = "INSERT INTO sales (sales_id, order_id, sales_date, employee_id, ice_cream_container_id, ice_cream_inf_id, flavor_id_1, flavor_id_2, flavor_id_3) values (?,?,?,?,?,?,?,?,?);";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				//?に値をセット
@@ -100,14 +99,71 @@ public class ServletGetRecipt001 extends HttpServlet {
 				//flavorのStockを取得
 				sql = "SELECT ice_cream_flavor_volume FROM ice_cream_flavor where ice_cream_flavor_id = ?";
 				pStmt = conn.prepareStatement(sql);
-				pStmt.setString(1,sales.getIce_cream_container_id());
+				pStmt.setString(1,sales.getFlavor_id_1());
 				//select 実行
-				ResultSet rs2 = pStmt.executeQuery();
-
-				Stock stock = new Stock();
+				rs2 = pStmt.executeQuery();
 				while (rs2.next()) {
-					stock.setContainer(rs2.getInt("ice_cream_container_stock"));
+					stock.setFlavor1(rs2.getInt("ice_cream_flavor_volume"));
 				}
+				pStmt.setString(1,sales.getFlavor_id_2());
+				//select 実行
+				rs2 = pStmt.executeQuery();
+				while (rs2.next()) {
+					stock.setFlavor2(rs2.getInt("ice_cream_flavor_volume"));
+				}
+				pStmt.setString(1,sales.getFlavor_id_3());
+				//select 実行
+				rs2 = pStmt.executeQuery();
+				while (rs2.next()) {
+					stock.setFlavor3(rs2.getInt("ice_cream_flavor_volume"));
+				}
+
+				//アイスのサイズによって減らす量を取得
+				sql = "SELECT ice_cream_size_volume FROM ice_cream_size where ice_cream_size_id = ?";
+				pStmt = conn.prepareStatement(sql);
+				pStmt.setString(1,sales.getIce_cream_size_id());
+				//select 実行
+				rs2 = pStmt.executeQuery();
+				while (rs2.next()) {
+					stock.setSize(rs2.getInt("ice_cream_size_volume"));
+				}
+
+				//在庫を減らす処理
+				//容器
+				sql = "UPDATE ice_cream_container SET ice_cream_container_stock = ? where ice_cream_container_id = ?";
+				pStmt = conn.prepareStatement(sql);
+				//?に値をセット
+				pStmt.setInt(1, stock.getContainer()-1);
+				pStmt.setString(2, sales.getIce_cream_container_id());
+				//実行
+				rs = pStmt.executeUpdate();
+				conn.commit();// 一連の処理の確定
+
+				//flavor
+				sql = "UPDATE ice_cream_flavor SET ice_cream_flavor_volume = ? where ice_cream_flavor_id = ?";
+				pStmt = conn.prepareStatement(sql);
+				//?に値をセット
+				pStmt.setInt(1, stock.getFlavor1() - stock.getSize());
+				pStmt.setString(2, sales.getFlavor_id_1());
+				//実行
+				rs = pStmt.executeUpdate();
+				conn.commit();// 一連の処理の確定
+
+				//?に値をセット
+				pStmt.setInt(1, stock.getFlavor2() - stock.getSize());
+				pStmt.setString(2, sales.getFlavor_id_2());
+				//実行
+				rs = pStmt.executeUpdate();
+				conn.commit();// 一連の処理の確定
+
+				//?に値をセット
+				pStmt.setInt(1, stock.getFlavor3() - stock.getSize());
+				pStmt.setString(2, sales.getFlavor_id_3());
+				//実行
+				rs = pStmt.executeUpdate();
+				conn.commit();// 一連の処理の確定
+
+
 				//おまじない
 				pStmt.close();
 			} catch (SQLException e) {

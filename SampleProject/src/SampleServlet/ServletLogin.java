@@ -60,6 +60,7 @@ public class ServletLogin extends HttpServlet {
 		String id = request.getParameter("id");
 		String ps = request.getParameter("ps");
 
+		//aa
 		//リクエストパラメータのチェック
 		String errorMsg = "";
 

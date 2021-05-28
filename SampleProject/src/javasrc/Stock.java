@@ -3,16 +3,22 @@
  */
 package javasrc;
 
+import java.io.Serializable;
+
 /**
  * @author j-uchida
  *
  */
-public class Stock {
+public class Stock implements Serializable{
 	private int container;
 	private int flavor1;
 	private int flavor2;
 	private int flavor3;
 	private int size;
+	private String ice_cream_container_name;//アイスクリーム容器名前
+	private String ice_cream_container_stock;//アイスクリーム容器名前
+	private String flavor_name;//アイスクリーム味１名前
+	private String flavor_volume;//アイスクリーム味１名前
 
 	public Stock() {
 		container = 0;
@@ -59,6 +65,38 @@ public class Stock {
 
 	public void setSize(int size) {
 		this.size = size;
+	}
+
+	public String getIce_cream_container_name() {
+		return ice_cream_container_name;
+	}
+
+	public void setIce_cream_container_name(String ice_cream_container_name) {
+		this.ice_cream_container_name = ice_cream_container_name;
+	}
+
+	public String getIce_cream_container_stock() {
+		return ice_cream_container_stock;
+	}
+
+	public void setIce_cream_container_stock(String ice_cream_container_stock) {
+		this.ice_cream_container_stock = ice_cream_container_stock;
+	}
+
+	public String getFlavor_name() {
+		return flavor_name;
+	}
+
+	public void setFlavor_name(String flavor_name) {
+		this.flavor_name = flavor_name;
+	}
+
+	public String getFlavor_volume() {
+		return flavor_volume;
+	}
+
+	public void setFlavor_volume(String flavor_volume) {
+		this.flavor_volume = flavor_volume;
 	}
 
 }
